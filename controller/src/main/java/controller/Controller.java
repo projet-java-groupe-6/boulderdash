@@ -2,6 +2,8 @@ package controller;
 
 import contract.ControllerOrder;
 import contract.IController;
+import contract.IModel;
+import contract.IView;
 
 /**
  * The Class Controller.
@@ -9,10 +11,10 @@ import contract.IController;
 public final class Controller implements IController {
 
 	/** The view. */
-	private IView		view;
+	private IView view;
 
 	/** The model. */
-	private IModel	model;
+	private IModel model;
 
 	/**
 	 * Instantiates a new controller.
@@ -36,7 +38,7 @@ public final class Controller implements IController {
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
+
 	}
 
 	/**
@@ -71,22 +73,6 @@ public final class Controller implements IController {
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
-		switch (controllerOrder) {
-			case English:
-				this.model.loadHelloWorld("GB");
-				break;
-			case Francais:
-				this.model.loadHelloWorld("FR");
-				break;
-			case Deutsch:
-				this.model.loadHelloWorld("DE");
-				break;
-			case Indonesia:
-				this.model.loadHelloWorld("ID");
-				break;
-			default:
-				break;
-		}
-	}
 
+	}
 }
