@@ -1,6 +1,8 @@
 package model;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * The class DAOLevel
@@ -14,7 +16,20 @@ public class DAOLevel {
 
     private Connection connection;
 
-    public DAOLevel(Connection connection) {
 
+
+    public DAOLevel(Connection connection) {
+        this.connection = connection;
+    }
+
+    private void loadLevel() {
+        Statement statement = null;
+        try {
+            statement = connection.createStatement();
+
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

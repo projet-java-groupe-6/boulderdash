@@ -1,14 +1,13 @@
 package controller;
 
-import contract.ControllerOrder;
-import contract.IController;
+import contract.IOrder;
 import contract.IModel;
 import contract.IView;
 
 /**
  * The Class Controller.
  */
-public final class Controller implements IController {
+public final class Controller implements IOrder {
 
 	/** The view. */
 	private IView view;
@@ -35,7 +34,7 @@ public final class Controller implements IController {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see contract.IController#control()
+	 * @see contract.IOrder#control()
 	 */
 	public void control() {
 
@@ -70,9 +69,9 @@ public final class Controller implements IController {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see contract.IController#orderPerform(contract.ControllerOrder)
+	 * @see contract.IOrder#orderPerform(contract.ControllerOrder)
 	 */
-	public void orderPerform(final ControllerOrder controllerOrder) {
+	public void orderPerform() {
 
 	}
 }
