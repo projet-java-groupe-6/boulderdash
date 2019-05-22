@@ -47,6 +47,8 @@ buildNumber.properties
 # *.iml
 # *.ipr
 
+.project
+
 # CMake
 cmake-build-*/
 
