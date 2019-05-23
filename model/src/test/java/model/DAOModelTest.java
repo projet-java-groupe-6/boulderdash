@@ -11,11 +11,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import entity.MotionElement;
 import entity.MotionlessElement;
 
 public class DAOModelTest {
 	
 	private DAOModel model;
+	private MotionElement character;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -28,6 +30,7 @@ public class DAOModelTest {
 	@Before
 	public void setUp() throws Exception {
 		this.model = new DAOModel();
+		this.character = new MotionElement("character.png");
 	}
 
 	@After
@@ -38,6 +41,9 @@ public class DAOModelTest {
 	public void testGetWalls() {
 		HashMap<Point, MotionlessElement> expected = new HashMap<>();
 		assertEquals(expected, this.model.getWalls());
+	}
+	public void testgetCharacter() {
+		assertEquals(character, this.model.getCharacter());
 	}
 
 }
