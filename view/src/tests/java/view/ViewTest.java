@@ -40,9 +40,9 @@ public class ViewTest {
 			
 		};
 		view = new View(model);
-		this.controller=new IController() {
+		this.controller = new IController() {
 			@Override
-			public void OrderPerform(Order order) {
+			public void orderPerform(Order order) {
 				
 			}
 

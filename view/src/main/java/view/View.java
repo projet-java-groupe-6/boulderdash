@@ -10,31 +10,29 @@ public class View implements IView {
 	
 	private IModel model;
 	private IController controller;
+	private ViewFrame frame;
 	
 	public View (IModel model) {
-		
-		this.model=model;
-	
+		this.model = model;
+		this.frame = new ViewFrame(this);
+
 	}
 
 	@Override
 	public IController getController() {
-		// TODO Auto-generated method stub
 		return this.controller;
 	}
 
 	@Override
 	public IModel getModel() {
-		// TODO Auto-generated method stub
 		return this.model;
 	}
 
 	@Override
 	public Observer getObserver() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.frame.getObserver();
 	}
 	public void setController(IController controller) {
-		this.controller=controller;
+		this.controller = controller;
 	}
 }
