@@ -19,7 +19,7 @@ public class DAOModel implements IModel {
 
     /**  */
     private static final int LEVEL = 1;
-    
+
     public DAOModel() {
     }
 
