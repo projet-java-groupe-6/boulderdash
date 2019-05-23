@@ -1,5 +1,6 @@
 package model;
 
+import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
 
@@ -14,18 +15,15 @@ import java.sql.Statement;
  *
  * @author clement
  */
-public class DAOModel {
+public class DAOModel implements IModel {
 
     /**  */
     private static final int LEVEL = 1;
 
-    private Connection connection;
-
-    public DAOModel(Connection connection) {
-        this.connection = connection;
+    public DAOModel() {
     }
 
-    public void loadLevel(IModel model) {
+    public void loadLevel() {
         Statement statement = null;
         try {
             statement = connection.createStatement();
