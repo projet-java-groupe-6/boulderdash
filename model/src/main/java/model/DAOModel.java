@@ -24,6 +24,7 @@ public class DAOModel implements IModel {
     private MotionElement character;
 
     public DAOModel() {
+    	this.walls = new HashMap<>();
     }
 
     public void loadLevel() {

@@ -2,13 +2,20 @@ package model;
 
 import static org.junit.Assert.*;
 
+import java.awt.Point;
+import java.util.HashMap;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import entity.MotionlessElement;
+
 public class DAOModelTest {
+	
+	private DAOModel model;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,6 +27,7 @@ public class DAOModelTest {
 
 	@Before
 	public void setUp() throws Exception {
+		this.model = new DAOModel();
 	}
 
 	@After
@@ -27,8 +35,9 @@ public class DAOModelTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testGetWalls() {
+		HashMap<Point, MotionlessElement> expected = new HashMap<>();
+		assertEquals(expected, this.model.getWalls());
 	}
 
 }
