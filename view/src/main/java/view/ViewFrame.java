@@ -2,6 +2,7 @@ package view;
 
 import contract.IModel;
 import contract.IView;
+import contract.Order;
 
 import javax.swing.*;
 import java.util.Observer;
