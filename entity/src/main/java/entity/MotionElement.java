@@ -19,9 +19,13 @@ public class MotionElement extends Sprite {
 
     public void setX(int x) {
         this.x = x;
+        this.setChanged();
+        this.notifyObservers();
     }
 
     public void setY(int y) {
         this.y = y;
+        this.setChanged();
+        this.notifyObservers();
     }
 }

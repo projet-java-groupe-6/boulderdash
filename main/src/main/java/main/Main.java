@@ -4,10 +4,6 @@
  */
 package main;
 
-import controller.Controller;
-import model.Model;
-import view.BoardFrame;
-
 /**
  * The Class Main.
  *
@@ -24,10 +20,9 @@ public abstract class Main {
     public static void main(final String[] args) {
         final Model model = new Model();
         final BoardFrame boardFrame = new BoardFrame("BoulderDash");
-        final Controller controller = new Controller(view, model);
-        view.setController(controller);
+        final Controller controller = new Controller(boardFrame, model);
+        boardFrame.setController(controller);
 
-        controller.control();
-        controller.orderPerform(ControllerOrder.English);
+        controller.play();
     }
 }

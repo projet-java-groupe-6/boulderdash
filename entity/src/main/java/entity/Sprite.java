@@ -3,8 +3,9 @@ package entity;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
+import java.util.Observable;
 
-public abstract class Sprite {
+public abstract class Sprite extends Observable {
 
     private String filename;
     private Image image;
