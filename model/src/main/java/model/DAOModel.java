@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 
 /**
  * The class DAOModel
@@ -19,6 +20,8 @@ public class DAOModel implements IModel {
 
     /**  */
     private static final int LEVEL = 1;
+    private HashMap<Point, MotionlessElement> walls;
+    private MotionElement character;
 
     public DAOModel() {
     }
@@ -39,4 +42,18 @@ public class DAOModel implements IModel {
             e.printStackTrace();
         }
     }
+
+	@Override
+	public HashMap<Point, MotionlessElement> getWalls() {
+		// TODO Auto-generated method stub
+		return this.walls;
+	}
+
+	@Override
+	public MotionElement getCharacter() {
+		// TODO Auto-generated method stub
+		return this.character;
+	}
+
+
 }
