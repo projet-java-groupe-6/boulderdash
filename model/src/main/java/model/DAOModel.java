@@ -19,43 +19,20 @@ public class DAOModel {
     /**  */
     private static final int LEVEL = 1;
 
-    private Connection connection;
 
-    public DAOModel(Connection connection) {
-        this.connection = connection;
+    public DAOModel() {
     }
 
-    public void loadLevel(IModel model) {
+    public void loadLevel() {
         Statement statement = null;
         try {
-            statement = connection.createStatement();
+            statement = DBConnection.getInstance().getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery("");
             while(resultSet.next()) {
                 int x = resultSet.getInt("x");
                 int y = resultSet.getInt("y");
                 char c = resultSet.getString("element").charAt(0);
-                switch (c) {
-                    case 'd':
-                        MotionlessElement element = new MotionlessElement("dirt.png");
-                        element.loadImage();
-                        model.getDirts().put(new Point(x, y), element);
-                        break;
-                    case 'r':
-                        MotionElement rock = new MotionElement("rock.png");
-                        rock.loadImage();
-                        model.getRocks().add(rock);
-                        break;
-                    case 'c':
-                        MotionElement character = new MotionElement("character.png");
-                        character.loadImage();
-                        model.setCharacter(character);
-                        break;
-                    case 'w':
-                        MotionlessElement walls = new MotionlessElement("wall.png");
-                        walls.loadImage();
-                        model.getWalls().put(new Point(x, y), walls);
-                        break;
-                }
+                
             }
         }
         catch (SQLException e) {
