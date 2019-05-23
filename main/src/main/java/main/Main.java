@@ -4,6 +4,10 @@
  */
 package main;
 
+import controller.Controller;
+import model.DAOModel;
+import view.ViewFrame;
+
 /**
  * The Class Main.
  *
@@ -18,11 +22,8 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final Model model = new Model();
-        final BoardFrame boardFrame = new BoardFrame("BoulderDash");
-        final Controller controller = new Controller(boardFrame, model);
-        boardFrame.setController(controller);
-
-        controller.play();
+        final DAOModel model = new DAOModel();
+        final ViewFrame viewFrame = new ViewFrame();
+        final Controller controller = new Controller();
     }
 }
