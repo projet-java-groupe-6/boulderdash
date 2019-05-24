@@ -12,6 +12,7 @@ import entity.MotionlessElement;
 import entity.object.Character;
 import entity.object.Diamond;
 import entity.object.Rock;
+import entity.object.Wall;
 
 public class Level {
 	
@@ -91,7 +92,7 @@ public class Level {
 		return this.rocks;
 	}
 
-	public ArrayList<MotionElement> getDiamonds(){
+	public ArrayList<Diamond> getDiamonds(){
 		return this.diamonds;
 	}
 
