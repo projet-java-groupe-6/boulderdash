@@ -29,6 +29,7 @@ public class ViewPanel extends JPanel implements Observer {
     public void paintComponent(Graphics graphics) {
         Graphics2D g = (Graphics2D)graphics;
         g.clearRect(0, 0, 768, 800);
+        g.scale(4, 4);
         for(Map.Entry<Point, MotionlessElement> walls: this.model.getWalls().entrySet()) {
             int x = walls.getKey().x;
             int y = walls.getKey().y;
@@ -36,6 +37,9 @@ public class ViewPanel extends JPanel implements Observer {
         }
         for(MotionElement rock: this.model.getRocks()) {
             g.drawImage(rock.getImage(), rock.getX()*IMAGE_SIZE, rock.getY()*IMAGE_SIZE, null);
+        }
+        for(MotionElement diamond: this.model.getDiamonds()) {
+            g.drawImage(diamond.getImage(), diamond.getX()*IMAGE_SIZE, diamond.getY()*IMAGE_SIZE, null);
         }
         MotionElement character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);

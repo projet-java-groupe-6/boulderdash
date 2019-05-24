@@ -43,6 +43,11 @@ public class ViewTest {
 			public ArrayList<MotionElement> getRocks() {
 				return null;
 			}
+
+			@Override
+			public ArrayList<MotionElement> getDiamonds() {
+				return null;
+			}
 			
 		};
 		view = new View(model);

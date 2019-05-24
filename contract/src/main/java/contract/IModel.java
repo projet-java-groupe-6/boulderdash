@@ -11,6 +11,6 @@ public interface IModel {
 	
 	HashMap<Point, MotionlessElement> getWalls();
 	ArrayList<MotionElement> getRocks();
-	ArrayList<MotionElement>getDiamond();
+	ArrayList<MotionElement>getDiamonds();
 	MotionElement getCharacter();
 }

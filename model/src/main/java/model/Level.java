@@ -23,6 +23,7 @@ public class Level {
 	private Level(LevelBuilder  builder) {
 		this.walls = new HashMap<>();
 		this.rocks = new ArrayList<>();
+		this.diamonds = new ArrayList<>();
 		this.parseBuilder(builder);
 	}
 	
@@ -49,18 +50,21 @@ public class Level {
 							character.setX(x);
 							character.setY(y);
 							this.character = character;
+							break;
 						case 'r':
 							MotionElement rock = new MotionElement("rock.png");
 							rock.loadImage();
 							rock.setX(x);
 							rock.setY(y);
 							this.rocks.add(rock);
+							break;
 						case 'd':
 							MotionElement diamond = new MotionElement("diamond.png");
 							diamond.loadImage();
 							diamond.setX(x);
 							diamond.setY(y);
-							this.diamond.add(diamond);
+							this.diamonds.add(diamond);
+							break;
 							
 					}
 					
