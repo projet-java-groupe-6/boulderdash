@@ -1,8 +1,7 @@
 package entity.object;
 
-import entity.MotionlessElement;
-
-public class Rock extends MotionlessElement {
+import entity.MotionElement;
+public class Rock extends MotionElement {
 	
 	public Rock() {
 		super("rock.png");
