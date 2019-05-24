@@ -40,38 +40,9 @@ public class ViewFrame extends JFrame implements KeyListener {
 
 	@Override
 	public void keyPressed(final KeyEvent e) {
-		int key = e.getKeyCode();
-
-		switch(e.getKeyCode())
-		{
-			case KeyEvent.VK_Z:
-			    this.controller.orderPerform(Order.CHARACTER_UP);
-			    break;
-			
-			
-			case KeyEvent.VK_S:
-			    this.controller.orderPerform(Order.CHARACTER_DOWN);
-			    break;
-			
-			
-			case KeyEvent.VK_Q:
-			    this.controller.orderPerform(Order.CHARACTER_LEFT);
-			    break;
-			
-			
-			case KeyEvent.VK_D:
-			    this.controller.orderPerform(Order.CHARACTER_RIGHT);
-			    break;
-			
-			case KeyEvent.VK_SPACE:
-			    this.controller.orderPerform(Order.CHARACTER_SPELL);
-			    break;
-
-			case KeyEvent.VK_R:
-				this.controller.orderPerform(Order.RETRY);
-				break;
-				
-		}
+		char key = e.getKeyChar();
+		Order order= new Order(key);
+		this.controller.orderPerform(order);
 	}
 
 	@Override
