@@ -12,12 +12,12 @@ import entity.MotionlessElement;
 import entity.object.Character;
 import entity.object.Diamond;
 import entity.object.Rock;
+import entity.object.Wall;
 
 public class Level {
 	
-	private HashMap<Point, MotionlessElement> walls;
-	
-	
+	private HashMap<Point, Wall> walls;
+
 	private Character character;
 	
 	private ArrayList<Rock> rocks;
@@ -79,7 +79,7 @@ public class Level {
 		}
 	}
 	
-	public HashMap<Point, MotionlessElement> getWalls() {
+	public HashMap<Point, Wall> getWalls() {
 		return walls;
 	}
 
@@ -91,7 +91,7 @@ public class Level {
 		return this.rocks;
 	}
 
-	public ArrayList<MotionElement> getDiamonds(){
+	public ArrayList<Diamond> getDiamonds(){
 		return this.diamonds;
 	}
 

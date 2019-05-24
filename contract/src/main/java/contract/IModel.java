@@ -7,13 +7,14 @@ import java.util.HashMap;
 import entity.MotionElement;
 import entity.MotionlessElement;
 import entity.object.Character;
-import entity.object.Diamonds;
+import entity.object.Diamond;
 import entity.object.Rock;
+import entity.object.Wall;
 
 public interface IModel {
 	
-	HashMap<Point, MotionlessElement> getWalls();
+	HashMap<Point, Wall> getWalls();
 	ArrayList<Rock> getRocks();
-	ArrayList<Diamonds>getDiamonds();
+	ArrayList<Diamond>getDiamonds();
 	Character getCharacter();
 }
