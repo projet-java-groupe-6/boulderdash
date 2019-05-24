@@ -30,4 +30,9 @@ public abstract class Sprite extends Observable {
             e.printStackTrace();
         }
     }
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+    
 }
