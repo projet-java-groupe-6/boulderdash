@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import entity.MotionElement;
@@ -13,7 +14,10 @@ public class Level {
 	
 	private HashMap<Point, MotionlessElement> walls;
 	
+	
 	private MotionElement character;
+	
+	private ArrayList<MotionElement> rocks;
 	
 	private Level(LevelBuilder  builder) {
 		this.walls = new HashMap<>();
@@ -43,7 +47,15 @@ public class Level {
 							character.setX(x);
 							character.setY(y);
 							this.character = character;
+						case 'r':
+							MotionElement rock = new MotionElement("rock.png");
+							rock.loadImage();
+							rock.setX(x);
+							rock.setY(y);
+							this.rocks.add(rock);
+							
 					}
+					
 				}
 				y++;
 			}
