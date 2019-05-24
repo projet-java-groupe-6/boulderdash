@@ -1,6 +1,6 @@
 package entity;
 
-public class MotionElement extends Sprite {
+public abstract class MotionElement extends Sprite {
 
     private int x;
     private int y;
