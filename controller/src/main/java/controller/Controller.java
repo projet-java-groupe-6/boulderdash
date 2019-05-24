@@ -9,11 +9,12 @@ public class Controller implements IController {
 	
 	private IView view;
 	private IModel model;
+	private Collisions collisions;
 
     public Controller(IView view, IModel model) {
     	this.view=view;
     	this.model=model;
-
+    	this.collisions = new Collisions();
     }
 
     @Override

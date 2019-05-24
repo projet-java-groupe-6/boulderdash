@@ -5,7 +5,9 @@ import contract.IModel;
 
 public class Collisions {
 
-	IModel model;
+	private IModel model;
 
-	
+	public Collisions(IModel model) {
+		this.model = model;
+	}
 }
