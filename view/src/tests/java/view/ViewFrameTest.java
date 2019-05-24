@@ -42,6 +42,7 @@ public class ViewFrameTest {
         KeyEvent event = null; 
         fr.keyPressed(event); 
         assertEquals(event.getKeyChar(), key1 );
+
     }
 	
 
