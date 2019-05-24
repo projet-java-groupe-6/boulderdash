@@ -2,9 +2,9 @@ package entity.object;
 
 import entity.MotionlessElement;
 
-public class Walls extends MotionlessElement {
+public class Wall extends MotionlessElement {
 
-	public Walls() {
+	public Wall() {
 		super("walls.png");
 	}
 
