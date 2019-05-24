@@ -28,7 +28,7 @@ public class Controller implements IController {
     		break;
     	case 'z':
     		this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
-    		break;
+    		break;    		
     	case 's':
     		this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
     		break;
@@ -40,6 +40,10 @@ public class Controller implements IController {
     @Override
     public void play() {
         this.model.getCharacter().addObserver(this.view.getObserver());
+        while(this.model.getCharacter().isAlive()) {
+        	
+        	
+        }
     }
 
 }
