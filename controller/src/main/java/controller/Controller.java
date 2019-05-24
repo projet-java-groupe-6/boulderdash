@@ -38,7 +38,7 @@ public class Controller implements IController {
 
     @Override
     public void play() {
-
+        this.model.getCharacter().addObserver(this.view.getObserver());
     }
 
 }
