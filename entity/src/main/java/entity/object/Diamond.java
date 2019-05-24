@@ -3,10 +3,10 @@ package entity.object;
 import entity.MotionElement;
 import entity.MotionlessElement;
 
-public class Diamonds extends MotionElement {
+public class Diamond extends MotionElement {
 
-	public Diamonds() {
-		super("diamonds.png");
+	public Diamond() {
+		super("diamond.png");
 	}
 
 }
