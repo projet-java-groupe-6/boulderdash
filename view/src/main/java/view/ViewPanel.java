@@ -3,10 +3,10 @@ package view;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
-import entity.object.Character;
 import entity.object.Diamond;
 import entity.object.Rock;
 import entity.object.Wall;
+import entity.object.Character;
 
 import javax.swing.*;
 import java.awt.*;
