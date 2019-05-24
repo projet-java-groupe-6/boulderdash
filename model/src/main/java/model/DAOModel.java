@@ -57,6 +57,11 @@ public class DAOModel implements IModel {
     public ArrayList<MotionElement> getRocks() {
         return this.level.getRocks();
     }
+	
+	@Override
+	public ArrayList<MotionElement> getDiamonds(){
+		return this.level.getDiamonds();
+	}
 
 
 }
