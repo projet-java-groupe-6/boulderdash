@@ -64,8 +64,7 @@ public class Level {
 							diamond.setX(x);
 							diamond.setY(y);
 							this.diamonds.add(diamond);
-							break;
-							
+							break;				
 					}
 					
 				}
