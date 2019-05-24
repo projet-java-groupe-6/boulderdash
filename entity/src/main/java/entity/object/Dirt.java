@@ -19,7 +19,7 @@ public class Dirt extends MotionlessElement {
 			this.setFilename("dirt_undug.png");
 			break;
 		case DUG:
-			this.setFilename("dirt_undug.png");
+			this.setFilename("dirt_dug.png");
 			break;
 		}
 		this.loadImage();
