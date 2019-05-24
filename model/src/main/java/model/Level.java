@@ -42,7 +42,7 @@ public class Level {
 					char c = line.charAt(x);
 					switch(c) {
 						case 'w':
-							MotionlessElement wall = new MotionlessElement("wall.png");
+							Wall wall = new Wall();
 							wall.loadImage();
 							Point p = new Point(x, y);
 							walls.put(p, wall);
