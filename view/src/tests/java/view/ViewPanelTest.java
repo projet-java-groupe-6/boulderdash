@@ -1,4 +1,4 @@
-package main;
+package view;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MainTest {
+public class ViewPanelTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -29,10 +29,6 @@ public class MainTest {
 	@Test
 	public void test() {
 		fail("Not yet implemented");
-	}
-	@Test
-	public void testMain() throws Exception {
-	    System.out.println("main");
 	}
 
 }
