@@ -80,6 +80,10 @@ public class Level {
 		return this.character;
 	}
 
+	public ArrayList<MotionElement> getRocks() {
+		return this.rocks;
+	}
+
 
 
 	public static class LevelBuilder{

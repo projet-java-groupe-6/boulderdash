@@ -34,6 +34,9 @@ public class ViewPanel extends JPanel implements Observer {
             int y = walls.getKey().y;
             g.drawImage(walls.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
         }
+        for(MotionElement rock: this.model.getRocks()) {
+            g.drawImage(rock.getImage(), rock.getX()*IMAGE_SIZE, rock.getY()*IMAGE_SIZE, null);
+        }
         MotionElement character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
     }

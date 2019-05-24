@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -51,6 +52,11 @@ public class DAOModel implements IModel {
 	public MotionElement getCharacter() {
 		return this.level.getCharacter();
 	}
+
+	@Override
+    public ArrayList<MotionElement> getRocks() {
+        return this.level.getRocks();
+    }
 
 
 }
