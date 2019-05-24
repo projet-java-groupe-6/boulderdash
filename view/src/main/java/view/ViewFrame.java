@@ -52,5 +52,6 @@ public class ViewFrame extends JFrame implements KeyListener {
 	    System.out.println("keyTyped");
 		
 	}
+	
 }
 
