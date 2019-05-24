@@ -18,7 +18,7 @@ public class Level {
 	private MotionElement character;
 	
 	private ArrayList<MotionElement> rocks;
-	private ArrayList<MotionElement> diamond;
+	private ArrayList<MotionElement> diamonds;
 	
 	private Level(LevelBuilder  builder) {
 		this.walls = new HashMap<>();
@@ -84,6 +84,9 @@ public class Level {
 		return this.rocks;
 	}
 
+	public ArrayList<MotionElement> getDiamonds(){
+		return this.diamonds;
+	}
 
 
 	public static class LevelBuilder{
