@@ -3,6 +3,10 @@ package model;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.Character;
+import entity.object.Diamond;
+import entity.object.Rock;
+import entity.object.Wall;
 import model.Level.LevelBuilder;
 
 import java.awt.*;
@@ -44,22 +48,22 @@ public class DAOModel implements IModel {
     }
 
 	@Override
-	public HashMap<Point, MotionlessElement> getWalls() {
+	public HashMap<Point, Wall> getWalls() {
 		return this.level.getWalls();
 	}
 
 	@Override
-	public MotionElement getCharacter() {
+	public Character getCharacter() {
 		return this.level.getCharacter();
 	}
 
 	@Override
-    public ArrayList<MotionElement> getRocks() {
+    public ArrayList<Rock> getRocks() {
         return this.level.getRocks();
     }
 	
 	@Override
-	public ArrayList<MotionElement> getDiamonds(){
+	public ArrayList<Diamond> getDiamonds(){
 		return this.level.getDiamonds();
 	}
 

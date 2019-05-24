@@ -6,11 +6,15 @@ import java.util.HashMap;
 
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.Character;
+import entity.object.Diamond;
+import entity.object.Rock;
+import entity.object.Wall;
 
 public interface IModel {
 	
-	HashMap<Point, MotionlessElement> getWalls();
-	ArrayList<MotionElement> getRocks();
-	ArrayList<MotionElement>getDiamonds();
-	MotionElement getCharacter();
+	HashMap<Point, Wall> getWalls();
+	ArrayList<Rock> getRocks();
+	ArrayList<Diamond>getDiamonds();
+	Character getCharacter();
 }
