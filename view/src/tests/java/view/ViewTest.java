@@ -6,6 +6,10 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import entity.object.Character;
+import entity.object.Diamond;
+import entity.object.Rock;
+import entity.object.Wall;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,29 +30,25 @@ public class ViewTest {
 	public void setUp() throws Exception {
 		
 		model = new IModel() {
-
 			@Override
-			public HashMap<Point, MotionlessElement> getWalls() {
-				// TODO Auto-generated method stub
+			public HashMap<Point, Wall> getWalls() {
 				return null;
 			}
 
 			@Override
-			public MotionElement getCharacter() {
-				// TODO Auto-generated method stub
+			public ArrayList<Rock> getRocks() {
 				return null;
 			}
 
 			@Override
-			public ArrayList<MotionElement> getRocks() {
+			public ArrayList<Diamond> getDiamonds() {
 				return null;
 			}
 
 			@Override
-			public ArrayList<MotionElement> getDiamonds() {
+			public Character getCharacter() {
 				return null;
 			}
-			
 		};
 		view = new View(model);
 		this.controller = new IController() {
