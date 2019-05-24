@@ -10,6 +10,7 @@ import java.util.HashMap;
 import entity.MotionElement;
 import entity.MotionlessElement;
 import entity.object.Character;
+import entity.object.Diamonds;
 import entity.object.Rock;
 
 public class Level {
@@ -17,10 +18,10 @@ public class Level {
 	private HashMap<Point, MotionlessElement> walls;
 	
 	
-	private MotionElement character;
+	private Character character;
 	
-	private ArrayList<MotionElement> rocks;
-	private ArrayList<MotionElement> diamonds;
+	private ArrayList<Rock> rocks;
+	private ArrayList<Diamonds> diamonds;
 	
 	private Level(LevelBuilder  builder) {
 		this.walls = new HashMap<>();
@@ -61,7 +62,7 @@ public class Level {
 							this.rocks.add(rock);
 							break;
 						case 'd':
-							MotionElement diamond = new MotionElement("diamond.png");
+							Diamonds diamond = new Diamonds();
 							diamond.loadImage();
 							diamond.setX(x);
 							diamond.setY(y);
@@ -82,11 +83,11 @@ public class Level {
 		return walls;
 	}
 
-	public MotionElement getCharacter() {
+	public Character getCharacter() {
 		return this.character;
 	}
 
-	public ArrayList<MotionElement> getRocks() {
+	public ArrayList<Rock> getRocks() {
 		return this.rocks;
 	}
 
