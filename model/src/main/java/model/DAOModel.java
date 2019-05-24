@@ -3,6 +3,7 @@ package model;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
+import model.Level.LevelBuilder;
 
 import java.awt.*;
 import java.sql.Connection;
@@ -20,24 +21,21 @@ public class DAOModel implements IModel {
 
     /**  */
     private static final int LEVEL = 1;
-    private HashMap<Point, MotionlessElement> walls;
-    private MotionElement character;
+    
+    private Level level;
 
     public DAOModel() {
-    	this.walls = new HashMap<>();
+    	this.loadLevel();
     }
 
     public void loadLevel() {
         Statement statement = null;
         try {
             statement = DBConnection.getInstance().getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("");
-            while(resultSet.next()) {
-                int x = resultSet.getInt("x");
-                int y = resultSet.getInt("y");
-                char c = resultSet.getString("element").charAt(0);
-                
-            }
+            ResultSet resultSet = statement.executeQuery("CALL map(" + LEVEL + ");");
+            resultSet.first();
+            String path = resultSet.getString("path");
+            this.level = new Level.LevelBuilder(path).build();
         }
         catch (SQLException e) {
             e.printStackTrace();
