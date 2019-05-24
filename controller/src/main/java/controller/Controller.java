@@ -1,44 +1,36 @@
 package controller;
 
 import contract.IController;
+import contract.IModel;
+import contract.IView;
 import contract.Order;
 
 public class Controller implements IController {
+	
+	private IView view;
+	private IModel model;
 
-    public Controller() {
+    public Controller(IView view, IModel model) {
+    	this.view=view;
+    	this.model=model;
 
     }
 
     @Override
     public void orderPerform(Order order) {
-		/*
-    	switch (order){
-		case CHARACTER_DOWN:
-			hm.move(Direction.DOWN);
-			break;
-		case CHARACTER_UP:
-			hm.move(Direction.UP);
-			break;
-		case CHARACTER_LEFT:
-			hm.move(Direction.LEFT);
-			break;
-		case CHARACTER_RIGHT:
-			hm.move(Direction.RIGHT);
-			break;
-		case CHARACTER_SPELL:
-			hm.sendSpell();
-			break;
-		case RETRY:
-			IHero h = model.getLevel().getHero();
-			h.setScore(h.getScore() - RETRY_COST);
-			this.model.loadLevel(this.model.getLevel().getId());
-			break;
-		default:
-			System.out.println("Not supported order : "+order.toString());
-			break;
-	}
-
-    */
+    	switch (order.getTyped()) {
+    	case 'd':
+    		this.model.getCharacter().setX(this.model.getCharacter().getX()+1);
+    	break;
+    	case 'q':
+    		this.model.getCharacter().setX(this.model.getCharacter().getX()-1);
+    	case 'z':
+    		this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
+    	case 's':
+    		this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
+    	}
+    	
+    	
     }
 
     @Override
