@@ -1,23 +1,23 @@
-w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w
-w t t t r r r t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t r r d t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t r t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t r r r t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w c t t t t t t t t t r r r d t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t r r r t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t r t t r t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t r r t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t r r r r t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w t t t w 
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t w
-w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w 
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+wttttrrrttttttttttttttrrrrdtttttrrrttttttttttttttw
+wttttrrdtttttttttttttttrrttttttttrtrttttdttttttttw
+wttttrtttttttdttrtttttrttrtttttrtttttttttttttttttw
+wtttttttdttttttttttttttttttttrtttttdtttttttttrtttw
+wttttttttrtttrtttdfttttttdtttttttttttttttttrtttttw
+wcttrtttttrtttttttttrttttttttrtttttttrtttttttttttw
+wtttttttttrrrtttttttrttttttttrttttttdtttrttttttrtw
+wtttttttttrrrdttttttttttdttttdttttttttttttrttttrtw
+wttttdttttrrrttttrrrrtttttttttttttrtttrttttrtttttw
+wttttttttttttttttttttttttttttttttttttttttttttttttw
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwtttw
+wtttttrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrttttttttttw
+wtttttrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrttttttttttw
+wtttttttttttttttttrttttttttttttdttttttttttttdttttw
+wtttdtttdtrttrttdttttrttrtrtttttttttrrrrtttttrtttw
+wttttttttttttttttttttttrttttttttttttrrrrttrttttttw
+wtttttttdttttrtrttrtttdttttdttttrtttrrrrttttttttw
+wtttttrtttttttttttdtttttrtttttdttttttddtttttttrttw
+wttttdttttrtttttttrtttttttttttttttttttttttsttttttw
+wttttttrtttttdttttttttttrttttdttttttttttrttttttttw
+wttttttttttttttttttttdtttttttttttttttttttttttttttw
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww

@@ -16,6 +16,7 @@ public class Level {
 	private MotionElement character;
 	
 	private Level(LevelBuilder  builder) {
+		this.walls = new HashMap<>();
 		this.parseBuilder(builder);
 	}
 	
@@ -30,12 +31,18 @@ public class Level {
 				for(int x = 0; x < length; x++) {
 					char c = line.charAt(x);
 					switch(c) {
-					case 'w':
-						MotionlessElement wall = new MotionlessElement("wall.png");
-						wall.loadImage();
-						Point p = new Point(x, y);
-						walls.put(p, wall);
-						break;
+						case 'w':
+							MotionlessElement wall = new MotionlessElement("wall.png");
+							wall.loadImage();
+							Point p = new Point(x, y);
+							walls.put(p, wall);
+							break;
+						case 'c':
+							MotionElement character = new MotionElement("character.png");
+							character.loadImage();
+							character.setX(x);
+							character.setY(y);
+							this.character = character;
 					}
 				}
 				y++;
@@ -48,6 +55,10 @@ public class Level {
 	
 	public HashMap<Point, MotionlessElement> getWalls() {
 		return walls;
+	}
+
+	public MotionElement getCharacter() {
+		return this.character;
 	}
 
 

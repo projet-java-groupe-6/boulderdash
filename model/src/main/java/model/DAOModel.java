@@ -44,14 +44,12 @@ public class DAOModel implements IModel {
 
 	@Override
 	public HashMap<Point, MotionlessElement> getWalls() {
-		// TODO Auto-generated method stub
-		return this.walls;
+		return this.level.getWalls();
 	}
 
 	@Override
 	public MotionElement getCharacter() {
-		// TODO Auto-generated method stub
-		return this.character;
+		return this.level.getCharacter();
 	}
 
 
