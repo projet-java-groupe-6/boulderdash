@@ -2,6 +2,7 @@ package controller;
 
 
 import contract.IModel;
+import entity.MotionElement;
 
 public class Collisions {
 
@@ -9,5 +10,12 @@ public class Collisions {
 
 	public Collisions(IModel model) {
 		this.model = model;
+	}
+	
+	public boolean canMove(Direction direction, MotionElement element) {
+		int x = element.getX();
+		int y = element.getY();
+		return false;
+		
 	}
 }
