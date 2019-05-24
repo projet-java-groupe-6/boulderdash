@@ -49,7 +49,6 @@ public class ViewFrame extends JFrame implements KeyListener {
 
 	@Override
 	public void keyTyped(final KeyEvent e) {
-	    System.out.println("keyTyped");
 		
 	}
 	

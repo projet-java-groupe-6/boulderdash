@@ -1,6 +1,7 @@
 package view;
 
 import contract.IModel;
+import entity.MotionElement;
 import entity.MotionlessElement;
 
 import javax.swing.*;
@@ -33,5 +34,7 @@ public class ViewPanel extends JPanel implements Observer {
             int y = walls.getKey().y;
             g.drawImage(walls.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
         }
+        MotionElement character = this.model.getCharacter();
+        g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
     }
 }
