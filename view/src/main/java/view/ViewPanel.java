@@ -3,6 +3,10 @@ package view;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.Character;
+import entity.object.Diamond;
+import entity.object.Rock;
+import entity.object.Wall;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,18 +34,18 @@ public class ViewPanel extends JPanel implements Observer {
         Graphics2D g = (Graphics2D)graphics;
         g.clearRect(0, 0, 768, 800);
         g.scale(4, 4);
-        for(Map.Entry<Point, MotionlessElement> walls: this.model.getWalls().entrySet()) {
+        for(Map.Entry<Point, Wall> walls: this.model.getWalls().entrySet()) {
             int x = walls.getKey().x;
             int y = walls.getKey().y;
             g.drawImage(walls.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
         }
-        for(MotionElement rock: this.model.getRocks()) {
+        for(Rock rock: this.model.getRocks()) {
             g.drawImage(rock.getImage(), rock.getX()*IMAGE_SIZE, rock.getY()*IMAGE_SIZE, null);
         }
-        for(MotionElement diamond: this.model.getDiamonds()) {
+        for(Diamond diamond: this.model.getDiamonds()) {
             g.drawImage(diamond.getImage(), diamond.getX()*IMAGE_SIZE, diamond.getY()*IMAGE_SIZE, null);
         }
-        MotionElement character = this.model.getCharacter();
+        Character character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
     }
 }
