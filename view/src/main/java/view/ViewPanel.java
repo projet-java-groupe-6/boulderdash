@@ -3,6 +3,8 @@ package view;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.Character;
+import entity.object.Rock;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,13 +37,13 @@ public class ViewPanel extends JPanel implements Observer {
             int y = walls.getKey().y;
             g.drawImage(walls.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
         }
-        for(MotionElement rock: this.model.getRocks()) {
+        for(Rock rock: this.model.getRocks()) {
             g.drawImage(rock.getImage(), rock.getX()*IMAGE_SIZE, rock.getY()*IMAGE_SIZE, null);
         }
         for(MotionElement diamond: this.model.getDiamonds()) {
             g.drawImage(diamond.getImage(), diamond.getX()*IMAGE_SIZE, diamond.getY()*IMAGE_SIZE, null);
         }
-        MotionElement character = this.model.getCharacter();
+        Character character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
     }
 }

@@ -9,6 +9,8 @@ import java.util.HashMap;
 
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.Character;
+import entity.object.Rock;
 
 public class Level {
 	
@@ -45,14 +47,14 @@ public class Level {
 							walls.put(p, wall);
 							break;
 						case 'c':
-							MotionElement character = new MotionElement("character.png");
+							Character character = new Character();
 							character.loadImage();
 							character.setX(x);
 							character.setY(y);
 							this.character = character;
 							break;
 						case 'r':
-							MotionElement rock = new MotionElement("rock.png");
+							Rock rock = new Rock();
 							rock.loadImage();
 							rock.setX(x);
 							rock.setY(y);

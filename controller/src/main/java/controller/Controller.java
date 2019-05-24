@@ -14,7 +14,7 @@ public class Controller implements IController {
     public Controller(IView view, IModel model) {
     	this.view=view;
     	this.model=model;
-    	this.collisions = new Collisions();
+    	this.collisions = new Collisions(model);
     }
 
     @Override
