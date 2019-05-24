@@ -17,8 +17,6 @@ public class ViewFrame extends JFrame implements KeyListener {
 
     private ViewPanel panel;
     private IView view;
-    private IController controller;
-    private Observable observable;
 
     public ViewFrame(IView v) {
         super("BoulderDash");
@@ -31,7 +29,6 @@ public class ViewFrame extends JFrame implements KeyListener {
         this.setContentPane(panel);
         this.setVisible(true);
         this.addKeyListener(this);
-        observable.addObserver(panel);
     }
 
     public Observer getObserver() {
@@ -42,7 +39,7 @@ public class ViewFrame extends JFrame implements KeyListener {
 	public void keyPressed(final KeyEvent e) {
 		char key = e.getKeyChar();
 		Order order= new Order(key);
-		this.controller.orderPerform(order);
+		this.view.getController().orderPerform(order);
 	}
 
 	@Override
