@@ -25,7 +25,7 @@ public abstract class Main {
     public static void main(final String[] args) {
         final DAOModel model = new DAOModel();
         final View view = new View(model);
-        final Controller controller = new Controller();
+        final Controller controller = new Controller(view, model);
         view.setController(controller);
 
         controller.play();

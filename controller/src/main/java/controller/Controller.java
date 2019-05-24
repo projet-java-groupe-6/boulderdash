@@ -24,10 +24,13 @@ public class Controller implements IController {
     	break;
     	case 'q':
     		this.model.getCharacter().setX(this.model.getCharacter().getX()-1);
+    		break;
     	case 'z':
-    		this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
-    	case 's':
     		this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
+    		break;
+    	case 's':
+    		this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
+    		break;
     	}
     	
     	
