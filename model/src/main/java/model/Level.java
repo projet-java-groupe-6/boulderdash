@@ -18,6 +18,7 @@ public class Level {
 	private MotionElement character;
 	
 	private ArrayList<MotionElement> rocks;
+	private ArrayList<MotionElement> diamond;
 	
 	private Level(LevelBuilder  builder) {
 		this.walls = new HashMap<>();
@@ -53,6 +54,12 @@ public class Level {
 							rock.setX(x);
 							rock.setY(y);
 							this.rocks.add(rock);
+						case 'd':
+							MotionElement diamond = new MotionElement("diamond.png");
+							diamond.loadImage();
+							diamond.setX(x);
+							diamond.setY(y);
+							this.diamond.add(diamond);
 							
 					}
 					
