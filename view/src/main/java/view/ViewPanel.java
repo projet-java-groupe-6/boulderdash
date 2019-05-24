@@ -13,6 +13,8 @@ public class ViewPanel extends JPanel implements Observer {
 
     private IModel model;
 
+    private static final int IMAGE_SIZE = 16;
+
     public ViewPanel(IModel model) {
         this.model = model;
     }
@@ -24,6 +26,12 @@ public class ViewPanel extends JPanel implements Observer {
 
     @Override
     public void paintComponent(Graphics graphics) {
-
+        Graphics2D g = (Graphics2D)graphics;
+        g.clearRect(0, 0, 768, 800);
+        for(Map.Entry<Point, MotionlessElement> walls: this.model.getWalls().entrySet()) {
+            int x = walls.getKey().x;
+            int y = walls.getKey().y;
+            g.drawImage(walls.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
+        }
     }
 }
