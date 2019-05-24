@@ -6,7 +6,7 @@ import entity.MotionlessElement;
 public class Diamond extends MotionElement {
 
 	public Diamond() {
-		super("diamonds.png");
+		super("diamond.png");
 	}
 
 }
