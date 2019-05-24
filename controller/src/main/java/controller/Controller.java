@@ -21,16 +21,24 @@ public class Controller implements IController {
     public void orderPerform(Order order) {
     	switch (order.getTyped()) {
     	case 'd':
-    		this.model.getCharacter().setX(this.model.getCharacter().getX()+1);
+    		if(collisions.canMove(Direction.RIGHT, this.model.getCharacter())) {
+				this.model.getCharacter().setX(this.model.getCharacter().getX()+1);
+			}
     	break;
     	case 'q':
-    		this.model.getCharacter().setX(this.model.getCharacter().getX()-1);
+    		if(collisions.canMove(Direction.LEFT, this.model.getCharacter())) {
+				this.model.getCharacter().setX(this.model.getCharacter().getX()-1);
+			}
     		break;
     	case 'z':
-    		this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
+    		if(collisions.canMove(Direction.UP, this.model.getCharacter())) {
+				this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
+			}
     		break;
     	case 's':
-    		this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
+    		if(collisions.canMove(Direction.DOWN, this.model.getCharacter())) {
+				this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
+			}
     		break;
     	}
     	
