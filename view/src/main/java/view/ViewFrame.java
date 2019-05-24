@@ -43,13 +43,11 @@ public class ViewFrame extends JFrame implements KeyListener {
 		char key = e.getKeyChar();
 		Order order= new Order(key);
 		this.controller.orderPerform(order);
-		
 	}
 
 	@Override
 	public void keyReleased(final KeyEvent e) {
 
-		
 	}
 
 	@Override
