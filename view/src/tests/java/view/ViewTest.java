@@ -3,6 +3,7 @@ package view;
 import static org.junit.Assert.*;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.junit.After;
@@ -35,6 +36,11 @@ public class ViewTest {
 			@Override
 			public MotionElement getCharacter() {
 				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public ArrayList<MotionElement> getRocks() {
 				return null;
 			}
 			

@@ -21,6 +21,7 @@ public class Level {
 	
 	private Level(LevelBuilder  builder) {
 		this.walls = new HashMap<>();
+		this.rocks = new ArrayList<>();
 		this.parseBuilder(builder);
 	}
 	
