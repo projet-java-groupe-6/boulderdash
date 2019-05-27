@@ -10,6 +10,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import entity.object.Character;
 
 import entity.MotionElement;
 import entity.MotionlessElement;
@@ -17,7 +18,7 @@ import entity.MotionlessElement;
 public class DAOModelTest {
 	
 	private DAOModel model;
-	private MotionElement character;
+	private Character character;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -30,7 +31,7 @@ public class DAOModelTest {
 	@Before
 	public void setUp() throws Exception {
 		this.model = new DAOModel();
-		this.character = new MotionElement("character.png");
+		this.character = new Character();
 	}
 
 	@After

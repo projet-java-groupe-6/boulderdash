@@ -26,5 +26,4 @@ public class Dirt extends MotionlessElement {
 		this.setChanged();
 		this.notifyObservers();
 	}
-
 }
