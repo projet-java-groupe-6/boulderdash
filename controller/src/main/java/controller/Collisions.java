@@ -64,6 +64,11 @@ public class Collisions {
 				this.model.getDiamonds().remove(diamond);
 			}
 		}
+		Point p = new Point(x, y);
+		Dirt dirt = this.model.getDirts().get(p);
+		if(dirt != null) {
+			this.model.getDirts().remove(p);
+		}
 	}
 
 	private synchronized ArrayList<Diamond> getCopyOfDiamonds() {
