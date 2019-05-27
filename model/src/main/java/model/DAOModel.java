@@ -4,11 +4,8 @@ import contract.IModel;
 import contract.IScore;
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.*;
 import entity.object.Character;
-import entity.object.Diamond;
-import entity.object.Dirt;
-import entity.object.Rock;
-import entity.object.Wall;
 import model.Level.LevelBuilder;
 
 import java.awt.*;
@@ -27,7 +24,7 @@ import java.util.HashMap;
 public class DAOModel implements IModel {
 
     /** Variable to choose level */
-    private static final int LEVEL = 1;
+    public static int levelNumber = 1;
 
     /**
      * Level object
@@ -50,7 +47,7 @@ public class DAOModel implements IModel {
         Statement statement = null;
         try {
             statement = DBConnection.getInstance().getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("CALL map(" + LEVEL + ");");
+            ResultSet resultSet = statement.executeQuery("CALL map(" + levelNumber + ");");
             resultSet.first();
             String path = resultSet.getString("path");
             this.level = new Level.LevelBuilder(path).build();
@@ -109,4 +106,9 @@ public class DAOModel implements IModel {
 	public IScore getScore() {
 		return this.score;
 	}
+
+	@Override
+    public HashMap<Point, Exit> getExit() {
+	    return this.level.getExit();
+    }
 }

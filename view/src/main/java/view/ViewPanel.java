@@ -3,10 +3,7 @@ package view;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
-import entity.object.Diamond;
-import entity.object.Dirt;
-import entity.object.Rock;
-import entity.object.Wall;
+import entity.object.*;
 import entity.object.Character;
 
 import javax.imageio.ImageIO;
@@ -100,11 +97,17 @@ public class ViewPanel extends JPanel implements Observer {
         for(Diamond diamond: this.model.getDiamonds()) {
             g.drawImage(diamond.getImage(), diamond.getX()*IMAGE_SIZE, diamond.getY()*IMAGE_SIZE, null);
         }
+        for(Map.Entry<Point, Exit> exit: this.model.getExit().entrySet()) {
+            int x = exit.getKey().x;
+            int y = exit.getKey().y;
+            g.drawImage(exit.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
+        }
+
         Character character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
         
         g.setFont(police);
-        g.setColor(Color.WHITE);
-        g.drawString(this.model.getScore().getScore() + " / 12", character.getX()*IMAGE_SIZE-5*IMAGE_SIZE, character.getY()*IMAGE_SIZE-4*IMAGE_SIZE);
+        g.setColor(Color.black);
+        g.drawString(this.model.getScore().getScore() + " / 20", character.getX()*IMAGE_SIZE-5*IMAGE_SIZE, character.getY()*IMAGE_SIZE-4*IMAGE_SIZE);
     }
 }
