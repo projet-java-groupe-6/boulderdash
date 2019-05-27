@@ -19,4 +19,5 @@ public interface IModel {
 	ArrayList<Diamond>getDiamonds();
 	Character getCharacter();
 	HashMap<Point, Dirt> getDirts();
+	IScore getScore();
 }

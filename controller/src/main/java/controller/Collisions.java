@@ -61,7 +61,8 @@ public class Collisions {
 		int y = character.getY();
 		for(Diamond diamond: getCopyOfDiamonds()) {
 			if(diamond.getX() == x && diamond.getY() == y) {
-				this.model.getDiamonds().remove(diamond);
+				this.model.getDiamonds().remove(diamond); 
+				this.model.getScore().setScore(this.model.getScore().getScore()+1);
 			}
 		}
 		Point p = new Point(x, y);

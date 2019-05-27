@@ -1,6 +1,7 @@
 package model;
 
 import contract.IModel;
+import contract.IScore;
 import entity.MotionElement;
 import entity.MotionlessElement;
 import entity.object.Character;
@@ -29,9 +30,11 @@ public class DAOModel implements IModel {
     private static final int LEVEL = 1;
     
     private Level level;
+    private Score score;
 
     public DAOModel() {
     	this.loadLevel();
+    	this.score = new Score();
     }
 
     public void loadLevel() {
@@ -71,6 +74,11 @@ public class DAOModel implements IModel {
 	@Override
 	public HashMap<Point, Dirt> getDirts(){
 		return this.level.getDirts();
+	}
+
+	@Override
+	public IScore getScore() {
+		return this.score;
 	}
 
 

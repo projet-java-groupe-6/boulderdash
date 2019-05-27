@@ -22,9 +22,13 @@ public class ViewPanel extends JPanel implements Observer {
     private IModel model;
 
     private static final int IMAGE_SIZE = 16;
+    
+
+    private Font police;     
 
     public ViewPanel(IModel model) {
         this.model = model;
+        police = new Font("Arial", Font.PLAIN, 18); 
     }
 
     @Override
@@ -69,5 +73,8 @@ public class ViewPanel extends JPanel implements Observer {
         }
         Character character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
+        
+        graphics.setFont(police);
+        graphics.drawString(this.model.getScore().getScore() + " / 12", 10, 20);
     }
 }
