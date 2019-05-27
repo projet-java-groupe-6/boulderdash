@@ -24,7 +24,7 @@ import java.util.HashMap;
 public class DAOModel implements IModel {
 
     /** Variable to choose level */
-    private static final int LEVEL = 1;
+    public static int levelNumber = 1;
 
     /**
      * Level object
@@ -47,7 +47,7 @@ public class DAOModel implements IModel {
         Statement statement = null;
         try {
             statement = DBConnection.getInstance().getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("CALL map(" + LEVEL + ");");
+            ResultSet resultSet = statement.executeQuery("CALL map(" + levelNumber + ");");
             resultSet.first();
             String path = resultSet.getString("path");
             this.level = new Level.LevelBuilder(path).build();
