@@ -6,6 +6,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import contract.IScore;
 import entity.object.*;
 import entity.object.Character;
 import org.junit.After;
@@ -50,6 +51,11 @@ public class ViewTest {
 
 			@Override
 			public HashMap<Point, Dirt> getDirts() {
+				return null;
+			}
+
+			@Override
+			public IScore getScore() {
 				return null;
 			}
 		};

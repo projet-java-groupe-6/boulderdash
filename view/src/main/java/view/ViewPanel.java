@@ -42,7 +42,7 @@ public class ViewPanel extends JPanel implements Observer {
      */
     public ViewPanel(IModel model) {
         this.model = model;
-        police = new Font("Arial", Font.PLAIN, 18); 
+        police = new Font("Arial", Font.PLAIN, 12);
     }
 
     /**
@@ -102,7 +102,8 @@ public class ViewPanel extends JPanel implements Observer {
         Character character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
         
-        graphics.setFont(police);
-        graphics.drawString(this.model.getScore().getScore() + " / 12", 10, 20);
+        g.setFont(police);
+        g.setColor(Color.WHITE);
+        g.drawString(this.model.getScore().getScore() + " / 12", character.getX()*IMAGE_SIZE-5*IMAGE_SIZE, character.getY()*IMAGE_SIZE-4*IMAGE_SIZE);
     }
 }

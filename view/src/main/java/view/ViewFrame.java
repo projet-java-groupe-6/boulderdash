@@ -8,6 +8,7 @@ import entity.MotionElement;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Observable;
@@ -44,6 +45,7 @@ public class ViewFrame extends JFrame implements KeyListener {
         this.setContentPane(panel);
         this.setVisible(true);
         this.addKeyListener(this);
+        this.setBackground(Color.BLACK);
     }
 
     /**
