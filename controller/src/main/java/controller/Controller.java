@@ -9,19 +9,45 @@ import contract.Order;
 import entity.object.Diamond;
 import entity.object.Rock;
 
+/**
+ * @author clement, Ilyes, Theo
+ */
 public class Controller implements IController {
-	
+
+	/**
+	 * View interface
+	 */
 	private IView view;
+
+	/**
+	 * Model interface
+	 */
 	private IModel model;
+
+	/**
+	 * Collisions object
+	 */
 	private Collisions collisions;
 
+	/**
+	 * The constructor of Controller
+	 * @param view
+	 * 		View interface
+	 * @param model
+	 * 		Model interface
+	 */
     public Controller(IView view, IModel model) {
     	this.view=view;
     	this.model=model;
     	this.collisions = new Collisions(model);
     }
 
-    @Override
+	/**
+	 * The method to handle an user action
+	 * @param order
+	 * 		Order object
+	 */
+	@Override
     public void orderPerform(Order order) {
     	switch (order.getTyped()) {
     	case 'd':
@@ -48,7 +74,10 @@ public class Controller implements IController {
     	this.collisions.handleCharacterMove();
     }
 
-    @Override
+	/**
+	 * Method to run the game loop
+	 */
+	@Override
     public void play() {
         this.model.getCharacter().addObserver(this.view.getObserver());
         for(Rock r: this.model.getRocks()) {

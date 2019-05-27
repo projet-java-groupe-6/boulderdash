@@ -1,5 +1,4 @@
 /**
- * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
 package main;
@@ -12,7 +11,7 @@ import view.ViewFrame;
 /**
  * The Class Main.
  *
- * @author Jean-Aymeric Diet
+ * @author clement, Ilyes and Theo
  */
 public abstract class Main {
 	

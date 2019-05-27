@@ -1,5 +1,8 @@
 package controller;
 
+/**
+ * @author Ilyes
+ */
 public enum Direction {
 	
 	LEFT,
