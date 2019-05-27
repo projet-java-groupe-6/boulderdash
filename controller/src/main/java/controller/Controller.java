@@ -41,7 +41,7 @@ public class Controller implements IController {
     public void play() {
         this.model.getCharacter().addObserver(this.view.getObserver());
         while(this.model.getCharacter().isAlive()) {
-        	
+        
         	
         }
     }
