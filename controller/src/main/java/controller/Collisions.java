@@ -3,6 +3,7 @@ package controller;
 
 import contract.IModel;
 import entity.MotionElement;
+import entity.object.Rock;
 import entity.object.Wall;
 
 import java.awt.*;
@@ -19,38 +20,47 @@ public class Collisions {
 	public boolean canMove(Direction direction, MotionElement element) {
 		int x = element.getX();
 		int y = element.getY();
+		Point elementPoint = new Point(x, y);
+		Wall w = null;
+		Rock r = null;
 		switch (direction) {
 			case LEFT:
-				for(Map.Entry<Point, Wall> walls: this.model.getWalls().entrySet()) {
-					if(walls.getKey().x-48 == x && walls.getKey().y == y) {
-						return false;
+				elementPoint.x -= 1;
+				w = this.model.getWalls().get(elementPoint);
+				for(Rock rock: this.model.getRocks()) {
+					if(rock.getX() == elementPoint.x && rock.getY() == elementPoint.y) {
+						r = rock;
 					}
 				}
 				break;
 			case UP:
-				for(Map.Entry<Point, Wall> walls: this.model.getWalls().entrySet()) {
-					if(walls.getKey().y-1 == y && walls.getKey().x == x) {
-						return false;
-					}
-				}
-				break;
-			case DOWN:
-				for(Map.Entry<Point, Wall> walls: this.model.getWalls().entrySet()) {
-					if(walls.getKey().y+1 == y && walls.getKey().x == x) {
-						return false;
+				elementPoint.y -= 1;
+				w = this.model.getWalls().get(elementPoint);
+				for(Rock rock: this.model.getRocks()) {
+					if(rock.getX() == elementPoint.x && rock.getY() == elementPoint.y) {
+						r = rock;
 					}
 				}
 				break;
 			case RIGHT:
-				for(Map.Entry<Point, Wall> walls: this.model.getWalls().entrySet()) {
-					if(walls.getKey().x+48 == x && walls.getKey().y == y) {
-						return false;
+				elementPoint.x += 1;
+				w = this.model.getWalls().get(elementPoint);
+				for(Rock rock: this.model.getRocks()) {
+					if(rock.getX() == elementPoint.x && rock.getY() == elementPoint.y) {
+						r = rock;
 					}
 				}
 				break;
-			default:
-				return true;
+			case DOWN:
+				elementPoint.y += 1;
+				w = this.model.getWalls().get(elementPoint);
+				for(Rock rock: this.model.getRocks()) {
+					if(rock.getX() == elementPoint.x && rock.getY() == elementPoint.y) {
+						r = rock;
+					}
+				}
+				break;
 		}
-		return true;
+		return w == null && r == null;
 	}
 }
