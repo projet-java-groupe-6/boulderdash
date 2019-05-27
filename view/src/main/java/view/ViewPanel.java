@@ -103,7 +103,7 @@ public class ViewPanel extends JPanel implements Observer {
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
         
         g.setFont(police);
-        g.setColor(Color.WHITE);
+        g.setColor(Color.black);
         g.drawString(this.model.getScore().getScore() + " / 12", character.getX()*IMAGE_SIZE-5*IMAGE_SIZE, character.getY()*IMAGE_SIZE-4*IMAGE_SIZE);
     }
 }

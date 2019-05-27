@@ -42,6 +42,7 @@ public class Controller implements IController {
     	this.collisions = new Collisions(model);
     }
 
+
 	/**
 	 * The method to handle an user action
 	 * @param order

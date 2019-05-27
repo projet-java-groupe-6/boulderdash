@@ -44,6 +44,10 @@ public abstract class Sprite extends Observable {
     public Image getImage() {
         return this.image;
     }
+    public Image getImageCharacter(){
+
+        return this.image;
+    }
 
     /**
      * Method to initialize the image from the file name
