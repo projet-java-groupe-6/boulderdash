@@ -4,7 +4,6 @@ import contract.IScore;
 
 public class Score implements IScore {
     
-    private final int NBR_TOTAL_DIAMONDS = 12;
     private int nbrDiamonds;
   
     	public Score (){
@@ -15,9 +14,7 @@ public class Score implements IScore {
     	public int getNbrDiamonds(){
     		return nbrDiamonds;
     	}
-    	public int getNbrTotalDiamonds(){
-    		return NBR_TOTAL_DIAMONDS;
-    	}
+
     	public void setScore (int score) {
     		this.nbrDiamonds=score;
     	}
