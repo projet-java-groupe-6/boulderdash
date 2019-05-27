@@ -58,21 +58,21 @@ public class Controller implements IController {
         	d.addObserver(this.view.getObserver());
         }
         while(this.model.getCharacter().isAlive()) {
-        	for(Rock rock: this.model.getRocks()) {
-        		if (this.collisions.canMove(Direction.DOWN, rock)) {
-        			rock.setY(rock.getY()+1);
-        		}
-        	}
-        	for (Diamond diamond: this.model.getDiamonds()) {
-        		if(this.collisions.canMove(Direction.DOWN, diamond)) {
-        			diamond.setY(diamond.getY()+1);
-        		}
-        	}
-        	try {
-        		Thread.sleep(300);
-        	}
-        	catch (InterruptedException e) {
+			for (Rock rock : this.model.getRocks()) {
+				if (this.collisions.canMove(Direction.DOWN, rock)) {
+					rock.setY(rock.getY() + 1);
+				}
+			}
+			for (Diamond diamond : this.model.getDiamonds()) {
+				if (this.collisions.canMove(Direction.DOWN, diamond)) {
+					diamond.setY(diamond.getY() + 1);
+				}
+			}
+			try {
+				Thread.sleep(400);
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+		}
     }
 }
