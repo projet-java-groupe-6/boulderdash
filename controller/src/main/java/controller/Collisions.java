@@ -3,16 +3,11 @@ package controller;
 
 import contract.IModel;
 import entity.MotionElement;
+import entity.object.*;
 import entity.object.Character;
-import entity.object.Diamond;
-import entity.object.Rock;
-import entity.object.Wall;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 public class Collisions {
 
@@ -42,12 +37,22 @@ public class Collisions {
 		}
 		Wall wall = this.model.getWalls().get(elementPoint);
 		Rock r = null;
+		Diamond d = null;
+		Dirt dirt = null;
 		for(Rock rock: this.model.getRocks()) {
 			if(rock.getX() == elementPoint.x && rock.getY() == elementPoint.y) {
 				r = rock;
 			}
 		}
-		return wall == null && r == null;
+		if(!(element instanceof Character)) {
+			for(Diamond diamond: this.model.getDiamonds()) {
+				if(diamond.getX() == elementPoint.x && diamond.getY() == elementPoint.y) {
+					d = diamond;
+				}
+			}
+			dirt = this.model.getDirts().get(elementPoint);
+		}
+		return wall == null && r == null && d == null && dirt == null;
 	}
 
 	public synchronized void handleCharacterMove() {
@@ -58,6 +63,11 @@ public class Collisions {
 			if(diamond.getX() == x && diamond.getY() == y) {
 				this.model.getDiamonds().remove(diamond);
 			}
+		}
+		Point p = new Point(x, y);
+		Dirt dirt = this.model.getDirts().get(p);
+		if(dirt != null) {
+			this.model.getDirts().remove(p);
 		}
 	}
 

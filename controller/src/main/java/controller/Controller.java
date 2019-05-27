@@ -1,9 +1,13 @@
 package controller;
 
+import java.util.concurrent.ExecutionException;
+
 import contract.IController;
 import contract.IModel;
 import contract.IView;
 import contract.Order;
+import entity.object.Diamond;
+import entity.object.Rock;
 
 public class Controller implements IController {
 	
@@ -47,9 +51,28 @@ public class Controller implements IController {
     @Override
     public void play() {
         this.model.getCharacter().addObserver(this.view.getObserver());
-        while(this.model.getCharacter().isAlive()) {
-        
-        	
+        for(Rock r: this.model.getRocks()) {
+        	r.addObserver(this.view.getObserver());
         }
+        for(Diamond d: this.model.getDiamonds()) {
+        	d.addObserver(this.view.getObserver());
+        }
+        while(this.model.getCharacter().isAlive()) {
+        	for(Rock rock: this.model.getRocks()) {
+        		if (this.collisions.canMove(Direction.DOWN, rock)) {
+        			rock.setY(rock.getY()+1);
+        		}
+        	}
+        	for (Diamond diamond: this.model.getDiamonds()) {
+        		if(this.collisions.canMove(Direction.DOWN, diamond)) {
+        			diamond.setY(diamond.getY()+1);
+        		}
+        	}
+        	try {
+        		Thread.sleep(300);
+        	}
+        	catch (InterruptedException e) {
+				e.printStackTrace();
+			}
     }
 }

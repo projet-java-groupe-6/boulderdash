@@ -5,6 +5,7 @@ import entity.MotionElement;
 import entity.MotionlessElement;
 import entity.object.Character;
 import entity.object.Diamond;
+import entity.object.Dirt;
 import entity.object.Rock;
 import entity.object.Wall;
 import model.Level.LevelBuilder;
@@ -65,6 +66,11 @@ public class DAOModel implements IModel {
 	@Override
 	public ArrayList<Diamond> getDiamonds(){
 		return this.level.getDiamonds();
+	}
+	
+	@Override
+	public HashMap<Point, Dirt> getDirts(){
+		return this.level.getDirts();
 	}
 
 

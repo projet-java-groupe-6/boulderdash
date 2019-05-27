@@ -3,13 +3,16 @@ package view;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
-import entity.object.Character;
 import entity.object.Diamond;
+import entity.object.Dirt;
 import entity.object.Rock;
 import entity.object.Wall;
+import entity.object.Character;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
@@ -33,6 +36,25 @@ public class ViewPanel extends JPanel implements Observer {
     public void paintComponent(Graphics graphics) {
         Graphics2D g = (Graphics2D)graphics;
         g.clearRect(0, 0, 768, 800);
+
+        Image dirtImage = null;
+        try {
+            dirtImage = ImageIO.read(getClass().getClassLoader().getResourceAsStream("dirt_dug.png"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        for(int x = 0; x < 50; x++) {
+            for(int y = 0; y < 22; y++) {
+                g.drawImage(dirtImage, x*IMAGE_SIZE, y*IMAGE_SIZE, null);
+            }
+        }
+
+        for(Map.Entry<Point, Dirt> dirt: this.model.getDirts().entrySet()) {
+            int x = dirt.getKey().x;
+            int y = dirt.getKey().y;
+            g.drawImage(dirt.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
+        }
 
         for(Map.Entry<Point, Wall> walls: this.model.getWalls().entrySet()) {
             int x = walls.getKey().x;
