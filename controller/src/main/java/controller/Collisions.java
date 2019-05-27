@@ -69,7 +69,7 @@ public class Collisions {
 					d = diamond;
 				}
 			}
-			dirt = this.model.getDirts().get(elementPoint);
+			dirt = this.model.getDirts().get(elementPoint);	
 		}
 		return wall == null && r == null && d == null && dirt == null;
 	}
