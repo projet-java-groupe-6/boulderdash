@@ -35,8 +35,6 @@ public class Controller implements IController {
 				this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
 			}
     		break;
-    		this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
-    		break;    		
     	case 's':
     		if(collisions.canMove(Direction.DOWN, this.model.getCharacter())) {
 				this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
