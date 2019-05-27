@@ -74,6 +74,5 @@ public class Controller implements IController {
         	catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-        }
     }
 }
