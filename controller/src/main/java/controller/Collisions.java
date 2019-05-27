@@ -3,6 +3,7 @@ package controller;
 
 import contract.IModel;
 import entity.MotionElement;
+import entity.object.Diamond;
 import entity.object.Rock;
 import entity.object.Wall;
 
@@ -37,9 +38,17 @@ public class Collisions {
 		}
 		Wall wall = this.model.getWalls().get(elementPoint);
 		Rock r = null;
+		Diamond d = null;
+		
 		for(Rock rock: this.model.getRocks()) {
 			if(rock.getX() == elementPoint.x && rock.getY() == elementPoint.y) {
 				r = rock;
+			}
+		}
+		for(Diamond diam: this.model.getDiamonds()) {
+			if(diam.getX() == elementPoint.x && diam.getY() == elementPoint.y) {
+				d = diam;
+				this.model.getDiamonds().remove(diam);
 			}
 		}
 		return wall == null && r == null;
