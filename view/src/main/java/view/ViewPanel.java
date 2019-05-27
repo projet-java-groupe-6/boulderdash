@@ -33,7 +33,7 @@ public class ViewPanel extends JPanel implements Observer {
     public void paintComponent(Graphics graphics) {
         Graphics2D g = (Graphics2D)graphics;
         g.clearRect(0, 0, 768, 800);
-        g.scale(4, 4);
+
         for(Map.Entry<Point, Wall> walls: this.model.getWalls().entrySet()) {
             int x = walls.getKey().x;
             int y = walls.getKey().y;
