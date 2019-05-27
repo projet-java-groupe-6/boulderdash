@@ -7,11 +7,21 @@ import entity.MotionElement;
  */
 public class Rock extends MotionElement {
 
+	private boolean falling;
+
 	/**
 	 * The constructor of Rock
 	 */
 	public Rock() {
 		super("rock.png");
+		this.falling = false;
 	}
 
+	public boolean isFalling() {
+		return falling;
+	}
+
+	public void setFalling(boolean falling) {
+		this.falling = falling;
+	}
 }

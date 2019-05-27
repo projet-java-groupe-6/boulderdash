@@ -88,13 +88,28 @@ public class Controller implements IController {
         }
         while(this.model.getCharacter().isAlive()) {
 			for (Rock rock : this.model.getRocks()) {
+				if(rock.getY()+1 == this.model.getCharacter().getY() && rock.getX() == this.model.getCharacter().getX() && rock.isFalling()){
+					this.model.getCharacter().setAlive(false);
+				}
 				if (this.collisions.canMove(Direction.DOWN, rock)) {
+					rock.setFalling(true);
 					rock.setY(rock.getY() + 1);
+
+				}
+				else {
+					rock.setFalling(false);
 				}
 			}
 			for (Diamond diamond : this.model.getDiamonds()) {
+				if(diamond.getY()+1 == this.model.getCharacter().getY() && diamond.getX() == this.model.getCharacter().getX() && diamond.isFalling()){
+					this.model.getCharacter().setAlive(false);
+				}
 				if (this.collisions.canMove(Direction.DOWN, diamond)) {
+					diamond.setFalling(true);
 					diamond.setY(diamond.getY() + 1);
+				}
+				else {
+					diamond.setFalling(false);
 				}
 			}
 			try {
@@ -103,5 +118,6 @@ public class Controller implements IController {
 				e.printStackTrace();
 			}
 		}
+        System.exit(0);
     }
 }
