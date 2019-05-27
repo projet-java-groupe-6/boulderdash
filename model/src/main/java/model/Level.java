@@ -11,6 +11,7 @@ import entity.MotionElement;
 import entity.MotionlessElement;
 import entity.object.Character;
 import entity.object.Diamond;
+import entity.object.Dirt;
 import entity.object.Rock;
 import entity.object.Wall;
 
@@ -22,11 +23,14 @@ public class Level {
 	
 	private ArrayList<Rock> rocks;
 	private ArrayList<Diamond> diamonds;
+	private HashMap<Point, Dirt> dirts;
 	
 	private Level(LevelBuilder  builder) {
 		this.walls = new HashMap<>();
 		this.rocks = new ArrayList<>();
 		this.diamonds = new ArrayList<>();
+		this.dirts=new HashMap<>();
+		
 		this.parseBuilder(builder);
 	}
 	
@@ -67,7 +71,13 @@ public class Level {
 							diamond.setX(x);
 							diamond.setY(y);
 							this.diamonds.add(diamond);
-							break;				
+							break;		
+						case 't': 
+							Dirt dirt = new Dirt();
+							dirt.loadImage();
+							Point pd = new Point(x,y);
+							dirts.put(pd, dirt);
+							break;
 					}
 					
 				}
@@ -93,6 +103,10 @@ public class Level {
 
 	public ArrayList<Diamond> getDiamonds(){
 		return this.diamonds;
+	}
+	
+	public HashMap<Point, Dirt> getDirts(){
+		return dirts;
 	}
 
 

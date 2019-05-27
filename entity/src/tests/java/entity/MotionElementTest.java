@@ -4,14 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import entity.object.Character;
 
 public class MotionElementTest {
 	
-	private MotionElement character;
+	private Character character;
 
 	@Before
 	public void setUp() {
-		this.character = new MotionElement("character.png");
+		this.character = new Character();
 		this.character.setX(1);
 		this.character.setY(1
 				);
