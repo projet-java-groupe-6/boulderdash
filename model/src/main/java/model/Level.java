@@ -15,16 +15,41 @@ import entity.object.Dirt;
 import entity.object.Rock;
 import entity.object.Wall;
 
+/**
+ * @author clement
+ */
 public class Level {
-	
+
+	/**
+	 * HashMap of walls
+	 */
 	private HashMap<Point, Wall> walls;
 
+	/**
+	 * Object of Character
+	 */
 	private Character character;
-	
+
+	/**
+	 * ArrayList of rocks
+	 */
 	private ArrayList<Rock> rocks;
+
+	/**
+	 * ArrayList of diamonds
+	 */
 	private ArrayList<Diamond> diamonds;
+
+	/**
+	 * HashMap of dirts
+	 */
 	private HashMap<Point, Dirt> dirts;
-	
+
+	/**
+	 * The constructor of Level
+	 * @param builder
+	 *		LevelBuilder object from DP Builder
+	 */
 	private Level(LevelBuilder  builder) {
 		this.walls = new HashMap<>();
 		this.rocks = new ArrayList<>();
@@ -33,7 +58,12 @@ public class Level {
 		
 		this.parseBuilder(builder);
 	}
-	
+
+	/**
+	 * Method to parse the LevelBuilder
+	 * @param builder
+	 * 		LevelBuilder from DP Builder
+	 */
 	private void parseBuilder(LevelBuilder builder) {
 		String path = builder.getPath();
 		BufferedReader in = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream(path)));
@@ -88,40 +118,78 @@ public class Level {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * Method to get walls associated with points
+	 * @return HashMap of walls
+	 */
 	public HashMap<Point, Wall> getWalls() {
 		return walls;
 	}
 
+	/**
+	 * Method to get the Character
+	 * @return Character object
+	 */
 	public Character getCharacter() {
 		return this.character;
 	}
 
+	/**
+	 * Method to get the rocks
+	 * @return ArrayList of rocks
+	 */
 	public ArrayList<Rock> getRocks() {
 		return this.rocks;
 	}
 
+	/**
+	 * Method to get diamonds
+	 * @return ArrayList of diamonds
+	 */
 	public ArrayList<Diamond> getDiamonds(){
 		return this.diamonds;
 	}
-	
+
+	/**
+	 * Method to get dirts
+	 * @return HashMap of dirts
+	 */
 	public HashMap<Point, Dirt> getDirts(){
 		return dirts;
 	}
 
-
+	/**
+	 * Static class LevelBuilder to create a DP Builder
+	 */
 	public static class LevelBuilder{
-		
+
+		/**
+		 * the path of file
+		 */
 		private String path;
-		
+
+		/**
+		 * The constructor of LevelBuilder
+		 * @param path
+		 * 		The path of level file
+		 */
 		public LevelBuilder(String path) {
 			this.path = path;
 		}
-		
+
+		/**
+		 * Method to build a Level object
+		 * @return Level object
+		 */
 		public Level build() {
 			return new Level(this);
 		}
-		
+
+		/**
+		 * Method to get the path of file
+		 * @return String of the path
+		 */
 		public String getPath() {
 			return this.path;
 		}

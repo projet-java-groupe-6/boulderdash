@@ -9,14 +9,33 @@ import entity.object.Character;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * @author clement
+ */
 public class Collisions {
 
+	/**
+	 * Model interface
+	 */
 	private IModel model;
 
+	/**
+	 * The constructor of Collisions
+	 * @param model
+	 * 		Model interface
+	 */
 	public Collisions(IModel model) {
 		this.model = model;
 	}
-	
+
+	/**
+	 * The method to know if an element can move in a certain direction
+	 * @param direction
+	 * 		Direction of the move
+	 * @param element
+	 * 		The element who moves
+	 * @return Boolean if the element can move in the specified direction
+	 */
 	public boolean canMove(Direction direction, MotionElement element) {
 		int x = element.getX();
 		int y = element.getY();
@@ -55,6 +74,9 @@ public class Collisions {
 		return wall == null && r == null && d == null && dirt == null;
 	}
 
+	/**
+	 * Method to handle a move (e.g: take diamonds...)
+	 */
 	public synchronized void handleCharacterMove() {
 		Character character = this.model.getCharacter();
 		int x = character.getX();
@@ -72,6 +94,10 @@ public class Collisions {
 		}
 	}
 
+	/**
+	 * Method to get a copy of ArrayList of diamonds
+	 * @return ArrayList of diamonds
+	 */
 	private synchronized ArrayList<Diamond> getCopyOfDiamonds() {
 		ArrayList<Diamond> copy = new ArrayList<>();
 		copy.addAll(this.model.getDiamonds());

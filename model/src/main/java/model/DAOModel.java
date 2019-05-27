@@ -26,17 +26,26 @@ import java.util.HashMap;
  */
 public class DAOModel implements IModel {
 
-    /**  */
+    /** Variable to choose level */
     private static final int LEVEL = 1;
-    
+
+    /**
+     * Level object
+     */
     private Level level;
     private Score score;
 
+    /**
+     * Constructor of DAOModel
+     */
     public DAOModel() {
     	this.loadLevel();
     	this.score = new Score();
     }
 
+    /**
+     * Method to get path of level text file
+     */
     public void loadLevel() {
         Statement statement = null;
         try {
@@ -51,26 +60,46 @@ public class DAOModel implements IModel {
         }
     }
 
+    /**
+     * Method to get walls
+     * @return HashMap of walls associated with points
+     */
 	@Override
 	public HashMap<Point, Wall> getWalls() {
 		return this.level.getWalls();
 	}
 
+    /**
+     * Method to get the character
+     * @return object Character
+     */
 	@Override
 	public Character getCharacter() {
 		return this.level.getCharacter();
 	}
 
+    /**
+     * Method to get the list of rocks
+     * @return ArrayList of rocks
+     */
 	@Override
     public ArrayList<Rock> getRocks() {
         return this.level.getRocks();
     }
-	
+
+    /**
+     * Method to get the list of diamonds
+     * @return ArrayList of diamonds
+     */
 	@Override
 	public ArrayList<Diamond> getDiamonds(){
 		return this.level.getDiamonds();
 	}
-	
+
+    /**
+     * Method to get dirts
+     * @return HashMap of dirts associated with points
+     */
 	@Override
 	public HashMap<Point, Dirt> getDirts(){
 		return this.level.getDirts();
@@ -80,6 +109,4 @@ public class DAOModel implements IModel {
 	public IScore getScore() {
 		return this.score;
 	}
-
-
 }
