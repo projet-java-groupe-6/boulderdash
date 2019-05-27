@@ -108,6 +108,8 @@ public class Level {
 							Point pd = new Point(x,y);
 							dirts.put(pd, dirt);
 							break;
+						case 's';
+						
 					}
 					
 				}
