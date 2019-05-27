@@ -41,8 +41,7 @@ public class Controller implements IController {
 			}
     		break;
     	}
-    	
-    	
+    	this.collisions.handleCharacterMove();
     }
 
     @Override

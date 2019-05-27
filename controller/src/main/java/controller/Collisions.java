@@ -3,10 +3,15 @@ package controller;
 
 import contract.IModel;
 import entity.MotionElement;
+import entity.object.Character;
+import entity.object.Diamond;
 import entity.object.Rock;
 import entity.object.Wall;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 public class Collisions {
@@ -43,5 +48,22 @@ public class Collisions {
 			}
 		}
 		return wall == null && r == null;
+	}
+
+	public synchronized void handleCharacterMove() {
+		Character character = this.model.getCharacter();
+		int x = character.getX();
+		int y = character.getY();
+		for(Diamond diamond: getCopyOfDiamonds()) {
+			if(diamond.getX() == x && diamond.getY() == y) {
+				this.model.getDiamonds().remove(diamond);
+			}
+		}
+	}
+
+	private synchronized ArrayList<Diamond> getCopyOfDiamonds() {
+		ArrayList<Diamond> copy = new ArrayList<>();
+		copy.addAll(this.model.getDiamonds());
+		return copy;
 	}
 }
