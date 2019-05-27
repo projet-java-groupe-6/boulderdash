@@ -58,6 +58,11 @@ public class ViewTest {
 			public IScore getScore() {
 				return null;
 			}
+
+			@Override
+			public HashMap<Point, Exit> getExit() {
+				return null;
+			}
 		};
 		view = new View(model);
 		this.controller = new IController() {
