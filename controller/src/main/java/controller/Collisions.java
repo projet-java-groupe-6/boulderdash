@@ -71,7 +71,7 @@ public class Collisions {
 				}
 			}
 			dirt = this.model.getDirts().get(elementPoint);
-			if(this.model.getCharacter().getY() == r.getY()){
+			if(this.model.getCharacter().getY() == elementPoint.y && this.model.getCharacter().getX() == elementPoint.x) {
 				canFall = false;
 			}
 		}

@@ -45,7 +45,7 @@ public class ViewFrame extends JFrame implements KeyListener {
         this.setContentPane(panel);
         this.setVisible(true);
         this.addKeyListener(this);
-        this.setBackground(Color.BLACK);
+        this.setBackground(Color.black);
     }
 
     /**

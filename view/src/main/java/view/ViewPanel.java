@@ -43,6 +43,7 @@ public class ViewPanel extends JPanel implements Observer {
     public ViewPanel(IModel model) {
         this.model = model;
         police = new Font("Arial", Font.PLAIN, 12);
+        this.setBackground(Color.black);
     }
 
     /**
