@@ -6,10 +6,8 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import entity.object.*;
 import entity.object.Character;
-import entity.object.Diamond;
-import entity.object.Rock;
-import entity.object.Wall;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,6 +45,11 @@ public class ViewTest {
 
 			@Override
 			public Character getCharacter() {
+				return null;
+			}
+
+			@Override
+			public HashMap<Point, Dirt> getDirts() {
 				return null;
 			}
 		};
