@@ -9,11 +9,8 @@ import java.util.HashMap;
 
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.*;
 import entity.object.Character;
-import entity.object.Diamond;
-import entity.object.Dirt;
-import entity.object.Rock;
-import entity.object.Wall;
 
 /**
  * @author clement
@@ -45,6 +42,8 @@ public class Level {
 	 */
 	private HashMap<Point, Dirt> dirts;
 
+	private HashMap<Point, Exit> exit;
+
 	/**
 	 * The constructor of Level
 	 * @param builder
@@ -55,6 +54,7 @@ public class Level {
 		this.rocks = new ArrayList<>();
 		this.diamonds = new ArrayList<>();
 		this.dirts=new HashMap<>();
+		this.exit = new HashMap<>();
 		
 		this.parseBuilder(builder);
 	}
@@ -108,8 +108,13 @@ public class Level {
 							Point pd = new Point(x,y);
 							dirts.put(pd, dirt);
 							break;
-						case 's';
-						
+						case 'e':
+							Exit e = new Exit();
+							e.loadImage();
+							Point exitPoint = new Point(x, y);
+							this.exit.put(exitPoint, e);
+							break;
+
 					}
 					
 				}
@@ -159,6 +164,10 @@ public class Level {
 	 */
 	public HashMap<Point, Dirt> getDirts(){
 		return dirts;
+	}
+
+	public HashMap<Point, Exit> getExit() {
+		return this.exit;
 	}
 
 	/**

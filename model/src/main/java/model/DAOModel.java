@@ -4,11 +4,8 @@ import contract.IModel;
 import contract.IScore;
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.*;
 import entity.object.Character;
-import entity.object.Diamond;
-import entity.object.Dirt;
-import entity.object.Rock;
-import entity.object.Wall;
 import model.Level.LevelBuilder;
 
 import java.awt.*;
@@ -109,4 +106,9 @@ public class DAOModel implements IModel {
 	public IScore getScore() {
 		return this.score;
 	}
+
+	@Override
+    public HashMap<Point, Exit> getExit() {
+	    return this.level.getExit();
+    }
 }

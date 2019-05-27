@@ -6,11 +6,8 @@ import java.util.HashMap;
 
 import entity.MotionElement;
 import entity.MotionlessElement;
+import entity.object.*;
 import entity.object.Character;
-import entity.object.Diamond;
-import entity.object.Dirt;
-import entity.object.Rock;
-import entity.object.Wall;
 
 /**
  * @author Ilyes
@@ -42,4 +39,6 @@ public interface IModel {
 	 */
 	HashMap<Point, Dirt> getDirts();
 	IScore getScore();
+
+	HashMap<Point, Exit> getExit();
 }
