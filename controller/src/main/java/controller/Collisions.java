@@ -58,6 +58,7 @@ public class Collisions {
 		Rock r = null;
 		Diamond d = null;
 		Dirt dirt = null;
+		boolean canFall = true;
 		for(Rock rock: this.model.getRocks()) {
 			if(rock.getX() == elementPoint.x && rock.getY() == elementPoint.y) {
 				r = rock;
@@ -70,8 +71,11 @@ public class Collisions {
 				}
 			}
 			dirt = this.model.getDirts().get(elementPoint);
+			if(this.model.getCharacter().getY() == r.getY()){
+				canFall = false;
+			}
 		}
-		return wall == null && r == null && d == null && dirt == null;
+		return wall == null && r == null && d == null && dirt == null && canFall;
 	}
 
 	/**
