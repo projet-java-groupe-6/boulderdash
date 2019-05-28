@@ -4,11 +4,7 @@ package controller;
 import contract.IElement;
 import contract.IModel;
 import contract.Permeability;
-import entity.MotionElement;
-import model.object.*;
-import model.object.Character;
 
-import javax.swing.text.Element;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -39,7 +35,7 @@ public class Collisions {
 	 * 		The element who moves
 	 * @return Boolean if the element can move in the specified direction
 	 */
-	public boolean canMove(Direction direction, MotionElement element) {
+	public boolean canMove(Direction direction, IElement element) {
 		int x = element.getX();
 		int y = element.getY();
 		Point elementPoint = new Point(x, y);
@@ -73,14 +69,14 @@ public class Collisions {
 			} else if (nextElement.getPermeability() == Permeability.NON_BLOCKING) {
 				return true;
 			} else {
-				if (element.canCrossSemiBlocking) {
+				if (nextElement.canCrossSemiBlocking()) {
 					return true;
 				}
 				return false;
-			} else{
-				return true;
 			}
-		]
+		}
+		else{
+			return true;
 		}
 	}
 	/**
@@ -103,8 +99,8 @@ public class Collisions {
 	 * Method to get a copy of ArrayList of diamonds
 	 * @return ArrayList of diamonds
 	 */
-	private synchronized ArrayList<Element> getCopyOfDiamonds() {
-		ArrayList<Element> copy = new ArrayList<>();
+	private synchronized ArrayList<IElement> getCopyOfElements() {
+		ArrayList<IElement> copy = new ArrayList<>();
 		copy.addAll(this.model.getElements());
 		return copy;
 	}
