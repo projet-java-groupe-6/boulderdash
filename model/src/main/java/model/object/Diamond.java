@@ -30,7 +30,7 @@ public class Diamond extends MotionElement {
 
 	@Override
 	public Permeability getPermeability() {
-		return Permeability.SEMI_BLOCKING;
+		return Permeability.SEMI_BOCKING;
 	}
 
 	@Override

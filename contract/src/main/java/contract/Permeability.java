@@ -2,6 +2,6 @@ package contract;
 
 public enum Permeability {
     BLOCKING,
-    SEMI_BOCKING,
+    SEMI_BLOCKING,
     NON_BLOCKING
 }
