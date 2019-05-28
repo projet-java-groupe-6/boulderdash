@@ -114,7 +114,7 @@ public class Controller implements IController {
 				e.printStackTrace();
 			}
 		}
-		JOptionPane.showMessageDialog(null, "Died !", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
 

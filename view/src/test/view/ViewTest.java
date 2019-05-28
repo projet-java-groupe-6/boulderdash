@@ -23,10 +23,6 @@ public class ViewTest {
 
             }
 
-            @Override
-            public void play() {
-
-            }
         };
         this.model1 = new IModel() {
             @Override

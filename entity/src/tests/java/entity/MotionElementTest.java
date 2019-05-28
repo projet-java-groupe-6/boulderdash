@@ -14,8 +14,7 @@ public class MotionElementTest {
 	public void setUp() {
 		this.character = new Character();
 		this.character.setX(1);
-		this.character.setY(1
-				);
+		this.character.setY(1);
 	}
 	
 	@Test
