@@ -2,13 +2,18 @@ package model;
 
 import static org.junit.Assert.*;
 
+import model.DBConnection;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.sql.Connection;
+
 public class DBConnectionTest {
+	Connection cnx;
+	DBConnection dbcnx;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,15 +25,20 @@ public class DBConnectionTest {
 
 	@Before
 	public void setUp() throws Exception {
+		dbcnx= new DBConnection();
+		this.cnx=dbcnx.getConnection();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
+
+	@Test
+	public void testgetConnection() {
+        Connection actual = cnx;
+		Connection excepted = this.dbcnx.getConnection();
+		assertEquals(excepted, actual);
+	}
 }
