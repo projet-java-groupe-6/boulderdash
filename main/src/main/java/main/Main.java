@@ -10,6 +10,8 @@ import view.View;
 import view.menu.MenuView;
 import view.menu.MenuViewFrame;
 
+import javax.swing.*;
+
 /**
  * The Class Main.
  *
@@ -25,6 +27,18 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
 
         MenuView menuView = new MenuView();
         MenuController menuController = new MenuController(menuView);
