@@ -1,5 +1,6 @@
 package model.object;
 
+import contract.ElementType;
 import contract.Permeability;
 import model.MotionElement;
 
@@ -22,5 +23,10 @@ public class Ennemy extends MotionElement {
     @Override
     public boolean canCrossSemiBlocking() {
         return false;
+    }
+
+    @Override
+    public ElementType getType() {
+        return ElementType.ENNEMY;
     }
 }

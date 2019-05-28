@@ -1,5 +1,6 @@
 package model.object;
 
+import contract.ElementType;
 import contract.IElement;
 import contract.Permeability;
 import model.MotionElement;
@@ -40,5 +41,10 @@ public class Rock extends MotionElement {
 	@Override
 	public boolean canCrossSemiBlocking() {
 		return false;
+	}
+
+	@Override
+	public ElementType getType() {
+		return ElementType.ROCK;
 	}
 }

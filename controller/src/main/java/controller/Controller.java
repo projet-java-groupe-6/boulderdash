@@ -104,7 +104,7 @@ public class Controller implements IController {
 						isAlive = false;
 					}
 				}
-        		if(!element.canFall() && element.getPermeability() == Permeability.BLOCKING && !element.canCrossSemiBlocking()) {
+        		if(element.getType() == ElementType.ENNEMY) {
         			moveRandomly(element);
 				}
 			}
@@ -119,21 +119,20 @@ public class Controller implements IController {
     }
 
     private void moveRandomly(IElement element) {
-    	int xy = random.nextInt(1);
+    	int xy = random.nextInt(2);
     	if(xy == 1) {
-    		int direction = random.nextInt(1);
-    		while(!collisions.canMove(direction == 1 ? Direction.RIGHT : Direction.LEFT, element)) {
-    			direction = random.nextInt(1);
+    		int direction = random.nextInt(2);
+    		if(collisions.canMove(direction == 1 ? Direction.RIGHT: Direction.LEFT, element)) {
+				element.setX(direction == 1 ? element.getX()+1 : element.getX()-1);
 			}
-    		element.setX(direction == 1 ? element.getX()+1 : element.getX()-1);
 		}
     	else {
-    		int direction = random.nextInt(1);
-    		while(!collisions.canMove(direction == 1 ? Direction.UP : Direction.DOWN, element)) {
-    			direction = random.nextInt(1);
+    		int direction = random.nextInt(2);
+    		if(collisions.canMove(direction == 1 ? Direction.UP : Direction.DOWN, element)) {
+				element.setY(direction == 1 ? element.getY()-1 : element.getY()+1);
 			}
-    		element.setY(direction == 1 ? element.getY()-1 : element.getY()+1);
 		}
+    	collisions.handleEnnemyMove(element);
 	}
 
     private synchronized ArrayList<IElement> getCopyOfElements() {
