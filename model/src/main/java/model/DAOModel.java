@@ -22,7 +22,7 @@ import java.util.Observer;
 public class DAOModel implements IModel {
 
     /** Variable to choose level */
-    public static int levelNumber = 1;
+    public static int levelNumber = 2;
 
     /**
      * Level object
