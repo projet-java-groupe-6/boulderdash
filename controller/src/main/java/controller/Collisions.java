@@ -39,7 +39,7 @@ public class Collisions {
 	 * 		The element who moves
 	 * @return Boolean if the element can move in the specified direction
 	 */
-	public boolean canMove(Direction direction, MotionElement element) {
+	public boolean canMove(Direction direction, IElement element) {
 		int x = element.getX();
 		int y = element.getY();
 		Point elementPoint = new Point(x, y);
