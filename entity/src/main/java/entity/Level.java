@@ -9,7 +9,7 @@ public class Level {
 
     private Connection connection;
 
-    public static int levelNumber = 1;
+    public static int levelNumber = 2;
 
     public Level(Connection connection) {
         this.connection = connection;
@@ -21,6 +21,7 @@ public class Level {
             statement = this.connection.createStatement();
             ResultSet resultSet = statement.executeQuery("CALL map(" + levelNumber + ");");
             resultSet.first();
+
             String path = resultSet.getString("path");
             return path;
         }

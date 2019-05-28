@@ -94,7 +94,7 @@ public class Collisions {
 						this.model.getScore().setScore(this.model.getScore().getScore() + 1);
 					}
 				}
-				else if(element.getPermeability() == Permeability.NON_BLOCKING && this.model.getScore().getScore() <= 30) {
+				else if(element.getPermeability() == Permeability.NON_BLOCKING && this.model.getScore().getScore() == 30) {
 					JOptionPane.showMessageDialog(null, "Return to the menu", "You win !", JOptionPane.INFORMATION_MESSAGE);
 					System.exit(0);
 				}
