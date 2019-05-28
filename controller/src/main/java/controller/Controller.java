@@ -4,6 +4,7 @@ import contract.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * @author clement, Ilyes, Theo
@@ -29,6 +30,8 @@ public class Controller implements IController {
 
 	private ArrayList<IElement> fallingElements;
 
+	private Random random;
+
 	/**
 	 * The constructor of Controller
 	 * @param view
@@ -42,6 +45,7 @@ public class Controller implements IController {
     	this.model=model;
     	this.collisions = new Collisions(model);
     	this.fallingElements = new ArrayList<>();
+    	this.random = new Random();
     }
 
 
@@ -100,6 +104,9 @@ public class Controller implements IController {
 						isAlive = false;
 					}
 				}
+        		if(!element.canFall() && element.getPermeability() == Permeability.BLOCKING && !element.canCrossSemiBlocking()) {
+        			moveRandomly(element);
+				}
 			}
 			try {
 				Thread.sleep(300);
@@ -110,6 +117,24 @@ public class Controller implements IController {
 		JOptionPane.showMessageDialog(null, "Died !", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
+
+    private void moveRandomly(IElement element) {
+    	int xy = random.nextInt(1);
+    	if(xy == 1) {
+    		int direction = random.nextInt(1);
+    		while(!collisions.canMove(direction == 1 ? Direction.RIGHT : Direction.LEFT, element)) {
+    			direction = random.nextInt(1);
+			}
+    		element.setX(direction == 1 ? element.getX()+1 : element.getX()-1);
+		}
+    	else {
+    		int direction = random.nextInt(1);
+    		while(!collisions.canMove(direction == 1 ? Direction.UP : Direction.DOWN, element)) {
+    			direction = random.nextInt(1);
+			}
+    		element.setY(direction == 1 ? element.getY()-1 : element.getY()+1);
+		}
+	}
 
     private synchronized ArrayList<IElement> getCopyOfElements() {
 		ArrayList<IElement> copy = new ArrayList<>();
