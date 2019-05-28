@@ -54,22 +54,22 @@ public class Controller implements IController {
     public void orderPerform(Order order) {
     	switch (order.getTyped()) {
     	case 'd':
-    		if(collisions.canMove(Direction.RIGHT, this.model.getCharacter())) {
+    		if(collisions.canMove(Direction.RIGHT, this.model.getCharacter()) && isAlive) {
 				this.model.getCharacter().setX(this.model.getCharacter().getX()+1);
 			}
     	break;
     	case 'q':
-    		if(collisions.canMove(Direction.LEFT, this.model.getCharacter())) {
+    		if(collisions.canMove(Direction.LEFT, this.model.getCharacter()) && isAlive) {
 				this.model.getCharacter().setX(this.model.getCharacter().getX()-1);
 			}
     		break;
     	case 'z':
-    		if(collisions.canMove(Direction.UP, this.model.getCharacter())) {
+    		if(collisions.canMove(Direction.UP, this.model.getCharacter()) && isAlive) {
 				this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
 			}
     		break;
     	case 's':
-    		if(collisions.canMove(Direction.DOWN, this.model.getCharacter())) {
+    		if(collisions.canMove(Direction.DOWN, this.model.getCharacter()) && isAlive) {
 				this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
 			}
     		break;
@@ -103,7 +103,7 @@ public class Controller implements IController {
 				}
 			}
 			try {
-				Thread.sleep(500);
+				Thread.sleep(300);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
