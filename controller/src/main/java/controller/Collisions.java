@@ -87,7 +87,7 @@ public class Collisions {
 	 * Method to handle a move (e.g: take diamonds...)
 	 */
 	public synchronized void handleCharacterMove() {
-		Character character = this.model.getCharacter();
+		IElement character = this.model.getCharacter();
 		int x = character.getX();
 		int y = character.getY();
 		for(IElement element: this.getCopyOfElements()) {
