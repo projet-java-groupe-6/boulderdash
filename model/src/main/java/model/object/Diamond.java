@@ -1,5 +1,7 @@
 package model.object;
 
+import contract.IElement;
+import contract.Permeability;
 import model.MotionElement;
 
 /**
@@ -14,7 +16,7 @@ public class Diamond extends MotionElement {
 	 */
 	public Diamond() {
 
-		super("images/diamond.png");
+		super("diamond.png");
 		this.Falling = false;
 	}
 
@@ -24,5 +26,20 @@ public class Diamond extends MotionElement {
 
 	public void setFalling(boolean falling) {
 		Falling = falling;
+	}
+
+	@Override
+	public Permeability getPermeability() {
+		return Permeability.SEMI_BLOCKING;
+	}
+
+	@Override
+	public boolean canFall() {
+		return true;
+	}
+
+	@Override
+	public boolean canCrossSemiBlocking() {
+		return false;
 	}
 }

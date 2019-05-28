@@ -1,5 +1,7 @@
 package model.object;
 
+import contract.IElement;
+import contract.Permeability;
 import model.MotionElement;
 
 /**
@@ -13,7 +15,7 @@ public class Rock extends MotionElement {
 	 * The constructor of Rock
 	 */
 	public Rock() {
-		super("images/rock.png");
+		super("rock.png");
 		this.falling = false;
 	}
 
@@ -23,5 +25,20 @@ public class Rock extends MotionElement {
 
 	public void setFalling(boolean falling) {
 		this.falling = falling;
+	}
+
+	@Override
+	public Permeability getPermeability() {
+		return Permeability.BLOCKING;
+	}
+
+	@Override
+	public boolean canFall() {
+		return true;
+	}
+
+	@Override
+	public boolean canCrossSemiBlocking() {
+		return false;
 	}
 }
