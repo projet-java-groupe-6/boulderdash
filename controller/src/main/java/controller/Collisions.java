@@ -95,7 +95,7 @@ public class Collisions {
 					}
 				}
 				else if(element.getPermeability() == Permeability.NON_BLOCKING && this.model.getScore().getScore() == 30) {
-					JOptionPane.showMessageDialog(null, "Return to the menu", "You win !", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Exit", "You win !", JOptionPane.INFORMATION_MESSAGE);
 					System.exit(0);
 				}
 			}
