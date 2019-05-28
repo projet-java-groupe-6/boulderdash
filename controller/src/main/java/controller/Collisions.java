@@ -1,11 +1,14 @@
 package controller;
 
 
+import contract.IElement;
 import contract.IModel;
+import contract.Permeability;
 import entity.MotionElement;
 import model.object.*;
 import model.object.Character;
 
+import javax.swing.text.Element;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -54,30 +57,30 @@ public class Collisions {
 				elementPoint.y += 1;
 				break;
 		}
-		Wall wall = this.model.getWalls().get(elementPoint);
-		Rock r = null;
-		Diamond d = null;
-		Dirt dirt = null;
-		boolean canFall = true;
-		for(Rock rock: this.model.getRocks()) {
-			if(rock.getX() == elementPoint.x && rock.getY() == elementPoint.y) {
-				r = rock;
+		IElement nextEllement = null;
+		for (IElement elements : getCopyOfElements()) {
+			if (elementPoint.x == elements.getX() && elementPoint.y == elements.getY()) {
+				nextEllement = elements;
+				break;
 			}
 		}
-		if(!(element instanceof Character)) {
-			for(Diamond diamond: this.model.getDiamonds()) {
-				if(diamond.getX() == elementPoint.x && diamond.getY() == elementPoint.y) {
-					d = diamond;
+		if (elementPoint.x == this.model.getCharacter().getX() && elementPoint.y == this.model.getCharacter().getY()) {
+			nextEllement = this.model.getCharacter();
+		}
+		if (nextEllement != null) {
+			if (nextEllement.getPermeability() == Permeability.BLOCKING) {
+				return false;
+			} else if (nextEllement.getPermeability() == Permeability.NON_BLOCKING) {
+				return true;
+			} else {
+				if (element.canCrossSemiBlocking) {
+					return true;
 				}
+				return false;
+			} else{
+				return true;
 			}
-			dirt = this.model.getDirts().get(elementPoint);
-			if(this.model.getCharacter().getY() == elementPoint.y && this.model.getCharacter().getX() == elementPoint.x) {
-				canFall = false;
-			}
-		}
-		return wall == null && r == null && d == null && dirt == null && canFall;
-	}
-
+		]
 	/**
 	 * Method to handle a move (e.g: take diamonds...)
 	 */
@@ -85,26 +88,23 @@ public class Collisions {
 		Character character = this.model.getCharacter();
 		int x = character.getX();
 		int y = character.getY();
-		for(Diamond diamond: getCopyOfDiamonds()) {
-			if(diamond.getX() == x && diamond.getY() == y) {
-				this.model.getDiamonds().remove(diamond); 
+		for(IElement element: this.getCopyOfElements()) {
+			if(element.getX() == x && element.getY() == y && element.getPermeability()==Permeability.SEMI_BOCKING) {
+				this.model.getElements().remove(element);
 				this.model.getScore().setScore(this.model.getScore().getScore()+1);
 			}
 		}
-		Point p = new Point(x, y);
-		Dirt dirt = this.model.getDirts().get(p);
-		if(dirt != null) {
-			this.model.getDirts().remove(p);
 		}
-	}
+
 
 	/**
 	 * Method to get a copy of ArrayList of diamonds
 	 * @return ArrayList of diamonds
 	 */
-	private synchronized ArrayList<Diamond> getCopyOfDiamonds() {
-		ArrayList<Diamond> copy = new ArrayList<>();
-		copy.addAll(this.model.getDiamonds());
+	private synchronized ArrayList<Element> getCopyOfDiamonds() {
+		ArrayList<Element> copy = new ArrayList<>();
+		copy.addAll(this.model.getElements());
 		return copy;
 	}
 }
+	
