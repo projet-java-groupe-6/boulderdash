@@ -63,10 +63,7 @@ public class ViewTest {
     }
 
     @Test
-    public void testsetController(IController cont) {
-       /* IController actual = cont;
-        IController excepted = view.setController(view.getController());
-        assertEquals(excepted, actual);
-       */
+    public void testsetController() {
+
     }
 }
