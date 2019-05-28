@@ -2,10 +2,6 @@ package view;
 
 import contract.IElement;
 import contract.IModel;
-import entity.MotionElement;
-import entity.MotionlessElement;
-import model.object.*;
-import model.object.Character;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -84,7 +80,7 @@ public class ViewPanel extends JPanel implements Observer {
             g.drawImage(element.getImage(), element.getX()*IMAGE_SIZE, element.getY()*IMAGE_SIZE, null);
         }
 
-        Character character = this.model.getCharacter();
+        IElement character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
         
         g.setFont(police);
