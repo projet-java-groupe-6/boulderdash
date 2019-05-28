@@ -1,5 +1,6 @@
 package contract;
 
+import java.awt.*;
 import java.util.Observer;
 
 public interface IElement {
