@@ -22,13 +22,13 @@ public class Character extends MotionElement {
 	 * The Character constructor
 	 */
 	public Character() {
-		super("character.png");
+		super("images/character.png");
 		this.alive = true;
-		this.left="character_left.png";
-		this.right="character_right.png";
-		this.up="character_top.png";
-		this.bottom="character_bottom.png";
-		this.normal="character.png";
+		this.left= "images/character_left.png";
+		this.right= "images/character_right.png";
+		this.up= "images/character_top.png";
+		this.bottom= "images/character_bottom.png";
+		this.normal= "images/character.png";
 		
 	}
 

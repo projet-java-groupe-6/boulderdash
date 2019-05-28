@@ -11,7 +11,7 @@ public class Wall extends MotionlessElement {
 	 * The constructor of Wall
 	 */
 	public Wall() {
-		super("wall.png");
+		super("images/wall.png");
 	}
 
 }

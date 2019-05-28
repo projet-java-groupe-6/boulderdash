@@ -5,6 +5,6 @@ import entity.MotionlessElement;
 public class Exit extends MotionlessElement {
 
     public Exit(){
-        super("exit.png");
+        super("images/exit.png");
     }
 }
