@@ -1,5 +1,6 @@
 package model;
 
+import contract.IAudio;
 import contract.IElement;
 import contract.IModel;
 import contract.IScore;
@@ -7,6 +8,7 @@ import entity.Level;
 import model.object.*;
 import model.object.Character;
 
+import javax.sound.sampled.Clip;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,6 +34,7 @@ public class Model implements IModel {
 
     private ArrayList<IElement> elements;
     private IElement character;
+    private IAudio clip;
 
     /**
      * Constructor of Model
@@ -127,4 +130,10 @@ public class Model implements IModel {
     public IScore getScore() {
         return this.score;
     }
+
+    @Override
+    public IAudio getCLip() {
+        return this.clip;
+    }
+
 }
