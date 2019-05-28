@@ -80,7 +80,6 @@ public class Controller implements IController {
 	/**
 	 * Method to run the game loop
 	 */
-	@Override
     public void play() {
         for(IElement element: this.model.getElements()){
         	element.setObserver(this.view.getObserver());

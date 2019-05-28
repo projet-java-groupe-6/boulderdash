@@ -12,9 +12,4 @@ public interface IController {
 	 */
 	void orderPerform(Order order);
 
-	/**
-	 * The method to run game loop
-	 */
-	void play();
-
 }
