@@ -2,6 +2,8 @@ package controller;
 
 import contract.*;
 
+import java.util.ArrayList;
+
 /**
  * @author clement, Ilyes, Theo
  */
@@ -81,7 +83,7 @@ public class Controller implements IController {
 		}
         this.model.getCharacter().setObserver(this.view.getObserver());
         while(this.isAlive) {
-        	for(IElement element: this.model.getElements()) {
+        	for(IElement element: getCopyOfElements()) {
         		if(element.canFall()) {
         			if(collisions.canMove(Direction.DOWN, element)) {
         				element.setY(element.getY()+1);
@@ -96,4 +98,10 @@ public class Controller implements IController {
 		}
         System.exit(0);
     }
+
+    private synchronized ArrayList<IElement> getCopyOfElements() {
+		ArrayList<IElement> copy = new ArrayList<>();
+		copy.addAll(this.model.getElements());
+		return copy;
+	}
 }
