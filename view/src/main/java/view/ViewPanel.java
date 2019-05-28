@@ -1,5 +1,6 @@
 package view;
 
+import contract.IElement;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
@@ -79,28 +80,8 @@ public class ViewPanel extends JPanel implements Observer {
                 g.drawImage(dirtImage, x*IMAGE_SIZE, y*IMAGE_SIZE, null);
             }
         }
-
-        for(Map.Entry<Point, Dirt> dirt: this.model.getDirts().entrySet()) {
-            int x = dirt.getKey().x;
-            int y = dirt.getKey().y;
-            g.drawImage(dirt.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
-        }
-
-        for(Map.Entry<Point, Wall> walls: this.model.getWalls().entrySet()) {
-            int x = walls.getKey().x;
-            int y = walls.getKey().y;
-            g.drawImage(walls.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
-        }
-        for(Rock rock: this.model.getRocks()) {
-            g.drawImage(rock.getImage(), rock.getX()*IMAGE_SIZE, rock.getY()*IMAGE_SIZE, null);
-        }
-        for(Diamond diamond: this.model.getDiamonds()) {
-            g.drawImage(diamond.getImage(), diamond.getX()*IMAGE_SIZE, diamond.getY()*IMAGE_SIZE, null);
-        }
-        for(Map.Entry<Point, Exit> exit: this.model.getExit().entrySet()) {
-            int x = exit.getKey().x;
-            int y = exit.getKey().y;
-            g.drawImage(exit.getValue().getImage(), x*IMAGE_SIZE, y*IMAGE_SIZE, null);
+        for(IElement element: this.model.getElements()){
+            g.drawImage(element.getImage(), element.getX()*IMAGE_SIZE, element.getY()*IMAGE_SIZE, null);
         }
 
         Character character = this.model.getCharacter();

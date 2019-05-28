@@ -14,31 +14,5 @@ import model.object.Character;
  */
 public interface IModel {
 
-	/**
-	 * @return HashMap of walls
-	 */
-	HashMap<Point, Wall> getWalls();
-
-	/**
-	 * @return ArrayList of rocks
-	 */
-	ArrayList<Rock> getRocks();
-
-	/**
-	 * @return ArrayList of diamonds
-	 */
-	ArrayList<Diamond> getDiamonds();
-
-	/**
-	 * @return Character object
-	 */
-	Character getCharacter();
-
-	/**
-	 * @return HashMap of dirts
-	 */
-	HashMap<Point, Dirt> getDirts();
-	IScore getScore();
-
-	HashMap<Point, Exit> getExit();
+	ArrayList<IElement> getElements();
 }
