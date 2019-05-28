@@ -1,6 +1,6 @@
-package entity.object;
+package model.object;
 
-import entity.MotionlessElement;
+import model.MotionlessElement;
 
 public class Exit extends MotionlessElement {
 

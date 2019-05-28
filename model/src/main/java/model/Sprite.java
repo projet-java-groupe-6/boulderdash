@@ -1,4 +1,4 @@
-package entity;
+package model;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

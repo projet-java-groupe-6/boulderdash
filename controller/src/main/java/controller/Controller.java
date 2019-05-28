@@ -1,13 +1,11 @@
 package controller;
 
-import java.util.concurrent.ExecutionException;
-
 import contract.IController;
 import contract.IModel;
 import contract.IView;
 import contract.Order;
-import entity.object.Diamond;
-import entity.object.Rock;
+import model.object.Diamond;
+import model.object.Rock;
 
 /**
  * @author clement, Ilyes, Theo
