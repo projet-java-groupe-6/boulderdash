@@ -21,7 +21,7 @@ public class CollisionsTest {
         coll = new Collisions(mdl);
         this.boolcanMove=true;
         this.dir=dir;
-        this.elm=elm;
+        this.elm=this.mdl.getCharacter();
     }
 
     @After
@@ -29,7 +29,7 @@ public class CollisionsTest {
     }
 
     @Test
-    public void canMove() {
+    public void testcanMove() {
         boolean excepted = boolcanMove;
         boolean actual = coll.canMove(dir,elm);
         assertEquals(excepted, actual);
@@ -37,6 +37,6 @@ public class CollisionsTest {
     }
 
     @Test
-    public void handleCharacterMove() {
+    public void testhandleCharacterMove() {
     }
 }

@@ -39,6 +39,12 @@ public class ViewTest {
             public IScore getScore() {
                 return null;
             }
+
+            @Override
+            public IAudio getCLip() {
+                return null;
+            }
+            
         };
         this.view = new View(this.model1);
         this.view.setController(this.cont);

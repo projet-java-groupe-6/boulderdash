@@ -17,14 +17,14 @@ public class SpriteTest {
     }
 
     @Test
-    public void getFilename() {
+    public void testgetFilename() {
     }
 
     @Test
-    public void getImage() {
+    public void testgetImage() {
     }
 
     @Test
-    public void loadImage() {
+    public void testloadImage() {
     }
 }

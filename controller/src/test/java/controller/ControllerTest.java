@@ -17,10 +17,10 @@ public class ControllerTest {
     }
 
     @Test
-    public void orderPerform() {
+    public void testorderPerform() {
     }
 
     @Test
-    public void play() {
+    public void testplay() {
     }
 }

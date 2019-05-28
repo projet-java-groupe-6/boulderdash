@@ -25,15 +25,15 @@ public class AudioTest {
     }
 
     @Test
-    public void play() {
+    public void testplay() {
     }
 
     @Test
-    public void stop() {
+    public void teststop() {
     }
 
     @Test
-    public void playSound() {
+    public void testplaySound() {
     }
 
     @Test
