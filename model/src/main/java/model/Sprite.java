@@ -44,17 +44,13 @@ public abstract class Sprite extends Observable {
     public Image getImage() {
         return this.image;
     }
-    public Image getImageCharacter(){
-
-        return this.image;
-    }
 
     /**
      * Method to initialize the image from the file name
      */
     public void loadImage() {
         try {
-            this.image = ImageIO.read(getClass().getClassLoader().getResourceAsStream(this.getFilename()));
+            this.image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + this.getFilename()));
         }
         catch (IOException e) {
             e.printStackTrace();

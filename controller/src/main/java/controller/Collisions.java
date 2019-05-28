@@ -63,21 +63,20 @@ public class Collisions {
 		if (elementPoint.x == this.model.getCharacter().getX() && elementPoint.y == this.model.getCharacter().getY()) {
 			nextElement = this.model.getCharacter();
 		}
-		if (nextElement != null) {
-			if (nextElement.getPermeability() == Permeability.BLOCKING) {
-				return false;
-			} else if (nextElement.getPermeability() == Permeability.NON_BLOCKING) {
-				return true;
-			} else {
-				if (nextElement.canCrossSemiBlocking()) {
+		if(nextElement != null) {
+			switch (nextElement.getPermeability()) {
+				case BLOCKING:
+					return false;
+				case NON_BLOCKING:
 					return true;
-				}
-				return false;
+				case SEMI_BLOCKING:
+					if(element.canCrossSemiBlocking()) {
+						return true;
+					}
+					return false;
 			}
 		}
-		else{
-			return true;
-		}
+		return true;
 	}
 	/**
 	 * Method to handle a move (e.g: take diamonds...)
@@ -87,12 +86,14 @@ public class Collisions {
 		int x = character.getX();
 		int y = character.getY();
 		for(IElement element: this.getCopyOfElements()) {
-			if(element.getX() == x && element.getY() == y && element.getPermeability()==Permeability.SEMI_BOCKING) {
+			if(element.getX() == x && element.getY() == y && element.getPermeability()==Permeability.SEMI_BLOCKING) {
 				this.model.getElements().remove(element);
-				this.model.getScore().setScore(this.model.getScore().getScore()+1);
+				if(element.canFall()) {
+					this.model.getScore().setScore(this.model.getScore().getScore()+1);
+				}
 			}
 		}
-		}
+	}
 
 
 	/**

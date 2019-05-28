@@ -1,11 +1,6 @@
 package controller;
 
-import contract.IController;
-import contract.IModel;
-import contract.IView;
-import contract.Order;
-import model.object.Diamond;
-import model.object.Rock;
+import contract.*;
 
 /**
  * @author clement, Ilyes, Theo
@@ -27,6 +22,8 @@ public class Controller implements IController {
 	 */
 	private Collisions collisions;
 
+	private boolean isAlive;
+
 	/**
 	 * The constructor of Controller
 	 * @param view
@@ -35,6 +32,7 @@ public class Controller implements IController {
 	 * 		Model interface
 	 */
     public Controller(IView view, IModel model) {
+    	this.isAlive = true;
     	this.view=view;
     	this.model=model;
     	this.collisions = new Collisions(model);
@@ -78,37 +76,16 @@ public class Controller implements IController {
 	 */
 	@Override
     public void play() {
-        this.model.getCharacter().addObserver(this.view.getObserver());
-        for(Rock r: this.model.getRocks()) {
-        	r.addObserver(this.view.getObserver());
-        }
-        for(Diamond d: this.model.getDiamonds()) {
-        	d.addObserver(this.view.getObserver());
-        }
-        while(this.model.getCharacter().isAlive()) {
-			for (Rock rock : this.model.getRocks()) {
-				if(rock.getY()+1 == this.model.getCharacter().getY() && rock.getX() == this.model.getCharacter().getX() && rock.isFalling()){
-					this.model.getCharacter().setAlive(false);
-				}
-				if (this.collisions.canMove(Direction.DOWN, rock)) {
-					rock.setFalling(true);
-					rock.setY(rock.getY() + 1);
-
-				}
-				else {
-					rock.setFalling(false);
-				}
-			}
-			for (Diamond diamond : this.model.getDiamonds()) {
-				if(diamond.getY()+1 == this.model.getCharacter().getY() && diamond.getX() == this.model.getCharacter().getX() && diamond.isFalling()){
-					this.model.getCharacter().setAlive(false);
-				}
-				if (this.collisions.canMove(Direction.DOWN, diamond)) {
-					diamond.setFalling(true);
-					diamond.setY(diamond.getY() + 1);
-				}
-				else {
-					diamond.setFalling(false);
+        for(IElement element: this.model.getElements()){
+        	element.setObserver(this.view.getObserver());
+		}
+        this.model.getCharacter().setObserver(this.view.getObserver());
+        while(this.isAlive) {
+        	for(IElement element: this.model.getElements()) {
+        		if(element.canFall()) {
+        			if(collisions.canMove(Direction.DOWN, element)) {
+        				element.setY(element.getY()+1);
+					}
 				}
 			}
 			try {
