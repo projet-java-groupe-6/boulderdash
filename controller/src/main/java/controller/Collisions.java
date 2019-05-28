@@ -1,6 +1,7 @@
 package controller;
 
 
+import contract.ElementType;
 import contract.IElement;
 import contract.IModel;
 import contract.Permeability;
@@ -67,6 +68,12 @@ public class Collisions {
 		if(nextElement != null) {
 			switch (nextElement.getPermeability()) {
 				case BLOCKING:
+					if(nextElement.getType() == ElementType.CHARACTER && element.getType() == ElementType.ENNEMY) {
+						return true;
+					}
+					else if(nextElement.getType() == ElementType.ENNEMY && element.getType() == ElementType.CHARACTER) {
+						return true;
+					}
 					return false;
 				case NON_BLOCKING:
 					return true;
@@ -82,7 +89,7 @@ public class Collisions {
 	/**
 	 * Method to handle a move (e.g: take diamonds...)
 	 */
-	public synchronized void handleCharacterMove() {
+	public void handleCharacterMove() {
 		IElement character = this.model.getCharacter();
 		int x = character.getX();
 		int y = character.getY();
@@ -90,15 +97,24 @@ public class Collisions {
 			if(element.getX() == x && element.getY() == y) {
 				if(element.getPermeability() == Permeability.SEMI_BLOCKING) {
 					this.model.getElements().remove(element);
-					if(element.canFall()) {
+					if(element.getType() == ElementType.DIAMOND) {
 						this.model.getScore().setScore(this.model.getScore().getScore() + 1);
 					}
 				}
-				else if(element.getPermeability() == Permeability.NON_BLOCKING && this.model.getScore().getScore() == 30) {
+				else if(element.getType() == ElementType.EXIT && this.model.getScore().getScore() == 30) {
 					JOptionPane.showMessageDialog(null, "Exit", "You win !", JOptionPane.INFORMATION_MESSAGE);
 					System.exit(0);
 				}
 			}
+		}
+	}
+
+	public void handleEnnemyMove(IElement ennemy) {
+		int x = ennemy.getX();
+		int y = ennemy.getY();
+		if(x == this.model.getCharacter().getX() && y == this.model.getCharacter().getY()) {
+			JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
+			System.exit(0);
 		}
 	}
 
