@@ -2,6 +2,7 @@ package controller;
 
 import contract.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -26,6 +27,8 @@ public class Controller implements IController {
 
 	private boolean isAlive;
 
+	private ArrayList<IElement> fallingElements;
+
 	/**
 	 * The constructor of Controller
 	 * @param view
@@ -38,6 +41,7 @@ public class Controller implements IController {
     	this.view=view;
     	this.model=model;
     	this.collisions = new Collisions(model);
+    	this.fallingElements = new ArrayList<>();
     }
 
 
@@ -86,7 +90,15 @@ public class Controller implements IController {
         	for(IElement element: getCopyOfElements()) {
         		if(element.canFall()) {
         			if(collisions.canMove(Direction.DOWN, element)) {
+        				this.fallingElements.add(element);
         				element.setY(element.getY()+1);
+					}
+					else {
+						this.fallingElements.remove(element);
+					}
+					if(element.getX() == this.model.getCharacter().getX() && element.getY()+1 == this.model.getCharacter().getY() &&
+						this.fallingElements.contains(element)) {
+						isAlive = false;
 					}
 				}
 			}
@@ -96,6 +108,7 @@ public class Controller implements IController {
 				e.printStackTrace();
 			}
 		}
+		JOptionPane.showMessageDialog(null, "Died !", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
 
