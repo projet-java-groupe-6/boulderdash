@@ -13,7 +13,7 @@ public class Rock extends MotionElement {
 	 * The constructor of Rock
 	 */
 	public Rock() {
-		super("rock.png");
+		super("images/rock.png");
 		this.falling = false;
 	}
 

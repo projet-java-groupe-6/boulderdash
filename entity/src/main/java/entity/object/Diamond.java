@@ -1,7 +1,6 @@
 package entity.object;
 
 import entity.MotionElement;
-import entity.MotionlessElement;
 
 /**
  * @author Ilyes
@@ -15,7 +14,7 @@ public class Diamond extends MotionElement {
 	 */
 	public Diamond() {
 
-		super("diamond.png");
+		super("images/diamond.png");
 		this.Falling = false;
 	}
 
