@@ -2,7 +2,6 @@ package view;
 
 import contract.IView;
 import contract.Order;
-import entity.MotionElement;
 
 import javax.swing.*;
 
