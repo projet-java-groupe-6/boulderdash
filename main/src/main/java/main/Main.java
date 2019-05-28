@@ -4,9 +4,8 @@
 package main;
 
 import controller.Controller;
-import model.DAOModel;
+import model.Model;
 import view.View;
-import view.ViewFrame;
 
 /**
  * The Class Main.
@@ -23,7 +22,7 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final DAOModel model = new DAOModel();
+        final Model model = new Model();
         final View view = new View(model);
         final Controller controller = new Controller(view, model);
         view.setController(controller);
