@@ -108,7 +108,7 @@ public class Controller implements IController {
 				}
 			}
 			try {
-				Thread.sleep(300);
+				Thread.sleep(600);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
