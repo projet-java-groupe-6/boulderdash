@@ -5,6 +5,7 @@ import contract.IElement;
 import contract.IModel;
 import contract.Permeability;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -86,10 +87,16 @@ public class Collisions {
 		int x = character.getX();
 		int y = character.getY();
 		for(IElement element: this.getCopyOfElements()) {
-			if(element.getX() == x && element.getY() == y && element.getPermeability()==Permeability.SEMI_BLOCKING) {
-				this.model.getElements().remove(element);
-				if(element.canFall()) {
-					this.model.getScore().setScore(this.model.getScore().getScore()+1);
+			if(element.getX() == x && element.getY() == y) {
+				if(element.getPermeability() == Permeability.SEMI_BLOCKING) {
+					this.model.getElements().remove(element);
+					if(element.canFall()) {
+						this.model.getScore().setScore(this.model.getScore().getScore() + 1);
+					}
+				}
+				else if(element.getPermeability() == Permeability.NON_BLOCKING && this.model.getScore().getScore() <= 30) {
+					JOptionPane.showMessageDialog(null, "Return to the menu", "You win !", JOptionPane.INFORMATION_MESSAGE);
+					System.exit(0);
 				}
 			}
 		}
