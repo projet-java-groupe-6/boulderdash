@@ -1,7 +1,6 @@
-package entity.object;
+package model.object;
 
-import entity.MotionElement;
-import entity.MotionlessElement;
+import model.MotionElement;
 
 /**
  * @author Ilyes

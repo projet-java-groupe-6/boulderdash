@@ -10,7 +10,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import entity.object.Character;
+import model.object.Character;
 
 import entity.MotionElement;
 import entity.MotionlessElement;

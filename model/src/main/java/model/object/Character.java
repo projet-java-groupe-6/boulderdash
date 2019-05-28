@@ -1,6 +1,6 @@
-package entity.object;
+package model.object;
 
-import entity.MotionElement;
+import model.MotionElement;
 
 /**
  * @author Ilyes

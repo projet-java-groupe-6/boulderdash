@@ -3,8 +3,8 @@ package view;
 import contract.IModel;
 import entity.MotionElement;
 import entity.MotionlessElement;
-import entity.object.*;
-import entity.object.Character;
+import model.object.*;
+import model.object.Character;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

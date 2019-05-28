@@ -6,8 +6,8 @@ import java.util.HashMap;
 
 import entity.MotionElement;
 import entity.MotionlessElement;
-import entity.object.*;
-import entity.object.Character;
+import model.object.*;
+import model.object.Character;
 
 /**
  * @author Ilyes

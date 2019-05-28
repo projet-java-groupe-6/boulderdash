@@ -3,8 +3,8 @@ package controller;
 
 import contract.IModel;
 import entity.MotionElement;
-import entity.object.*;
-import entity.object.Character;
+import model.object.*;
+import model.object.Character;
 
 import java.awt.*;
 import java.util.ArrayList;
