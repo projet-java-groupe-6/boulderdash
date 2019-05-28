@@ -13,4 +13,5 @@ public interface IElement {
     boolean canCrossSemiBlocking();
     Image getImage();
     void setObserver (Observer observer);
+    ElementType getType();
 }

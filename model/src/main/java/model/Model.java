@@ -94,6 +94,13 @@ public class Model implements IModel {
                             e.loadImage();
                             elements.add(e);
                             break;
+                        case 'x':
+                            Ennemy ennemy = new Ennemy();
+                            ennemy.loadImage();
+                            ennemy.setX(x);
+                            ennemy.setY(y);
+                            elements.add(ennemy);
+                            break;
 
                     }
 

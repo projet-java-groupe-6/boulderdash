@@ -72,7 +72,7 @@ public class ViewPanel extends JPanel implements Observer {
             e.printStackTrace();
         }
         for(int x = 0; x < 50; x++) {
-            for(int y = 0; y < 22; y++) {
+            for(int y = 0; y < 21; y++) {
                 g.drawImage(dirtImage, x*IMAGE_SIZE, y*IMAGE_SIZE, null);
             }
         }
