@@ -4,41 +4,12 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import entity.MotionElement;
-import entity.MotionlessElement;
-import model.object.*;
-import model.object.Character;
-
 /**
  * @author Ilyes
  */
 public interface IModel {
 
-	/**
-	 * @return HashMap of walls
-	 */
-	HashMap<Point, Wall> getWalls();
-
-	/**
-	 * @return ArrayList of rocks
-	 */
-	ArrayList<Rock> getRocks();
-
-	/**
-	 * @return ArrayList of diamonds
-	 */
-	ArrayList<Diamond> getDiamonds();
-
-	/**
-	 * @return Character object
-	 */
-	Character getCharacter();
-
-	/**
-	 * @return HashMap of dirts
-	 */
-	HashMap<Point, Dirt> getDirts();
+	ArrayList<IElement> getElements();
+	IElement getCharacter();
 	IScore getScore();
-
-	HashMap<Point, Exit> getExit();
 }
