@@ -14,12 +14,13 @@ public class DirtTest {
     Permeability per;
     boolean boolcanFall;
     boolean boolcanCross;
+    int x,y;
 
     @Before
     public void setUp() throws Exception {
-        dirt = new Dirt(x1, y1);
-        this.x1=x1;
-        this.y1=y1;
+        dirt = new Dirt(x,y);
+        this.dirt.setX(1);
+        this.dirt.setY(1);
         this.per= Permeability.SEMI_BLOCKING;
         this.boolcanFall=false;
         this.boolcanCross=false;
@@ -30,37 +31,32 @@ public class DirtTest {
     }
 
     @Test
-    public void getX() {
-        int actual = x1;
-        int excepted = dirt.getX();
-        assertEquals(excepted, actual);
+    public void testgetX() {
+        int excepted = 1;
+        assertEquals(excepted, dirt.getX());
     }
 
     @Test
-    public void getY() {
-        int actual = y1;
-        int excepted = dirt.getY();
-        assertEquals(excepted, actual);
+    public void testgetY() {
+        int excepted = 1;
+        assertEquals(excepted, dirt.getY());
     }
 
     @Test
-    public void getPermeability() {
-        Permeability actual = per;
-        Permeability excepted = dirt.getPermeability();
-        assertEquals(excepted, actual);
+    public void testgetPermeability() {
+        Permeability excepted = per;
+        assertEquals(excepted, dirt.getPermeability());
     }
 
     @Test
-    public void canFall() {
-        boolean actual = boolcanFall;
-        boolean excepted = dirt.canFall();
-        assertEquals(excepted, actual);
+    public void testcanFall() {
+        boolean excepted = boolcanFall;
+        assertEquals(excepted, dirt.canFall());
     }
 
     @Test
-    public void canCrossSemiBlocking() {
-        boolean actual = boolcanCross;
-        boolean excepted = dirt.canCrossSemiBlocking();
-        assertEquals(excepted, actual);
+    public void testcanCrossSemiBlocking() {
+        boolean excepted = boolcanCross;
+        assertEquals(excepted, dirt.canCrossSemiBlocking());
     }
 }

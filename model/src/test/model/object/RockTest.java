@@ -29,29 +29,25 @@ public class RockTest {
 
     @Test
     public void isFalling() {
-        boolean actual = boolisFalling;
-        boolean excepted = rock.isFalling();
-        assertEquals(excepted, actual);
+        boolean excepted = boolisFalling;
+        assertEquals(excepted, rock.isFalling());
     }
 
     @Test
     public void getPermeability() {
-        Permeability actual = per;
-        Permeability excepted = rock.getPermeability();
-        assertEquals(excepted, actual);
+        Permeability excepted = per;
+        assertEquals(excepted, rock.getPermeability());
     }
 
     @Test
     public void canFall() {
-        boolean actual = boolcanFall;
-        boolean excepted = rock.canFall();
-        assertEquals(excepted, actual);
+        boolean excepted = boolcanFall;
+        assertEquals(excepted, rock.canFall());
     }
 
     @Test
     public void canCrossSemiBlocking() {
-        boolean actual = boolcanCross;
-        boolean excepted = rock.canCrossSemiBlocking();
-        assertEquals(excepted, actual);
+        boolean excepted = boolcanCross;
+        assertEquals(excepted, rock.canCrossSemiBlocking());
     }
 }

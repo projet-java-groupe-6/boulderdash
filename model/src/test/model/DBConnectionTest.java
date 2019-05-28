@@ -37,8 +37,8 @@ public class DBConnectionTest {
 
 	@Test
 	public void testgetConnection() {
-        Connection actual = cnx;
-		Connection excepted = this.dbcnx.getConnection();
+        Connection excepted = cnx;
+		Connection actual = this.dbcnx.getConnection();
 		assertEquals(excepted, actual);
 	}
 }
