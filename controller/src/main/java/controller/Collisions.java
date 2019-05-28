@@ -105,6 +105,10 @@ public class Collisions {
 					JOptionPane.showMessageDialog(null, "Exit", "You win !", JOptionPane.INFORMATION_MESSAGE);
 					System.exit(0);
 				}
+				else if(element.getType() == ElementType.ENNEMY) {
+					JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
+					System.exit(0);
+				}
 			}
 		}
 	}
