@@ -1,9 +1,13 @@
-package entity;
+package model;
+
+import contract.IElement;
+
+import java.util.Observer;
 
 /**
  * @author Clement, Theo
  */
-public abstract class MotionElement extends Sprite {
+public abstract class MotionElement extends Sprite implements IElement {
 
     /**
      * x of element
@@ -60,5 +64,10 @@ public abstract class MotionElement extends Sprite {
         this.y = y;
         this.setChanged();
         this.notifyObservers();
+    }
+
+    @Override
+    public void setObserver(Observer observer) {
+        this.addObserver(observer);
     }
 }

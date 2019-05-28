@@ -1,20 +1,18 @@
 package model;
 
+import contract.IElement;
 import contract.IModel;
 import contract.IScore;
-import entity.MotionElement;
-import entity.MotionlessElement;
-import entity.object.*;
-import entity.object.Character;
-import model.Level.LevelBuilder;
+import model.object.*;
+import model.object.Character;
 
 import java.awt.*;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Observer;
 
 /**
  * The class DAOModel
@@ -36,8 +34,8 @@ public class DAOModel implements IModel {
      * Constructor of DAOModel
      */
     public DAOModel() {
-    	this.loadLevel();
     	this.score = new Score();
+    	this.loadLevel();
     }
 
     /**
@@ -57,58 +55,18 @@ public class DAOModel implements IModel {
         }
     }
 
-    /**
-     * Method to get walls
-     * @return HashMap of walls associated with points
-     */
-	@Override
-	public HashMap<Point, Wall> getWalls() {
-		return this.level.getWalls();
-	}
-
-    /**
-     * Method to get the character
-     * @return object Character
-     */
-	@Override
-	public Character getCharacter() {
-		return this.level.getCharacter();
-	}
-
-    /**
-     * Method to get the list of rocks
-     * @return ArrayList of rocks
-     */
-	@Override
-    public ArrayList<Rock> getRocks() {
-        return this.level.getRocks();
+    @Override
+    public ArrayList<IElement> getElements() {
+        return this.level.getElements();
     }
 
-    /**
-     * Method to get the list of diamonds
-     * @return ArrayList of diamonds
-     */
-	@Override
-	public ArrayList<Diamond> getDiamonds(){
-		return this.level.getDiamonds();
-	}
+    @Override
+    public IElement getCharacter() {
+        return this.level.getCharacter();
+    }
 
-    /**
-     * Method to get dirts
-     * @return HashMap of dirts associated with points
-     */
-	@Override
-	public HashMap<Point, Dirt> getDirts(){
-		return this.level.getDirts();
-	}
-
-	@Override
-	public IScore getScore() {
-		return this.score;
-	}
-
-	@Override
-    public HashMap<Point, Exit> getExit() {
-	    return this.level.getExit();
+    @Override
+    public IScore getScore() {
+        return this.score;
     }
 }

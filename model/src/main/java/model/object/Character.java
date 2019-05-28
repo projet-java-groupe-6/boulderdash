@@ -1,21 +1,18 @@
-package entity.object;
+package model.object;
 
-import entity.MotionElement;
+import contract.IElement;
+import contract.Permeability;
+import model.MotionElement;
 
 /**
  * @author Ilyes
  */
 public class Character extends MotionElement {
 
-	/**
-	 * boolean of character if alive
-	 */
-	private boolean alive;
 	private String left; 
 	private String right;
 	private String up;
 	private String bottom;
-	private String normal;
 	
 
 	/**
@@ -23,30 +20,11 @@ public class Character extends MotionElement {
 	 */
 	public Character() {
 		super("character.png");
-		this.alive = true;
 		this.left="character_left.png";
 		this.right="character_right.png";
 		this.up="character_top.png";
 		this.bottom="character_bottom.png";
-		this.normal="character.png";
 		
-	}
-
-	/**
-	 * Method to know if character is alive or not
-	 * @return Boolean of character state
-	 */
-	public boolean isAlive() {
-		return this.alive;
-	}
-
-	/**
-	 * Method to set character state
-	 * @param alive
-	 * 		Boolean of character state
-	 */
-	public void setAlive(boolean alive) {
-		this.alive = alive;
 	}
 
 	@Override
@@ -69,6 +47,20 @@ public class Character extends MotionElement {
 		this.loadImage();
 		super.setY(y);
 	}
-	
 
+
+	@Override
+	public Permeability getPermeability() {
+		return Permeability.BLOCKING;
+	}
+
+	@Override
+	public boolean canFall() {
+		return false;
+	}
+
+	@Override
+	public boolean canCrossSemiBlocking() {
+		return true;
+	}
 }

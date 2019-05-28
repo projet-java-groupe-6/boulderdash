@@ -6,43 +6,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Observer;
 
-import entity.MotionElement;
-import entity.MotionlessElement;
-import entity.object.*;
-import entity.object.Character;
+import contract.IElement;
+import model.object.*;
+import model.object.Character;
 
 /**
  * @author clement
  */
 public class Level {
 
-	/**
-	 * HashMap of walls
-	 */
-	private HashMap<Point, Wall> walls;
-
-	/**
-	 * Object of Character
-	 */
-	private Character character;
-
-	/**
-	 * ArrayList of rocks
-	 */
-	private ArrayList<Rock> rocks;
-
-	/**
-	 * ArrayList of diamonds
-	 */
-	private ArrayList<Diamond> diamonds;
-
-	/**
-	 * HashMap of dirts
-	 */
-	private HashMap<Point, Dirt> dirts;
-
-	private HashMap<Point, Exit> exit;
+	private ArrayList<IElement> elements;
+	private IElement character;
 
 	/**
 	 * The constructor of Level
@@ -50,11 +26,7 @@ public class Level {
 	 *		LevelBuilder object from DP Builder
 	 */
 	private Level(LevelBuilder  builder) {
-		this.walls = new HashMap<>();
-		this.rocks = new ArrayList<>();
-		this.diamonds = new ArrayList<>();
-		this.dirts=new HashMap<>();
-		this.exit = new HashMap<>();
+		this.elements = new ArrayList<>();
 		
 		this.parseBuilder(builder);
 	}
@@ -76,10 +48,9 @@ public class Level {
 					char c = line.charAt(x);
 					switch(c) {
 						case 'w':
-							Wall wall = new Wall();
+							Wall wall = new Wall(x, y);
 							wall.loadImage();
-							Point p = new Point(x, y);
-							walls.put(p, wall);
+							elements.add(wall);
 							break;
 						case 'c':
 							Character character = new Character();
@@ -93,26 +64,24 @@ public class Level {
 							rock.loadImage();
 							rock.setX(x);
 							rock.setY(y);
-							this.rocks.add(rock);
+							elements.add(rock);
 							break;
 						case 'd':
 							Diamond diamond = new Diamond();
 							diamond.loadImage();
 							diamond.setX(x);
 							diamond.setY(y);
-							this.diamonds.add(diamond);
+							elements.add(diamond);
 							break;		
 						case 't': 
-							Dirt dirt = new Dirt();
+							Dirt dirt = new Dirt(x, y);
 							dirt.loadImage();
-							Point pd = new Point(x,y);
-							dirts.put(pd, dirt);
+							elements.add(dirt);
 							break;
 						case 'e':
-							Exit e = new Exit();
+							Exit e = new Exit(x, y);
 							e.loadImage();
-							Point exitPoint = new Point(x, y);
-							this.exit.put(exitPoint, e);
+							elements.add(e);
 							break;
 
 					}
@@ -126,48 +95,12 @@ public class Level {
 		}
 	}
 
-	/**
-	 * Method to get walls associated with points
-	 * @return HashMap of walls
-	 */
-	public HashMap<Point, Wall> getWalls() {
-		return walls;
+	public ArrayList<IElement> getElements() {
+		return this.elements;
 	}
 
-	/**
-	 * Method to get the Character
-	 * @return Character object
-	 */
-	public Character getCharacter() {
+	public IElement getCharacter() {
 		return this.character;
-	}
-
-	/**
-	 * Method to get the rocks
-	 * @return ArrayList of rocks
-	 */
-	public ArrayList<Rock> getRocks() {
-		return this.rocks;
-	}
-
-	/**
-	 * Method to get diamonds
-	 * @return ArrayList of diamonds
-	 */
-	public ArrayList<Diamond> getDiamonds(){
-		return this.diamonds;
-	}
-
-	/**
-	 * Method to get dirts
-	 * @return HashMap of dirts
-	 */
-	public HashMap<Point, Dirt> getDirts(){
-		return dirts;
-	}
-
-	public HashMap<Point, Exit> getExit() {
-		return this.exit;
 	}
 
 	/**
