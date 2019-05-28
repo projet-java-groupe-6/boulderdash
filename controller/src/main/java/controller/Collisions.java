@@ -81,6 +81,8 @@ public class Collisions {
 				return true;
 			}
 		]
+		}
+	}
 	/**
 	 * Method to handle a move (e.g: take diamonds...)
 	 */
