@@ -57,20 +57,20 @@ public class Collisions {
 				elementPoint.y += 1;
 				break;
 		}
-		IElement nextEllement = null;
+		IElement nextElement = null;
 		for (IElement elements : getCopyOfElements()) {
 			if (elementPoint.x == elements.getX() && elementPoint.y == elements.getY()) {
-				nextEllement = elements;
+				nextElement = elements;
 				break;
 			}
 		}
 		if (elementPoint.x == this.model.getCharacter().getX() && elementPoint.y == this.model.getCharacter().getY()) {
-			nextEllement = this.model.getCharacter();
+			nextElement = this.model.getCharacter();
 		}
-		if (nextEllement != null) {
-			if (nextEllement.getPermeability() == Permeability.BLOCKING) {
+		if (nextElement != null) {
+			if (nextElement.getPermeability() == Permeability.BLOCKING) {
 				return false;
-			} else if (nextEllement.getPermeability() == Permeability.NON_BLOCKING) {
+			} else if (nextElement.getPermeability() == Permeability.NON_BLOCKING) {
 				return true;
 			} else {
 				if (element.canCrossSemiBlocking) {
