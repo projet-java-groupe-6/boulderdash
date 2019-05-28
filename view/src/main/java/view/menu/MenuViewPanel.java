@@ -21,13 +21,19 @@ public class MenuViewPanel extends JPanel {
     public MenuViewPanel(MenuView view) {
         this.boxLayout = new BoxLayout(this, BoxLayout.LINE_AXIS);
         this.setLayout(this.boxLayout);
-        this.levels = new String[] {"level 1", "level 2", "level 3", "level 4", "level 5"};
+        this.levels = new String[] {"level 1", "level 2", "level 3", "level 4", "level 5", "map 6"};
         this.comboBox = new JComboBox<>(this.levels);
         this.start = new JButton("Start");
         this.start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                Order order = new Order(levels[comboBox.getSelectedIndex()].replace("level ", "").charAt(0));
+                Order order = null;
+                if(levels[comboBox.getSelectedIndex()].startsWith("level")) {
+                    order = new Order(levels[comboBox.getSelectedIndex()].replace("level ", "").charAt(0));
+                }
+                else {
+                    order = new Order(levels[5].replace("map ", "").charAt(0));
+                }
                 view.getController().orderPerform(order);
                 view.hideMenu();
             }
