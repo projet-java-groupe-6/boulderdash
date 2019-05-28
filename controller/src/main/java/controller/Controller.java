@@ -14,7 +14,6 @@ public class Controller implements IController {
 	 * View interface
 	 */
 	private IView view;
-
 	/**
 	 * Model interface
 	 */
