@@ -20,6 +20,7 @@ public class MenuViewFrame extends JFrame {
         this.setResizable(false);
         this.menuViewPanel = new MenuViewPanel(view);
         this.setContentPane(menuViewPanel);
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
 }
