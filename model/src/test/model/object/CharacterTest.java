@@ -36,23 +36,20 @@ public class CharacterTest {
 
     @Test
     public void testgetPermeability() {
-        Permeability actual = per;
-        Permeability excepted = car.getPermeability();
-       assertEquals(actual, excepted);
+        Permeability excepted = per;
+       assertEquals(excepted, car.getPermeability());
     }
 
     @Test
     public void testcanFall() {
-        boolean actual = bool;
-        boolean excepted = car.canFall();
-        assertEquals(excepted, actual);
+        boolean excepted = bool;
+        assertEquals(excepted, car.canFall());
 
     }
 
     @Test
     public void testcanCrossSemiBlocking() {
-        boolean actual = bool1;
-        boolean excepted = car.canCrossSemiBlocking();
-        assertEquals(excepted, actual);
+        boolean excepted = bool1;
+        assertEquals(excepted, car.canCrossSemiBlocking());
     }
 }

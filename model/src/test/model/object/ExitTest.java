@@ -9,17 +9,16 @@ import static org.junit.Assert.*;
 
 public class ExitTest {
     Exit exit;
-    int x1;
-    int y1;
+    int x, y;
     Permeability per;
     boolean boolcanFall;
     boolean boolcanCross;
 
     @Before
     public void setUp() throws Exception {
-        exit = new Exit(x1, y1);
-        this.x1=x1;
-        this.y1=y1;
+        exit = new Exit(x, y);
+        this.exit.setX(1);
+        this.exit.setY(1);
         this.per= Permeability.NON_BLOCKING;
         this.boolcanFall=false;
         this.boolcanCross=false;
@@ -31,36 +30,31 @@ public class ExitTest {
 
     @Test
     public void getX() {
-        int actual = x1;
-        int excepted = exit.getX();
-        assertEquals(excepted, actual);
+        int excepted = 1;
+        assertEquals(excepted, exit.getX());
     }
 
     @Test
     public void getY() {
-        int actual = y1;
-        int excepted = exit.getY();
-        assertEquals(excepted, actual);
+        int excepted = 1;
+        assertEquals(excepted,  exit.getY());
     }
 
     @Test
     public void getPermeability() {
-        Permeability actual = per;
-        Permeability excepted = exit.getPermeability();
-        assertEquals(excepted, actual);
+        Permeability excepted = per;
+        assertEquals(excepted, exit.getPermeability());
     }
 
     @Test
     public void canFall() {
-        boolean actual = boolcanFall;
-        boolean excepted = exit.canFall();
-        assertEquals(excepted, actual);
+        boolean excepted = boolcanFall;
+        assertEquals(excepted, exit.canFall());
     }
 
     @Test
     public void canCrossSemiBlocking() {
-        boolean actual = boolcanCross;
-        boolean excepted = exit.canCrossSemiBlocking();
-        assertEquals(excepted, actual);
+        boolean excepted = boolcanCross;
+        assertEquals(excepted, exit.canCrossSemiBlocking());
     }
 }

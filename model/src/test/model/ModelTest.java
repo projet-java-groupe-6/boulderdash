@@ -31,22 +31,22 @@ public class ModelTest {
 
     @Test
     public void getElements() {
-        ArrayList<IElement> actual = list;
-        ArrayList<IElement> excepted = model.getElements();
+        ArrayList<IElement> excepted = list;
+        ArrayList<IElement> actual = model.getElements();
         assertEquals(excepted, actual);
     }
 
     @Test
     public void getCharacter() {
-        IElement actual = elm;
-        IElement excepted = model.getCharacter();
+        IElement excepted = elm;
+        IElement actual = model.getCharacter();
         assertEquals(excepted, actual);
     }
 
     @Test
     public void getScore() {
-        IScore actual = scr;
-        IScore excepted = model.getScore();
+        IScore excepted = scr;
+        IScore actual = model.getScore();
         assertEquals(excepted, actual);
     }
 }

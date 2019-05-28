@@ -50,15 +50,15 @@ public class ViewTest {
 
     @Test
     public void testgetController() {
-        IController actual = cont;
-        IController expected= view.getController();
-        assertEquals("controller test work", expected, actual);
+        IController excepted = cont;
+        IController actual= view.getController();
+        assertEquals("controller test work", excepted, actual);
     }
 
     @Test
     public void testgetModel() {
-        IModel actual = model1;
-        IModel excepted = view.getModel();
+        IModel excepted = model1;
+        IModel actual = view.getModel();
         assertEquals("model test work", excepted, actual);
     }
 

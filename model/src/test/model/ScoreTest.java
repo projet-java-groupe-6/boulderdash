@@ -26,8 +26,8 @@ public class ScoreTest {
 
     @org.junit.Test
     public void testgetScore() {
-        int actual = nbrDiamonds;
-        int excepted = score.getScore();
+        int excepted = nbrDiamonds;
+        int actual = score.getScore();
         assertEquals(excepted, actual);
 
     }

@@ -30,9 +30,8 @@ public class DiamondTest {
 
     @Test
     public void isFalling() {
-        boolean actual= boolisfalling;
-        boolean excepted = diam.isFalling();
-        assertEquals(excepted, actual);
+        boolean excepted= boolisfalling;
+        assertEquals(excepted, diam.isFalling());
     }
 
     @Test
@@ -41,22 +40,19 @@ public class DiamondTest {
 
     @Test
     public void getPermeability() {
-        Permeability actual = per;
-        Permeability excepted = diam.getPermeability();
-        assertEquals(excepted, actual);
+        Permeability excepted = per;
+        assertEquals(excepted, diam.getPermeability());
     }
 
     @Test
     public void canFall() {
-        boolean actual = boolcanFall;
-        boolean excepted = diam.canFall();
-        assertEquals(excepted, actual);
+        boolean excepted = boolcanFall;
+        assertEquals(excepted, diam.canFall());
     }
 
     @Test
     public void canCrossSemiBlocking() {
-        boolean actual = boolcanCross;
-        boolean excepted = diam.canCrossSemiBlocking();
-        assertEquals(excepted, actual);
+        boolean excepted = boolcanCross;
+        assertEquals(excepted, diam.canCrossSemiBlocking());
     }
 }

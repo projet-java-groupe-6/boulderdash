@@ -28,22 +28,22 @@ public class DBPropertiesTest {
 
     @Test
     public void testgetUrl() {
-        String actual = url;
-        String expected = this.properties.getUrl();
-        assertEquals(expected, actual);
+        String excepted = url;
+        String actual = this.properties.getUrl();
+        assertEquals(excepted, actual);
     }
 
     @Test
     public void testgetLogin() {
-        String actual = login;
-        String excepted = this.properties.getLogin();
+        String excepted = login;
+        String actual = this.properties.getLogin();
         assertEquals(excepted, actual);
     }
 
     @Test
     public void testgetPassword() {
-        String actual =passwd;
-        String excepted = this.properties.getPassword();
+        String excepted =passwd;
+        String actual = this.properties.getPassword();
         assertEquals(excepted, actual);
     }
 }
