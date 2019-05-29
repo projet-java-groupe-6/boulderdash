@@ -1,22 +1,21 @@
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wctttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
+wtttttttt x tttttrrrrtttttx             xttttttttw
+wtttttttt x ttttr   xrttttx             xttttttttw
+wcttttttt x ttttr    rttttx             xttttttttw
+wtttttttt x tttttrrrrtttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwtttw
+wrrrrrrtdddddddddddddddddddddddddddddttttttttttttw
 wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wstttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttttttttttttttttttttttttttttttttttttttttttw
+wtttttr                              ttttttttttttw
+wtttttr                              tttttttttttew
+wtttttr                         tttttttttttttttttw
+wtttttr                    ttttttttttttttttttttttw
+wtttttr               tttttttttttttttttttttttttttw
+wtttttr          ttttttttttttttttttttttttttttttttw
+wttdttt     tttttttttttttttttttttttttttttttttttttw
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww

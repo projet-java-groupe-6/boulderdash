@@ -23,10 +23,6 @@ public class ViewTest {
 
             }
 
-            @Override
-            public void play() {
-
-            }
         };
         this.model1 = new IModel() {
             @Override
@@ -43,6 +39,15 @@ public class ViewTest {
             public IScore getScore() {
                 return null;
             }
+
+            @Override
+            public IAudio getAudio() {
+                return null;
+            }
+
+
+
+
         };
         this.view = new View(this.model1);
         this.view.setController(this.cont);
@@ -53,24 +58,21 @@ public class ViewTest {
     }
 
     @Test
-    public void getController() {
-        IController actual = cont;
-        IController expected= view.getController();
-        assertEquals("controller test work", expected, actual);
+    public void testgetController() {
+        IController excepted = cont;
+        IController actual= view.getController();
+        assertEquals("controller test work", excepted, actual);
     }
 
     @Test
-    public void getModel() {
-        IModel actual = model1;
-        IModel excepted = view.getModel();
+    public void testgetModel() {
+        IModel excepted = model1;
+        IModel actual = view.getModel();
         assertEquals("model test work", excepted, actual);
     }
 
     @Test
-    public void setController(IController cont) {
-       /* IController actual = cont;
-        IController excepted = view.setController(view.getController());
-        assertEquals(excepted, actual);
-       */
+    public void testsetController() {
+
     }
 }

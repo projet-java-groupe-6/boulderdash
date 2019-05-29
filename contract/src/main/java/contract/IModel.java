@@ -1,8 +1,7 @@
 package contract;
 
-import java.awt.Point;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * @author Ilyes
@@ -26,4 +25,6 @@ public interface IModel {
 	 * @return interface of score
 	 */
 	IScore getScore();
+	IAudio getAudio();
+
 }

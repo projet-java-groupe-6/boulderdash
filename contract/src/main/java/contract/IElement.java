@@ -61,4 +61,5 @@ public interface IElement {
      *      observer instance
      */
     void setObserver (Observer observer);
+    ElementType getType();
 }

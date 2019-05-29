@@ -4,6 +4,7 @@ import contract.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * @author clement, Ilyes, Theo
@@ -14,7 +15,6 @@ public class Controller implements IController {
 	 * View interface
 	 */
 	private IView view;
-
 	/**
 	 * Model interface
 	 */
@@ -29,6 +29,8 @@ public class Controller implements IController {
 
 	private ArrayList<IElement> fallingElements;
 
+	private Random random;
+
 	/**
 	 * The constructor of Controller
 	 * @param view
@@ -42,6 +44,7 @@ public class Controller implements IController {
     	this.model=model;
     	this.collisions = new Collisions(model);
     	this.fallingElements = new ArrayList<>();
+    	this.random = new Random();
     }
 
 
@@ -100,16 +103,37 @@ public class Controller implements IController {
 						isAlive = false;
 					}
 				}
+        		if(element.getType() == ElementType.ENNEMY) {
+        			moveRandomly(element);
+				}
 			}
 			try {
-				Thread.sleep(300);
+				Thread.sleep(600);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		JOptionPane.showMessageDialog(null, "Died !", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
+		this.model.getAudio().playSound("audio/lose.wav");
+		JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
+
+    private void moveRandomly(IElement element) {
+    	int xy = random.nextInt(2);
+    	if(xy == 1) {
+    		int direction = random.nextInt(2);
+    		if(collisions.canMove(direction == 1 ? Direction.RIGHT: Direction.LEFT, element)) {
+				element.setX(direction == 1 ? element.getX()+1 : element.getX()-1);
+			}
+		}
+    	else {
+    		int direction = random.nextInt(2);
+    		if(collisions.canMove(direction == 1 ? Direction.UP : Direction.DOWN, element)) {
+				element.setY(direction == 1 ? element.getY()-1 : element.getY()+1);
+			}
+		}
+    	collisions.handleEnnemyMove(element);
+	}
 
     private synchronized ArrayList<IElement> getCopyOfElements() {
 		ArrayList<IElement> copy = new ArrayList<>();
