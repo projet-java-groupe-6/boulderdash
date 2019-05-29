@@ -7,7 +7,14 @@ import entity.Level;
 
 public class MenuController implements IController {
 
+    /**
+     * menu view interface
+     */
     private IView view;
+
+    /**
+     * boolean to wait for user to choose level
+     */
     private boolean chosen;
 
     /**
