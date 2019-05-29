@@ -36,6 +36,7 @@ public class Model implements IModel {
     private IElement character;
     private IAudio clip;
 
+
     /**
      * Constructor of Model
      */
@@ -132,13 +133,10 @@ public class Model implements IModel {
     }
 
     @Override
-    public IAudio getCLip() {
+    public IAudio getAudio() {
         return this.clip;
     }
 
-    @Override
-    public IAudio playSound(String sound) {
-        return this.clip;
-    }
+
 
 }

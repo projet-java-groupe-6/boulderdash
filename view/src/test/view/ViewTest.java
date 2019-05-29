@@ -41,14 +41,12 @@ public class ViewTest {
             }
 
             @Override
-            public IAudio getCLip() {
+            public IAudio getAudio() {
                 return null;
             }
 
-            @Override
-            public IAudio playSound(String sound) {
-                return null;
-            }
+
+
 
         };
         this.view = new View(this.model1);

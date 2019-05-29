@@ -14,7 +14,7 @@ public class Audio implements IAudio {
     public Audio(String sound){
 
         try {
-            AudioInputStream audio = AudioSystem.getAudioInputStream(getClass().getResource(sound));
+            AudioInputStream audio = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResourceAsStream(sound));
             clip = AudioSystem.getClip();
             clip.open(audio);
 

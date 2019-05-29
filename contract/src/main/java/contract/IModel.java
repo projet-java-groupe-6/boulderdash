@@ -12,4 +12,5 @@ public interface IModel {
 	IElement getCharacter();
 	IScore getScore();
 	IAudio getAudio();
+
 }
