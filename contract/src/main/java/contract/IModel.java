@@ -11,5 +11,6 @@ public interface IModel {
 	ArrayList<IElement> getElements();
 	IElement getCharacter();
 	IScore getScore();
-	IAudio getCLip();
+	IAudio getAudio();
+
 }

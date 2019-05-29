@@ -41,10 +41,13 @@ public class ViewTest {
             }
 
             @Override
-            public IAudio getCLip() {
+            public IAudio getAudio() {
                 return null;
             }
-            
+
+
+
+
         };
         this.view = new View(this.model1);
         this.view.setController(this.cont);

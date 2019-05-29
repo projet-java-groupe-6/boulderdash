@@ -113,6 +113,7 @@ public class Controller implements IController {
 				e.printStackTrace();
 			}
 		}
+		this.model.getAudio().playSound("audio/lose.wav");
 		JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
