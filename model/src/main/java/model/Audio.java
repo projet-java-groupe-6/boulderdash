@@ -1,13 +1,14 @@
 package model;
 
+import com.sun.media.sound.WaveFileReader;
 import contract.IAudio;
 
 import javax.sound.sampled.*;
+import java.io.File;
 import java.io.IOException;
 
 public class Audio implements IAudio {
 
-    public Clip clip;
     public static Audio instance;
 
     private Audio(){
@@ -15,19 +16,12 @@ public class Audio implements IAudio {
 
     }
 
-    public void stop(){
-        clip.stop();
-    }
-
     public void playSound(String sound) {
         try {
-            AudioInputStream audio = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResourceAsStream(sound));
-            System.out.println("play");
-            AudioFormat format = audio.getFormat();
-            DataLine.Info info = new DataLine.Info(Clip.class, format);
-            clip = (Clip)AudioSystem.getLine(info);
-            clip.open(audio);
-            clip.start();
+            AudioInputStream al = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResourceAsStream(sound));
+            Clip c = AudioSystem.getClip();
+            c.open(al);
+            c.start();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,11 +39,6 @@ public class Audio implements IAudio {
             instance = new Audio();
         }
         return instance;
-    }
-
-    @Override
-    public Clip getClip() {
-        return clip;
     }
 
 }
