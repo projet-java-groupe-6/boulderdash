@@ -34,7 +34,6 @@ public class Model implements IModel {
 
     private ArrayList<IElement> elements;
     private IElement character;
-    private IAudio clip;
 
 
     /**
@@ -134,7 +133,7 @@ public class Model implements IModel {
 
     @Override
     public IAudio getAudio() {
-        return this.clip;
+        return Audio.getInstance();
     }
 
 

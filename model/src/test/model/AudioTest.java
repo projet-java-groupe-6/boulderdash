@@ -16,7 +16,7 @@ public class AudioTest {
 
     @Before
     public void setUp() throws Exception {
-        audio = new Audio(sound);
+        audio = Audio.getInstance();
         this.clip1= AudioSystem.getClip();
     }
 

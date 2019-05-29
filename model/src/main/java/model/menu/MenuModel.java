@@ -11,10 +11,7 @@ import java.util.ArrayList;
 
 public class MenuModel implements IModel {
 
-    IAudio clip;
-
     public MenuModel(){
-        this.clip = new Audio("audio/game.wav");
     }
 
     @Override
@@ -34,6 +31,6 @@ public class MenuModel implements IModel {
 
     @Override
     public IAudio getAudio() {
-        return this.clip;
+        return Audio.getInstance();
     }
 }
