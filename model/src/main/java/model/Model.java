@@ -156,6 +156,10 @@ public class Model implements IModel {
         return this.score;
     }
 
+    /**
+     * Method to get the audio
+     * @return instance of audio
+     */
     @Override
     public IAudio getAudio() {
         return Audio.getInstance();
