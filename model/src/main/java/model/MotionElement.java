@@ -66,6 +66,11 @@ public abstract class MotionElement extends Sprite implements IElement {
         this.notifyObservers();
     }
 
+    /**
+     * Method to set the Observer
+     * @param observer
+     *      observer instance
+     */
     @Override
     public void setObserver(Observer observer) {
         this.addObserver(observer);

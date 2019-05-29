@@ -116,16 +116,29 @@ public class Model implements IModel {
         }
     }
 
+
+    /**
+     * Method to get the elements
+     * @return elements
+     */
     @Override
     public ArrayList<IElement> getElements() {
         return this.elements;
     }
 
+    /**
+     * Method to get the character
+     * @return character
+     */
     @Override
     public IElement getCharacter() {
         return this.character;
     }
 
+    /**
+     * Method to get the score
+     * @return score
+     */
     @Override
     public IScore getScore() {
         return this.score;

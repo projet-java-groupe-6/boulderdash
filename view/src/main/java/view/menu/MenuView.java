@@ -19,21 +19,37 @@ public class MenuView implements IView {
         this.controller = controller;
     }
 
+
+    /**
+     * Method to get the Controller
+     * @return controller
+     */
     @Override
     public IController getController() {
         return this.controller;
     }
 
+    /**
+     * Method to get the model
+     * @return null
+     */
     @Override
     public IModel getModel() {
         return null;
     }
 
+    /**
+     * Method to get observer
+     * @return null
+     */
     @Override
     public Observer getObserver() {
         return null;
     }
 
+    /**
+     * Method to hide level menu
+     */
     public void hideMenu() {
         this.menuViewFrame.setVisible(false);
     }

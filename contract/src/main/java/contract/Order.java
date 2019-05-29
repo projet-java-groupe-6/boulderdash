@@ -28,6 +28,7 @@ public class Order {
 	}
 
 	/**
+	 * Method to set char typed
 	 * @param typed
 	 * 		set the typed char
 	 */

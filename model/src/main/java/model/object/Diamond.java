@@ -10,7 +10,6 @@ import model.MotionElement;
  */
 public class Diamond extends MotionElement {
 
-	private boolean Falling;
 
 	/**
 	 * The constructor of Diamond
@@ -18,27 +17,31 @@ public class Diamond extends MotionElement {
 	public Diamond() {
 
 		super("diamond.png");
-		this.Falling = false;
 	}
 
-	public boolean isFalling() {
-		return Falling;
-	}
 
-	public void setFalling(boolean falling) {
-		Falling = falling;
-	}
-
+	/**
+	 * Method to get Permeability
+	 * @return object's Permeability
+	 */
 	@Override
 	public Permeability getPermeability() {
 		return Permeability.SEMI_BLOCKING;
 	}
 
+	/**
+	 * Method to know if the element can fall
+	 * @return boolean true if element can fall
+	 */
 	@Override
 	public boolean canFall() {
 		return true;
 	}
 
+	/**
+	 * Method to know if element can cross semi blocking
+	 * @return boolean true if element can cross
+	 */
 	@Override
 	public boolean canCrossSemiBlocking() {
 		return false;

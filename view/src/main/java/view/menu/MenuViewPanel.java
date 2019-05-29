@@ -12,12 +12,31 @@ import java.util.Observer;
 
 public class MenuViewPanel extends JPanel {
 
+    /**
+     * menu to show levels
+     */
     private JComboBox<String> comboBox;
+
+    /**
+     * Button to start game
+     */
     private JButton start;
+
+    /**
+     * Window layout
+     */
     private BoxLayout boxLayout;
 
+    /**
+     * The list of levels
+     */
     private String[] levels;
 
+    /**
+     * The MenuViewPanel constructor
+     * @param view
+     *      view instance
+     */
     public MenuViewPanel(MenuView view) {
         this.boxLayout = new BoxLayout(this, BoxLayout.LINE_AXIS);
         this.setLayout(this.boxLayout);

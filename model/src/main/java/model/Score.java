@@ -3,24 +3,42 @@ package model;
 import contract.IScore;
 
 public class Score implements IScore {
-    
-    private int nbrDiamonds;
-  
-    	public Score (){
+
+	/**
+	 * number of diamonds
+	 */
+	private int nbrDiamonds;
+
+	/**
+	 * The Constructor of the score
+	 */
+	public Score (){
     		this.nbrDiamonds=0;
     	}
 
-	
-    	public int getNbrDiamonds(){
+	/**
+	 * Method to get the Number of diamonds
+	 * @return number of diamonds
+	 */
+	public int getNbrDiamonds(){
     		return nbrDiamonds;
     	}
 
-    	public void setScore (int score) {
+	/**
+	 * Method to set the score
+	 * @param score
+	 * 		score instance
+	 */
+	public void setScore (int score) {
     		this.nbrDiamonds=score;
     	}
 
 
-		@Override
+	/**
+	 * Method to get the score
+	 * @return numbre of diamonds
+	 */
+	@Override
 		public int getScore() {	
 			return this.nbrDiamonds;
 		}
