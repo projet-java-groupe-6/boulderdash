@@ -37,14 +37,14 @@ public class ModelTest {
     }
 
     @Test
-    public void getCharacter() {
+    public void testgetCharacter() {
         IElement excepted = elm;
         IElement actual = model.getCharacter();
         assertEquals(excepted, actual);
     }
 
     @Test
-    public void getScore() {
+    public void testgetScore() {
         IScore excepted = scr;
         IScore actual = model.getScore();
         assertEquals(excepted, actual);

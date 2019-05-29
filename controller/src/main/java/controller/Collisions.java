@@ -1,10 +1,7 @@
 package controller;
 
 
-import contract.ElementType;
-import contract.IElement;
-import contract.IModel;
-import contract.Permeability;
+import contract.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,6 +34,7 @@ public class Collisions {
 	 * 		The element who moves
 	 * @return Boolean if the element can move in the specified direction
 	 */
+
 	public boolean canMove(Direction direction, IElement element) {
 		int x = element.getX();
 		int y = element.getY();
@@ -97,15 +95,19 @@ public class Collisions {
 			if(element.getX() == x && element.getY() == y) {
 				if(element.getPermeability() == Permeability.SEMI_BLOCKING) {
 					this.model.getElements().remove(element);
+					//this.model.getClip().playSound("/audio/takediamonds.wav");
+
 					if(element.getType() == ElementType.DIAMOND) {
 						this.model.getScore().setScore(this.model.getScore().getScore() + 1);
 					}
 				}
 				else if(element.getType() == ElementType.EXIT && this.model.getScore().getScore() == 30) {
+					//this.model.getClip().playSound("/audio/win.wav");
 					JOptionPane.showMessageDialog(null, "Exit", "You win !", JOptionPane.INFORMATION_MESSAGE);
 					System.exit(0);
 				}
 				else if(element.getType() == ElementType.ENNEMY) {
+					//this.model.getClip().playSound("/audio/lose.wav");
 					JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
 					System.exit(0);
 				}
@@ -117,6 +119,7 @@ public class Collisions {
 		int x = ennemy.getX();
 		int y = ennemy.getY();
 		if(x == this.model.getCharacter().getX() && y == this.model.getCharacter().getY()) {
+			//this.model.getClip().playSound("/audio/lose.wav");
 			JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
 			System.exit(0);
 		}

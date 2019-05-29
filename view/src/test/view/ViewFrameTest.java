@@ -40,15 +40,15 @@ public class ViewFrameTest {
     }
 
     @Test
-    public void getObserver() {
+    public void testgetObserver() {
     }
 
     @Test
-    public void keyPressed() {
+    public void testkeyPressed() {
     }
 
     @Test
-    public void keyReleased() {
+    public void testkeyReleased() {
     }
 
     @Test
