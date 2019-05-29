@@ -1,42 +1,44 @@
 package model;
 
+import com.sun.media.sound.WaveFileReader;
 import contract.IAudio;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Audio implements IAudio {
-    public Clip clip;
+
+    public static Audio instance;
+
+    private Audio(){
 
 
+    }
 
-    public Audio(String sound){
-
+    public void playSound(String sound) {
         try {
-            AudioInputStream audio = AudioSystem.getAudioInputStream(getClass().getResource(sound));
-            clip = AudioSystem.getClip();
-            clip.open(audio);
+            AudioInputStream al = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResourceAsStream(sound));
+            Clip c = AudioSystem.getClip();
+            c.open(al);
+            c.start();
 
-        } catch (Exception e) {}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+        catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void play(){
-        clip.start();
-    }
-
-    public void stop(){
-        clip.stop();
-    }
-
-    public static void playSound(String sound){
-        Audio s = new Audio(sound);
-        s.play();
-    }
-
-    @Override
-    public Clip getClip() {
-        return clip;
+    public static Audio getInstance() {
+        if(instance == null) {
+            instance = new Audio();
+        }
+        return instance;
     }
 
 }

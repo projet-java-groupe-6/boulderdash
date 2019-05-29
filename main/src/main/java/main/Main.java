@@ -6,6 +6,7 @@ package main;
 import controller.Controller;
 import controller.menu.MenuController;
 import model.Model;
+import model.menu.MenuModel;
 import view.View;
 import view.menu.MenuView;
 import view.menu.MenuViewFrame;
@@ -40,8 +41,9 @@ public abstract class Main {
             e.printStackTrace();
         }
 
+        MenuModel menuModel = new MenuModel();
         MenuView menuView = new MenuView();
-        MenuController menuController = new MenuController(menuView);
+        MenuController menuController = new MenuController(menuView, menuModel);
         menuView.setController(menuController);
 
         menuController.waitFor();
