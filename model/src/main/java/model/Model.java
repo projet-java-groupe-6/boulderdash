@@ -136,4 +136,9 @@ public class Model implements IModel {
         return this.clip;
     }
 
+    @Override
+    public IAudio playSound(String sound) {
+        return this.clip;
+    }
+
 }

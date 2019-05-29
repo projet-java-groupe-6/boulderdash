@@ -29,7 +29,7 @@ public class Audio implements IAudio {
         clip.stop();
     }
 
-    public static void playSound(String sound){
+    public void playSound(String sound){
         Audio s = new Audio(sound);
         s.play();
     }
