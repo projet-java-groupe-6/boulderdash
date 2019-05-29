@@ -9,34 +9,38 @@ import model.MotionElement;
  */
 public class Rock extends MotionElement {
 
-	private boolean falling;
 
 	/**
 	 * The constructor of Rock
 	 */
 	public Rock() {
 		super("rock.png");
-		this.falling = false;
+
 	}
 
-	public boolean isFalling() {
-		return falling;
-	}
 
-	public void setFalling(boolean falling) {
-		this.falling = falling;
-	}
-
+	/**
+	 * Method to get Permeability
+	 * @return object's Permeability
+	 */
 	@Override
 	public Permeability getPermeability() {
 		return Permeability.BLOCKING;
 	}
 
+	/**
+	 * Method to know if the element can fall
+	 * @return boolean true if element can fall
+	 */
 	@Override
 	public boolean canFall() {
 		return true;
 	}
 
+	/**
+	 * Method to know if element can cross semi blocking
+	 * @return boolean true if element can cross
+	 */
 	@Override
 	public boolean canCrossSemiBlocking() {
 		return false;

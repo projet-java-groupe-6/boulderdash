@@ -27,6 +27,11 @@ public class Character extends MotionElement {
 		
 	}
 
+	/**
+	 * Method to set x and change image
+	 * @param x
+	 * 		int x
+	 */
 	@Override
 	public void setX(int x) {
 		if(x > this.getX()) {
@@ -38,6 +43,13 @@ public class Character extends MotionElement {
 		this.loadImage();
 		super.setX(x);
 	}
+
+	/**
+	 * Method to set y and change image
+	 * @param y
+	 * 		int y
+	 */
+	@Override
 	public void setY(int y){
 		if ( y > this.getY()) {
 			this.setFilename(this.bottom);
@@ -49,16 +61,28 @@ public class Character extends MotionElement {
 	}
 
 
+	/**
+	 * Method to get Permeability
+	 * @return object's Permeability
+	 */
 	@Override
 	public Permeability getPermeability() {
 		return Permeability.BLOCKING;
 	}
 
+	/**
+	 * Method to know if the element can fall
+	 * @return boolean true if element can fall
+	 */
 	@Override
 	public boolean canFall() {
 		return false;
 	}
 
+	/**
+	 * Method to know if element can cross semi blocking
+	 * @return boolean true if element can cross
+	 */
 	@Override
 	public boolean canCrossSemiBlocking() {
 		return true;
