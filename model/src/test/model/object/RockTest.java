@@ -27,11 +27,6 @@ public class RockTest {
     public void tearDown() throws Exception {
     }
 
-    @Test
-    public void isFalling() {
-        boolean excepted = boolisFalling;
-        assertEquals(excepted, rock.isFalling());
-    }
 
     @Test
     public void getPermeability() {

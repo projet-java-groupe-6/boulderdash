@@ -28,11 +28,6 @@ public class DiamondTest {
     public void tearDown() throws Exception {
     }
 
-    @Test
-    public void isFalling() {
-        boolean excepted= boolisfalling;
-        assertEquals(excepted, diam.isFalling());
-    }
 
     @Test
     public void setFalling() {
