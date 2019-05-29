@@ -18,6 +18,11 @@ public abstract class MotionlessElement extends Sprite implements IElement {
         super(filename);
     }
 
+    /**
+     * Method to set the observer
+     * @param observer
+     *      observer instance
+     */
     @Override
     public void setObserver(Observer observer) {
         this.addObserver(observer);
