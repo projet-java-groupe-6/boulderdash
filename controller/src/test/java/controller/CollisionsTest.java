@@ -19,9 +19,9 @@ public class CollisionsTest {
     @Before
     public void setUp() throws Exception {
         coll = new Collisions(mdl);
-        this.boolcanMove=true;
-        this.dir=dir;
-        this.elm=this.mdl.getCharacter();
+        boolcanMove=true;
+        dir= dir.LEFT;
+        //elm= mdl.getCharacter();
     }
 
     @After
