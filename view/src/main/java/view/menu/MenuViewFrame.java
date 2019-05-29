@@ -9,12 +9,19 @@ import java.util.Observer;
 
 public class MenuViewFrame extends JFrame {
 
+    /**
+     * View panel object
+     */
     private MenuViewPanel menuViewPanel;
-    private MenuView view;
 
+
+    /**
+     * The MenuViewFrame constructor
+     * @param view
+     *      view interface
+     */
     public MenuViewFrame(MenuView view) {
         super("Choose a level");
-        this.view = view;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(300, 300);
         this.setResizable(false);
