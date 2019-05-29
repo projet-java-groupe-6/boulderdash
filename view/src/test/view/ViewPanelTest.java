@@ -25,11 +25,11 @@ public class ViewPanelTest {
     }
 
     @Test
-    public void update() {
+    public void testupdate() {
     }
 
     @Test
-    public void paintComponent() {
+    public void testpaintComponent() {
 
     }
 }

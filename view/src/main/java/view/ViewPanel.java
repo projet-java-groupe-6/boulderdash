@@ -59,7 +59,7 @@ public class ViewPanel extends JPanel implements Observer {
     @Override
     public void paintComponent(Graphics graphics) {
         Graphics2D g = (Graphics2D)graphics;
-        g.clearRect(0, 0, 768, 800);
+        g.clearRect(0, 0, 768, 736);
 
         g.scale(4, 4);
         g.translate(-this.model.getCharacter().getX()*IMAGE_SIZE+5*IMAGE_SIZE, -this.model.getCharacter().getY()*IMAGE_SIZE+5*IMAGE_SIZE);
@@ -72,7 +72,7 @@ public class ViewPanel extends JPanel implements Observer {
             e.printStackTrace();
         }
         for(int x = 0; x < 50; x++) {
-            for(int y = 0; y < 22; y++) {
+            for(int y = 0; y < 21; y++) {
                 g.drawImage(dirtImage, x*IMAGE_SIZE, y*IMAGE_SIZE, null);
             }
         }

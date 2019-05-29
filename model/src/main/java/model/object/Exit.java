@@ -1,5 +1,6 @@
 package model.object;
 
+import contract.ElementType;
 import contract.IElement;
 import contract.Permeability;
 import model.MotionlessElement;
@@ -96,5 +97,10 @@ public class Exit extends MotionlessElement {
     @Override
     public boolean canCrossSemiBlocking() {
         return false;
+    }
+
+    @Override
+    public ElementType getType() {
+        return ElementType.EXIT;
     }
 }
