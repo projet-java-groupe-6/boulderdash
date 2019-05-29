@@ -18,7 +18,7 @@ public class MenuController implements IController {
      */
     private boolean chosen;
 
-    
+
     private IModel model;
 
     /**
