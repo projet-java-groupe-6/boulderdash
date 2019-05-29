@@ -1,21 +1,21 @@
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-wtttttttttttttttttttttttttx             xttttttttw
-wtttttttttttttttttttttttttx             xttttttttw
-wtttttttttttttttttttttttttx             xttttttttw
-wtttttttttttttttttttttttttx             xttttttttw
-wcttttttttttttttttttttttttx             xttttttttw
-wtttttttttttttttttttttttttx             xttttttttw
-wtttttttttttttttttttttttttx             xttttttttw
-wtttttttttttttttttttttttttx             xttttttttw
-wtttttttttttttttttttttttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
+wtttttttt x tttttrrrrtttttx             xttttttttw
+wtttttttt x ttttr   xrttttx             xttttttttw
+wcttttttt x ttttr    rttttx             xttttttttw
+wtttttttt x tttttrrrrtttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
+wtttttttt x ttttttttttttttx             xttttttttw
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwtttw
-wtttttttttdddddddddddddddddddddddddddttttttttttttw
+wrrrrrrtdddddddddddddddddddddddddddddttttttttttttw
 wttttttttttttttttttttttttttttttttttttttttttttttttw
-wttttttttt                           tttttttttttew
-wttttttttt                           ttttttttttttw
-wttttttttttt                         ttttttttttttw
-wtttttttttttttttt                    ttttttttttttw
-wttttttttttttttttttttt               ttttttttttttw
-wtttttttttttttttttttttttttt          ttttttttttttw
-wttttttttttttttttttttttttttttttt     ttttttttttttw
+wtttttr                              ttttttttttttw
+wtttttr                              tttttttttttew
+wtttttr                         tttttttttttttttttw
+wtttttr                    ttttttttttttttttttttttw
+wtttttr               tttttttttttttttttttttttttttw
+wtttttr          ttttttttttttttttttttttttttttttttw
+wttdttt     tttttttttttttttttttttttttttttttttttttw
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
