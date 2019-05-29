@@ -6,7 +6,7 @@ package contract;
 public interface IController {
 
 	/**
-	 * method to send an order
+	 * Method to send an order
 	 * @param order
 	 * 		Order object
 	 */
