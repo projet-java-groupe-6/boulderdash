@@ -28,12 +28,6 @@ public class RockTest {
     }
 
     @Test
-    public void isFalling() {
-        boolean excepted = boolisFalling;
-        assertEquals(excepted, rock.isFalling());
-    }
-
-    @Test
     public void getPermeability() {
         Permeability excepted = per;
         assertEquals(excepted, rock.getPermeability());
