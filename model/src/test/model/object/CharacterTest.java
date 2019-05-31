@@ -13,7 +13,10 @@ public class CharacterTest {
     boolean bool;
     boolean bool1;
 
-
+    /**
+     * Initializing Character Test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         car = new Character();
@@ -30,16 +33,24 @@ public class CharacterTest {
     public void setX() {
     }
 
+
     @Test
     public void setY() {
     }
 
+
+    /**
+     * Test to get the Permeability of the element
+     */
     @Test
     public void testgetPermeability() {
         Permeability excepted = per;
        assertEquals(excepted, car.getPermeability());
     }
 
+    /**
+     * Test to know if element can fall
+     */
     @Test
     public void testcanFall() {
         boolean excepted = bool;
@@ -47,6 +58,9 @@ public class CharacterTest {
 
     }
 
+    /**
+     * Test to know if element can cross semi blocking element
+     */
     @Test
     public void testcanCrossSemiBlocking() {
         boolean excepted = bool1;

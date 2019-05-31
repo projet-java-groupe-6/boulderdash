@@ -14,6 +14,10 @@ public class RockTest {
     boolean boolcanFall;
     boolean boolcanCross;
 
+    /**
+     * Initializing rock test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         rock = new Rock();
@@ -27,19 +31,27 @@ public class RockTest {
     public void tearDown() throws Exception {
     }
 
-
+    /**
+     * Test to get the Permeability of the element
+     */
     @Test
     public void getPermeability() {
         Permeability excepted = per;
         assertEquals(excepted, rock.getPermeability());
     }
 
+    /**
+     * Test to know if element can fall
+     */
     @Test
     public void canFall() {
         boolean excepted = boolcanFall;
         assertEquals(excepted, rock.canFall());
     }
 
+    /**
+     * Test to know if element can cross semi blocking element
+     */
     @Test
     public void canCrossSemiBlocking() {
         boolean excepted = boolcanCross;

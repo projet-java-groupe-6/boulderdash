@@ -14,6 +14,10 @@ public class AudioTest {
     Audio audio;
     String sound;
 
+    /**
+     * Initializing audio test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         audio = Audio.getInstance();
@@ -23,6 +27,7 @@ public class AudioTest {
     @After
     public void tearDown() throws Exception {
     }
+
 
     @Test
     public void testplay() {

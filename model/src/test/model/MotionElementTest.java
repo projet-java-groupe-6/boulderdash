@@ -10,6 +10,9 @@ public class MotionElementTest {
 
     private Character character;
 
+    /**
+     * Initializing MotionElement test
+     */
     @Before
     public void setUp() {
         this.character = new Character();
@@ -17,11 +20,18 @@ public class MotionElementTest {
         this.character.setY(1);
     }
 
+    /**
+     * Test to get the x of motion element
+     */
     @Test
     public void testGetX() {
         int expected = 1;
         assertEquals(expected, this.character.getX());
     }
+
+    /**
+     * Test to get the y of motion element
+     */
     @Test
     public void testGetY() {
         int expected = 1;

@@ -54,7 +54,7 @@ public class Model implements IModel {
     private void parse(String path) {
         BufferedReader in = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream(path)));
 
-        
+
         String line;
         int y = 0;
         try {

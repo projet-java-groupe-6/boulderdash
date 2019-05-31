@@ -17,6 +17,10 @@ public class ModelTest {
     ArrayList<IElement> list;
 
 
+    /**
+     * Initializing model test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         model = new Model();
@@ -29,6 +33,9 @@ public class ModelTest {
     public void tearDown() throws Exception {
     }
 
+    /**
+     * Test to get the element
+     */
     @Test
     public void getElements() {
         ArrayList<IElement> excepted = list;
@@ -36,6 +43,9 @@ public class ModelTest {
         assertEquals(excepted, actual);
     }
 
+    /**
+     * test to get the character
+     */
     @Test
     public void testgetCharacter() {
         IElement excepted = elm;
@@ -43,6 +53,9 @@ public class ModelTest {
         assertEquals(excepted, actual);
     }
 
+    /**
+     * Test to get the score
+     */
     @Test
     public void testgetScore() {
         IScore excepted = scr;

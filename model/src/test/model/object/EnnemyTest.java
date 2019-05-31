@@ -16,6 +16,10 @@ public class EnnemyTest {
     ElementType elmtp;
     Permeability prm;
 
+    /**
+     * Initializing ennemy test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         ennemy = new Ennemy();
@@ -29,24 +33,36 @@ public class EnnemyTest {
     public void tearDown() throws Exception {
     }
 
+    /**
+     * Test to get the Permeability of the element
+     */
     @Test
     public void getPermeability() {
         Permeability excepted = prm;
         assertEquals(excepted, ennemy.getPermeability());
     }
 
+    /**
+     * Test to know if element can fall
+     */
     @Test
     public void canFall() {
         boolean excepted = boolcanFall;
         assertEquals(excepted, ennemy.canFall());
     }
 
+    /**
+     * Test to know if element can cross semi blocking element
+     */
     @Test
     public void canCrossSemiBlocking() {
         boolean excepted = boolcanCross;
         assertEquals(excepted, ennemy.canCrossSemiBlocking());
     }
 
+    /**
+     * Test to get the type of the element
+     */
     @Test
     public void getType() {
         ElementType excepted = elmtp;

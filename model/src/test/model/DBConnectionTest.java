@@ -15,6 +15,7 @@ public class DBConnectionTest {
 	Connection cnx;
 	DBConnection dbcnx;
 
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -23,6 +24,10 @@ public class DBConnectionTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Initializing DBConnection test
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		dbcnx= new DBConnection();
@@ -34,7 +39,9 @@ public class DBConnectionTest {
 	}
 
 
-
+	/**
+	 * Test of the connection
+	 */
 	@Test
 	public void testgetConnection() {
         Connection excepted = cnx;

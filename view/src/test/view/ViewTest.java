@@ -15,6 +15,10 @@ public class ViewTest {
     View view;
     IModel model1;
 
+    /**
+     * Initializing View test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         this.cont = new IController() {
@@ -57,6 +61,9 @@ public class ViewTest {
     public void tearDown() throws Exception {
     }
 
+    /**
+     * Test to get the controller
+     */
     @Test
     public void testgetController() {
         IController excepted = cont;
@@ -64,6 +71,9 @@ public class ViewTest {
         assertEquals("controller test work", excepted, actual);
     }
 
+    /**
+     * Test to get the model
+     */
     @Test
     public void testgetModel() {
         IModel excepted = model1;

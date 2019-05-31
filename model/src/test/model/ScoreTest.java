@@ -6,6 +6,10 @@ public class ScoreTest {
     int nbrDiamonds;
     Score score;
 
+    /**
+     * Initializing score test
+     * @throws Exception
+     */
     @org.junit.Before
     public void setUp() throws Exception {
         score = new Score();
@@ -24,6 +28,9 @@ public class ScoreTest {
     public void testsetScore() {
     }
 
+    /**
+     * Test to get the number of diamond of the score
+     */
     @org.junit.Test
     public void testgetScore() {
         int excepted = nbrDiamonds;

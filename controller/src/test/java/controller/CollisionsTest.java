@@ -11,14 +11,38 @@ import java.util.Observer;
 
 import static org.junit.Assert.*;
 
+
 public class CollisionsTest {
+
+    /**
+     * Direction enumeration
+     */
     Direction dir;
+
+    /**
+     * Element interface
+     */
     IElement elm;
+
+    /**
+     * Model interface
+     */
     IModel mdl;
+
+    /**
+     * Collision object
+     */
     Collisions coll;
+
+    /**
+     * Boolean expected
+     */
     boolean boolcanMove;
 
-
+    /**
+     * Initializing collision test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         this.mdl = new IModel() {
@@ -102,6 +126,9 @@ public class CollisionsTest {
     public void tearDown() throws Exception {
     }
 
+    /**
+     * Test canMove method
+     */
     @Test
     public void testcanMove() {
         boolean excepted = boolcanMove;
@@ -110,6 +137,9 @@ public class CollisionsTest {
 
     }
 
+    /**
+     * test handleCharacterMove method
+     */
     @Test
     public void testhandleCharacterMove() {
     }

@@ -14,6 +14,10 @@ public class DBPropertiesTest {
     String login;
     String url;
 
+    /**
+     * Initializing DBProperties test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         this.properties = new DBProperties();
@@ -26,6 +30,9 @@ public class DBPropertiesTest {
     public void tearDown() throws Exception {
     }
 
+    /**
+     * Test to get the url
+     */
     @Test
     public void testgetUrl() {
         String excepted = url;
@@ -33,6 +40,9 @@ public class DBPropertiesTest {
         assertEquals(excepted, actual);
     }
 
+    /**
+     * Test to get the login
+     */
     @Test
     public void testgetLogin() {
         String excepted = login;
@@ -40,6 +50,9 @@ public class DBPropertiesTest {
         assertEquals(excepted, actual);
     }
 
+    /**
+     * Test to get the password
+     */
     @Test
     public void testgetPassword() {
         String excepted =passwd;

@@ -15,6 +15,10 @@ public class MenuViewTest {
     Order order;
     IModel model;
 
+    /**
+     * Initializing of MenuView test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         menuView = new MenuView();

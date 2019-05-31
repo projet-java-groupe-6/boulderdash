@@ -15,6 +15,10 @@ public class ViewFrameTest {
     ViewPanel viewPanel;
     IView view;
 
+    /**
+     * Initializing ViewFrame test
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         view = new IView() {
