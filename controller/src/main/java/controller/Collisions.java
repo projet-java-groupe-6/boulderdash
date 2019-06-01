@@ -95,21 +95,29 @@ public class Collisions {
 			if(element.getX() == x && element.getY() == y) {
 				if(element.getPermeability() == Permeability.SEMI_BLOCKING) {
 					this.model.getElements().remove(element);
-
+					//recovery of a diamond
 					if(element.getType() == ElementType.DIAMOND) {
 						this.model.getScore().setScore(this.model.getScore().getScore() + 1);
+						//running the clip take diamonds
 						this.model.getAudio().playSound("audio/takediamonds.wav");
 					}
 				}
+				//when the character arrives at the exit with the 30 diamonds : won part
 				else if(element.getType() == ElementType.EXIT && this.model.getScore().getScore() == 30) {
+					//running the clip win
 					this.model.getAudio().playSound("audio/win.wav");
+					//window display titled you win with Exit as a message
 					JOptionPane.showMessageDialog(null, "Exit", "You win !", JOptionPane.INFORMATION_MESSAGE);
+					//closing windows
 					System.exit(0);
 				}
+				// When the character touch an enemy
 				else if(element.getType() == ElementType.ENNEMY) {
-					//this.model.getClip().playSound("/audio/lose.wav");
+					//running the clip lose
 					this.model.getAudio().playSound("audio/lose.wav");
+					//window display titled Game Over with Exit as a message
 					JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
+					//closing windows
 					System.exit(0);
 				}
 			}
