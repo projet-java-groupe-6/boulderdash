@@ -64,9 +64,13 @@ public class Model implements IModel {
      * 		LevelBuilder from DP Builder
      */
     private void parse(String path) {
+        // reading the text file located in path
         BufferedReader in = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream(path)));
-        String line;
-        int y = 0;
+
+
+        String line; // to read each line of the text file
+        int y = 0; // browse all the lines
+        //recovery of elements from the text file according to the letters
         try {
             while((line = in.readLine()) != null) {
                 int length = line.length();

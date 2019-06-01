@@ -12,12 +12,12 @@ public abstract class MotionElement extends Sprite implements IElement {
     /**
      * x of element
      */
-    private int x;
+    private int x; //position of the element
 
     /**
      * y of element
      */
-    private int y;
+    private int y; //position of the element
 
     /**
      * The constructor of MotionElement

@@ -1,6 +1,5 @@
 package model;
 
-import com.sun.media.sound.WaveFileReader;
 import contract.IAudio;
 
 import javax.sound.sampled.*;
@@ -44,7 +43,7 @@ public class Audio implements IAudio {
             e.printStackTrace();
         }
     }
-
+    
     /**
      * Method to get instance of audio
      * @return instance
