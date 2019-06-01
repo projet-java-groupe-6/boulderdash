@@ -15,7 +15,7 @@ public class Level {
     /**
      * level map number 
      */
-    public static int levelNumber = 2;
+    public static int levelNumber = 2; // level chosen
 
     /**
      * The Constructor of Level
