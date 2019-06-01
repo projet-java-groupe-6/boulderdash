@@ -15,6 +15,7 @@ public class Audio implements IAudio {
 
     }
 
+
     public void playSound(String sound) {
         try {
             AudioInputStream al = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResourceAsStream(sound));
@@ -33,6 +34,7 @@ public class Audio implements IAudio {
         }
     }
 
+    // GETTERS
     public static Audio getInstance() {
         if(instance == null) {
             instance = new Audio();
