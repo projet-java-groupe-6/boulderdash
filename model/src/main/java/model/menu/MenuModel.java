@@ -11,6 +11,9 @@ import java.util.ArrayList;
 
 public class MenuModel implements IModel {
 
+    /**
+     * Constructor of the menu model
+     */
     public MenuModel(){
     }
 
@@ -29,6 +32,10 @@ public class MenuModel implements IModel {
         return null;
     }
 
+    /**
+     * Method to get audio interface
+     * @return Audio interface
+     */
     @Override
     public IAudio getAudio() {
         return Audio.getInstance();

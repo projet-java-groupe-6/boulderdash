@@ -27,12 +27,24 @@ import java.util.Observer;
  */
 public class Model implements IModel {
 
-
+    /**
+     * Score
+     */
     private Score score;
 
+    /**
+     * Level
+     */
     private Level level;
 
+    /**
+     * ArrayList of elements
+     */
     private ArrayList<IElement> elements;
+
+    /**
+     * Character
+     */
     private IElement character;
 
 
@@ -150,7 +162,7 @@ public class Model implements IModel {
 
     /**
      * Method to get the audio
-     * @return Audio.getInstance
+     * @return instance of audio
      */
     @Override
     public IAudio getAudio() {

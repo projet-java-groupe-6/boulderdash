@@ -99,6 +99,10 @@ public class Dirt extends MotionlessElement {
 		return false;
 	}
 
+	/**
+	 * Method to get the type of the element
+	 * @return ElementType of the element
+	 */
 	@Override
 	public ElementType getType() {
 		return ElementType.DIRT;
