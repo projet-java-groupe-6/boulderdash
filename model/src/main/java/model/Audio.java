@@ -43,7 +43,7 @@ public class Audio implements IAudio {
             e.printStackTrace();
         }
     }
-    
+
     /**
      * Method to get instance of audio
      * @return instance
