@@ -125,6 +125,11 @@ public class Collisions {
 		}
 	}
 
+	/**
+	 * Method to handle an ennemy's move
+	 * @param ennemy
+	 * 		Element interface of the ennemy
+	 */
 	public void handleEnnemyMove(IElement ennemy) {
 		int x = ennemy.getX(); //getting the position x of the enemy
 		int y = ennemy.getY(); //getting the position x of the enemy

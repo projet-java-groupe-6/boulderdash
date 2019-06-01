@@ -129,8 +129,12 @@ public class Controller implements IController {
         System.exit(0);
     }
 
-    //moving of the enemies
-    private void moveRandomly(IElement element) {
+	/**
+	 * Method to move randomly an element (used for ennemies)
+	 * @param element
+	 * 		Element interface who will move
+	 */
+	private void moveRandomly(IElement element) {
     	int xy = random.nextInt(2);
     	if(xy == 1) {
     		int direction = random.nextInt(2);
@@ -147,6 +151,10 @@ public class Controller implements IController {
     	collisions.handleEnnemyMove(element);
 	}
 
+	/**
+	 * Get a copy of all elements
+	 * @return ArrayList of all elements
+	 */
     private synchronized ArrayList<IElement> getCopyOfElements() {
 		ArrayList<IElement> copy = new ArrayList<>();
 		copy.addAll(this.model.getElements());

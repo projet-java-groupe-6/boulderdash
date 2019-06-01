@@ -47,6 +47,10 @@ public class Diamond extends MotionElement {
 		return false;
 	}
 
+	/**
+	 * Method to get the type of the element
+	 * @return ElementType of the element
+	 */
 	@Override
 	public ElementType getType() {
 		return ElementType.DIAMOND;

@@ -89,6 +89,10 @@ public class Character extends MotionElement {
 		return true;
 	}
 
+	/**
+	 * Method to get the type of the element
+	 * @return ElementType of the element
+	 */
 	@Override
 	public ElementType getType() {
 		return ElementType.CHARACTER;
