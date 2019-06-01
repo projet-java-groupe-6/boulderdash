@@ -94,6 +94,7 @@ public class Controller implements IController {
         	element.setObserver(this.view.getObserver());
 		}
         this.model.getCharacter().setObserver(this.view.getObserver());
+        //while the character is not dead : isAlive = true
         while(this.isAlive) {
         	for(IElement element: getCopyOfElements()) {
         		//gravity manage

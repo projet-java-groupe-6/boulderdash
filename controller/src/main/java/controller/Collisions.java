@@ -36,8 +36,8 @@ public class Collisions {
 	 */
 
 	public boolean canMove(Direction direction, IElement element) {
-		int x = element.getX();
-		int y = element.getY();
+		int x = element.getX(); // getting the position x of the element
+		int y = element.getY(); // getting the position x of the element
 		Point elementPoint = new Point(x, y);
 		switch (direction) {
 			case LEFT:
@@ -64,6 +64,7 @@ public class Collisions {
 			nextElement = this.model.getCharacter();
 		}
 		if(nextElement != null) {
+			// Permeability manage
 			switch (nextElement.getPermeability()) {
 				case BLOCKING:
 					if(nextElement.getType() == ElementType.CHARACTER && element.getType() == ElementType.ENNEMY) {
@@ -89,8 +90,8 @@ public class Collisions {
 	 */
 	public void handleCharacterMove() {
 		IElement character = this.model.getCharacter();
-		int x = character.getX();
-		int y = character.getY();
+		int x = character.getX(); // getting the position x of the character
+		int y = character.getY(); // getting the positiony of the character
 		for(IElement element: this.getCopyOfElements()) {
 			if(element.getX() == x && element.getY() == y) {
 				if(element.getPermeability() == Permeability.SEMI_BLOCKING) {
@@ -125,11 +126,15 @@ public class Collisions {
 	}
 
 	public void handleEnnemyMove(IElement ennemy) {
-		int x = ennemy.getX();
-		int y = ennemy.getY();
+		int x = ennemy.getX(); //getting the position x of the enemy
+		int y = ennemy.getY(); //getting the position x of the enemy
+		// check if the position of the character is equal to that of the enemy
 		if(x == this.model.getCharacter().getX() && y == this.model.getCharacter().getY()) {
+			//running the clip lose
 			this.model.getAudio().playSound("audio/lose.wav");
+			//window display titled Game Over with Exit as a message
 			JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
+			//closing windows
 			System.exit(0);
 		}
 	}
