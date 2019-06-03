@@ -41,7 +41,7 @@ public class Level {
             // getting the path to the data base
             String path = resultSet.getString("path");
             return path;
-        }
+        } // case of sql exception
         catch (SQLException e) {
             e.printStackTrace();
         }

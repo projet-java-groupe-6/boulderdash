@@ -125,8 +125,10 @@ public class Controller implements IController {
 		}
         //when the character is dead : isAlive = false
 		this.model.getAudio().playSound("audio/lose.wav");
+		//window display titled Game Over with Exit as a message
 		JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
-        System.exit(0);
+		//closing windows
+		System.exit(0);
     }
 
 	/**
@@ -135,7 +137,7 @@ public class Controller implements IController {
 	 * 		Element interface who will move
 	 */
 	private void moveRandomly(IElement element) {
-    	int xy = random.nextInt(2);
+    	int xy = random.nextInt(2); // a random
     	if(xy == 1) {
     		int direction = random.nextInt(2);
     		if(collisions.canMove(direction == 1 ? Direction.RIGHT: Direction.LEFT, element)) {
@@ -143,7 +145,7 @@ public class Controller implements IController {
 			}
 		}
     	else {
-    		int direction = random.nextInt(2);
+    		int direction = random.nextInt(2); // a random
     		if(collisions.canMove(direction == 1 ? Direction.UP : Direction.DOWN, element)) {
 				element.setY(direction == 1 ? element.getY()-1 : element.getY()+1);
 			}

@@ -28,6 +28,8 @@ public abstract class MotionElement extends Sprite implements IElement {
         super(filename);
     }
 
+    // ** GETTERS **
+
     /**
      * The method to get the x of element
      * @return int of the x
@@ -49,6 +51,9 @@ public abstract class MotionElement extends Sprite implements IElement {
      * @param x
      *      int of the x
      */
+
+    // ** SETTERS **
+
     public void setX(int x) {
         this.x = x;
         this.setChanged();

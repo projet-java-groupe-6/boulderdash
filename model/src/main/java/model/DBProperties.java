@@ -46,6 +46,8 @@ class DBProperties extends Properties {
 		}
 	}
 
+	// ** GETTERS **
+
 	/**
 	 * Gets the url.
 	 *
@@ -54,6 +56,27 @@ class DBProperties extends Properties {
 	public String getUrl() {
 		return this.url;
 	}
+
+	/**
+	 * Gets the login.
+	 *
+	 * @return the login
+	 */
+	public String getLogin() {
+		return this.login;
+	}
+
+
+	/**
+	 * Gets the password.
+	 *
+	 * @return the password
+	 */
+	public String getPassword() {
+		return this.password;
+	}
+
+	// ** SETTERS **
 
 	/**
 	 * Sets the url.
@@ -66,15 +89,6 @@ class DBProperties extends Properties {
 	}
 
 	/**
-	 * Gets the login.
-	 *
-	 * @return the login
-	 */
-	public String getLogin() {
-		return this.login;
-	}
-
-	/**
 	 * Sets the login.
 	 *
 	 * @param login
@@ -82,15 +96,6 @@ class DBProperties extends Properties {
 	 */
 	private void setLogin(final String login) {
 		this.login = login;
-	}
-
-	/**
-	 * Gets the password.
-	 *
-	 * @return the password
-	 */
-	public String getPassword() {
-		return this.password;
 	}
 
 	/**
