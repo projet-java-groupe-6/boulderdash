@@ -1,7 +1,6 @@
 package model.object;
 
 import contract.ElementType;
-import contract.IElement;
 import contract.Permeability;
 import org.junit.After;
 import org.junit.Before;
@@ -9,20 +8,20 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class EnnemyTest {
-    Ennemy ennemy;
+public class EnemyTest {
+    Enemy enemy;
     boolean boolcanFall;
     boolean boolcanCross;
     ElementType elmtp;
     Permeability prm;
 
     /**
-     * Initializing ennemy test
+     * Initializing enemy test
      * @throws Exception
      */
     @Before
     public void setUp() throws Exception {
-        ennemy = new Ennemy();
+        enemy = new Enemy();
         this.boolcanFall=false;
         this.boolcanCross=false;
         this.prm = Permeability.BLOCKING;
@@ -39,7 +38,7 @@ public class EnnemyTest {
     @Test
     public void getPermeability() {
         Permeability excepted = prm;
-        assertEquals(excepted, ennemy.getPermeability());
+        assertEquals(excepted, enemy.getPermeability());
     }
 
     /**
@@ -48,7 +47,7 @@ public class EnnemyTest {
     @Test
     public void canFall() {
         boolean excepted = boolcanFall;
-        assertEquals(excepted, ennemy.canFall());
+        assertEquals(excepted, enemy.canFall());
     }
 
     /**
@@ -57,7 +56,7 @@ public class EnnemyTest {
     @Test
     public void canCrossSemiBlocking() {
         boolean excepted = boolcanCross;
-        assertEquals(excepted, ennemy.canCrossSemiBlocking());
+        assertEquals(excepted, enemy.canCrossSemiBlocking());
     }
 
     /**
@@ -66,6 +65,6 @@ public class EnnemyTest {
     @Test
     public void getType() {
         ElementType excepted = elmtp;
-        assertEquals(excepted, ennemy.getType());
+        assertEquals(excepted, enemy.getType());
     }
 }

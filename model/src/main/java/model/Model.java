@@ -8,17 +8,10 @@ import entity.Level;
 import model.object.*;
 import model.object.Character;
 
-import javax.sound.sampled.Clip;
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Observer;
 
 /**
  * The class Model
@@ -112,11 +105,11 @@ public class Model implements IModel {
                             elements.add(e);
                             break;
                         case 'x':
-                            Ennemy ennemy = new Ennemy();
-                            ennemy.loadImage();
-                            ennemy.setX(x);
-                            ennemy.setY(y);
-                            elements.add(ennemy);
+                            Enemy enemy = new Enemy();
+                            enemy.loadImage();
+                            enemy.setX(x);
+                            enemy.setY(y);
+                            elements.add(enemy);
                             break;
 
                     }

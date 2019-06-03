@@ -4,9 +4,9 @@ import contract.ElementType;
 import contract.Permeability;
 import model.MotionElement;
 
-public class Ennemy extends MotionElement {
+public class Enemy extends MotionElement {
 
-    public Ennemy() {
+    public Enemy() {
         super("ennemy.png");
     }
 
