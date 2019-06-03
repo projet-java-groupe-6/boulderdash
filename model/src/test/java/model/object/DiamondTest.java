@@ -32,7 +32,6 @@ public class DiamondTest {
     public void tearDown() throws Exception {
     }
 
-
     @Test
     public void setFalling() {
     }
