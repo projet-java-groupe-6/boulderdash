@@ -3,8 +3,10 @@ package model;
 import contract.IAudio;
 
 import javax.sound.sampled.*;
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Audio implements IAudio {
 
@@ -28,7 +30,9 @@ public class Audio implements IAudio {
      */
     public void playSound(String sound) {
         try {
-            AudioInputStream al = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResourceAsStream(sound));
+            InputStream inputStream = getClass().getClassLoader().getResourceAsStream(sound);
+            inputStream = new BufferedInputStream(inputStream);
+            AudioInputStream al = AudioSystem.getAudioInputStream(inputStream);
             Clip c = AudioSystem.getClip();
             c.open(al);
             c.start();
