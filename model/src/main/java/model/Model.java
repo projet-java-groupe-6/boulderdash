@@ -33,7 +33,7 @@ public class Model implements IModel {
     /**
      * ArrayList of elements
      */
-    private ArrayList<IElement> elements;
+    private ArrayList<IElement> elements; //List for different elements
 
     /**
      * Character
@@ -47,8 +47,8 @@ public class Model implements IModel {
     public Model() {
         this.elements = new ArrayList<>();
     	this.score = new Score();
-    	this.level = new Level(DBConnection.getInstance().getConnection());
-    	this.parse(this.level.getPath());
+    	this.level = new Level(DBConnection.getInstance().getConnection()); // access to the data base
+    	this.parse(this.level.getPath()); // getting the path the level chosen
     }
 
     /**
@@ -64,7 +64,7 @@ public class Model implements IModel {
         //recovery of elements from the text file according to the letters
         try {
             while((line = in.readLine()) != null) {
-                int length = line.length();
+                int length = line.length(); // length of every line in the file txt
                 for(int x = 0; x < length; x++) {
                     char c = line.charAt(x);
                     switch(c) {
@@ -115,7 +115,7 @@ public class Model implements IModel {
                     }
 
                 }
-                y++;
+                y++; // next line
             }
         }
         catch(IOException e) {

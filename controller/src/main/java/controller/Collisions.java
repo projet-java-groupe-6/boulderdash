@@ -91,7 +91,7 @@ public class Collisions {
 	public void handleCharacterMove() {
 		IElement character = this.model.getCharacter();
 		int x = character.getX(); // getting the position x of the character
-		int y = character.getY(); // getting the positiony of the character
+		int y = character.getY(); // getting the position y of the character
 		for(IElement element: this.getCopyOfElements()) {
 			if(element.getX() == x && element.getY() == y) {
 				if(element.getPermeability() == Permeability.SEMI_BLOCKING) {
