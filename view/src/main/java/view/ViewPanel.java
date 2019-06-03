@@ -65,8 +65,10 @@ public class ViewPanel extends JPanel implements Observer {
         g.translate(-this.model.getCharacter().getX()*IMAGE_SIZE+5*IMAGE_SIZE, -this.model.getCharacter().getY()*IMAGE_SIZE+5*IMAGE_SIZE);
 
         Image dirtImage = null;
+        Image diamond = null;
         try {
             dirtImage = ImageIO.read(getClass().getClassLoader().getResourceAsStream("dirt_dug.png"));
+            diamond = ImageIO.read(getClass().getClassLoader().getResourceAsStream("diamond.png"));
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -82,9 +84,10 @@ public class ViewPanel extends JPanel implements Observer {
 
         IElement character = this.model.getCharacter();
         g.drawImage(character.getImage(), character.getX()*IMAGE_SIZE, character.getY()*IMAGE_SIZE, null);
-        
+
+        g.drawImage(diamond, character.getX()*IMAGE_SIZE-5*IMAGE_SIZE, character.getY()*IMAGE_SIZE-5*IMAGE_SIZE, null);
         g.setFont(police);
         g.setColor(Color.black);
-        g.drawString(this.model.getScore().getScore() + " / 30", character.getX()*IMAGE_SIZE-5*IMAGE_SIZE, character.getY()*IMAGE_SIZE-4*IMAGE_SIZE);
+        g.drawString(this.model.getScore().getScore() + " / 30", character.getX()*IMAGE_SIZE-4*IMAGE_SIZE, character.getY()*IMAGE_SIZE-4*IMAGE_SIZE);
     }
 }
