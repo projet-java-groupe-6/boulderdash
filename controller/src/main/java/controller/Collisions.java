@@ -92,7 +92,7 @@ public class Collisions {
 		IElement character = this.model.getCharacter();
 		int x = character.getX(); // getting the position x of the character
 		int y = character.getY(); // getting the position y of the character
-		for(IElement element: this.getCopyOfElements()) {
+		for(IElement element: this.getCopyOfElements()) { // browsing the elements
 			if(element.getX() == x && element.getY() == y) {
 				if(element.getPermeability() == Permeability.SEMI_BLOCKING) {
 					this.model.getElements().remove(element);

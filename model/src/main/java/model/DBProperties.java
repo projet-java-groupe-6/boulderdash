@@ -47,7 +47,7 @@ class DBProperties extends Properties {
 	}
 
 	// ** GETTERS **
-	
+
 	/**
 	 * Gets the url.
 	 *
