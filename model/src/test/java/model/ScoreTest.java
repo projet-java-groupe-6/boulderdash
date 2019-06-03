@@ -3,7 +3,15 @@ package model;
 import static org.junit.Assert.*;
 
 public class ScoreTest {
+
+    /**
+     * Int number of diamonds
+     */
     int nbrDiamonds;
+
+    /**
+     * Score object
+     */
     Score score;
 
     /**

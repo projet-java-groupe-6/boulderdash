@@ -8,10 +8,30 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RockTest {
+
+    /**
+     * Rock object
+     */
     Rock rock;
+
+    /**
+     * Permeability object
+     */
     Permeability per;
+
+    /**
+     * Boolean is falling
+     */
     boolean boolisFalling;
+
+    /**
+     * Boolean element can fall
+     */
     boolean boolcanFall;
+
+    /**
+     * Boolean element can cross
+     */
     boolean boolcanCross;
 
     /**

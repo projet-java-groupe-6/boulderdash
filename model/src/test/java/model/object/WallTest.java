@@ -8,11 +8,35 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class WallTest {
+
+    /**
+     * Wall object
+     */
     Wall wall;
+
+    /**
+     * x of element
+     */
     int x;
+
+    /**
+     * y of element
+     */
     int y;
+
+    /**
+     * Element permeability
+     */
     Permeability per;
+
+    /**
+     * Boolean element can fall
+     */
     boolean boolcanFall;
+
+    /**
+     * Boolean can cross
+     */
     boolean boolcanCross;
 
     /**

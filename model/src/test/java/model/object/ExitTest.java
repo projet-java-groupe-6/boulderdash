@@ -8,10 +8,30 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ExitTest {
+
+    /**
+     * Exit object
+     */
     Exit exit;
+
+    /**
+     * X and Y of object
+     */
     int x, y;
+
+    /**
+     * Permeability
+     */
     Permeability per;
+
+    /**
+     * Boolean element can fall
+     */
     boolean boolcanFall;
+
+    /**
+     * Boolean element can cross
+     */
     boolean boolcanCross;
 
     /**

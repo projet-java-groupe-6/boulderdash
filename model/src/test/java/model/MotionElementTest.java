@@ -8,6 +8,9 @@ import model.object.Character;
 
 public class MotionElementTest {
 
+    /**
+     * Character object
+     */
     private Character character;
 
     /**

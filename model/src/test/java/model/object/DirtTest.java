@@ -8,12 +8,40 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DirtTest {
+
+    /**
+     * Dirt object
+     */
     Dirt dirt;
+
+    /**
+     * int x expected
+     */
     int x1;
+
+    /**
+     * int y expected
+     */
     int y1;
+
+    /**
+     * Permeability
+     */
     Permeability per;
+
+    /**
+     * Boolean can fall
+     */
     boolean boolcanFall;
+
+    /**
+     * Boolean can cross
+     */
     boolean boolcanCross;
+
+    /**
+     * X and Y
+     */
     int x,y;
 
     /**

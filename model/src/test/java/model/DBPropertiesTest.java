@@ -9,9 +9,24 @@ import static org.junit.Assert.*;
 
 public class DBPropertiesTest {
 
+    /**
+     * DBProperties object
+     */
     private DBProperties properties;
+
+    /**
+     * Password
+     */
     String passwd;
+
+    /**
+     * Login
+     */
     String login;
+
+    /**
+     * DB URL
+     */
     String url;
 
     /**

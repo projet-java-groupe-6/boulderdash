@@ -9,10 +9,30 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class EnemyTest {
+
+    /**
+     * Enemy object
+     */
     Enemy enemy;
+
+    /**
+     * Boolean can fall
+     */
     boolean boolcanFall;
+
+    /**
+     * Boolean can cross
+     */
     boolean boolcanCross;
+
+    /**
+     * Element type of element
+     */
     ElementType elmtp;
+
+    /**
+     * Permeability
+     */
     Permeability prm;
 
     /**

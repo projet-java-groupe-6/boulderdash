@@ -10,7 +10,15 @@ import javax.sound.sampled.Clip;
 import static org.junit.Assert.*;
 
 public class AudioTest {
+
+    /**
+     * Clip
+     */
     Clip clip1;
+
+    /**
+     * Audio instance
+     */
     Audio audio;
     String sound;
 

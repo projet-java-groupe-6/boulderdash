@@ -12,7 +12,15 @@ import java.util.Observer;
 import static org.junit.Assert.*;
 
 public class ViewFrameTest {
+
+    /**
+     * ViewPanel object
+     */
     ViewPanel viewPanel;
+
+    /**
+     * View interface
+     */
     IView view;
 
     /**

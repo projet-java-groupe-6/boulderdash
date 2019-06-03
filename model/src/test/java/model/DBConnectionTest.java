@@ -12,7 +12,15 @@ import org.junit.Test;
 import java.sql.Connection;
 
 public class DBConnectionTest {
+
+	/**
+	 * Connection object
+	 */
 	Connection cnx;
+
+	/**
+	 * DBConnection instance
+	 */
 	DBConnection dbcnx;
 
 

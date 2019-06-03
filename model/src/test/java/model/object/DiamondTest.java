@@ -8,10 +8,30 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DiamondTest {
+
+    /**
+     * Diamond object
+     */
     Diamond diam;
+
+    /**
+     * Boolean is falling
+     */
     boolean boolisfalling;
+
+    /**
+     * Permeability
+     */
     Permeability per;
+
+    /**
+     * Boolean can fall
+     */
     boolean boolcanFall;
+
+    /**
+     * Boolean can Cross
+     */
     boolean boolcanCross;
 
 

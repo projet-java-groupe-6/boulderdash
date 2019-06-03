@@ -11,8 +11,20 @@ import java.util.Observer;
 import static org.junit.Assert.*;
 
 public class ViewTest {
+
+    /**
+     * Controller interface
+     */
     IController cont;
+
+    /**
+     * View object
+     */
     View view;
+
+    /**
+     * Model interface
+     */
     IModel model1;
 
     /**

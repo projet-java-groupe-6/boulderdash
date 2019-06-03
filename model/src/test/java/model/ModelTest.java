@@ -11,9 +11,25 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class ModelTest {
+
+    /**
+     * Model object
+     */
     Model model;
+
+    /**
+     * Element interface
+     */
     IElement elm;
+
+    /**
+     * Score interface
+     */
     IScore scr;
+
+    /**
+     * ArrayList of elements
+     */
     ArrayList<IElement> list;
 
 

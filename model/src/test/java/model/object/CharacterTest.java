@@ -8,9 +8,25 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CharacterTest {
+
+    /**
+     * Character instance
+     */
     Character car;
+
+    /**
+     * Permeability
+     */
     Permeability per;
+
+    /**
+     * expected Boolean
+     */
     boolean bool;
+
+    /**
+     * expected Boolean 1
+     */
     boolean bool1;
 
     /**
