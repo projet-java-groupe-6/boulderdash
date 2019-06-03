@@ -8,13 +8,24 @@ import java.io.IOException;
 
 public class Audio implements IAudio {
 
+    /**
+     * Audio instance
+     */
     public static Audio instance;
 
+    /**
+     * Constructor of audio (private)
+     */
     private Audio(){
 
 
     }
 
+    /**
+     * Method to play sound
+     * @param sound
+     *      path of sound file
+     */
     public void playSound(String sound) {
         try {
             AudioInputStream al = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResourceAsStream(sound));
@@ -33,6 +44,10 @@ public class Audio implements IAudio {
         }
     }
 
+    /**
+     * Method to get instance of audio
+     * @return instance
+     */
     public static Audio getInstance() {
         if(instance == null) {
             instance = new Audio();

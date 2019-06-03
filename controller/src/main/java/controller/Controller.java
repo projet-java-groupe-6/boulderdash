@@ -25,11 +25,11 @@ public class Controller implements IController {
 	 */
 	private Collisions collisions;
 
-	private boolean isAlive;
+	private boolean isAlive; // true if the character is alive
 
-	private ArrayList<IElement> fallingElements;
+	private ArrayList<IElement> fallingElements; //A list which saves the falling elements : rock, diamond
 
-	private Random random;
+	private Random random; //a random for the moving of the enemies
 
 	/**
 	 * The constructor of Controller
@@ -55,22 +55,27 @@ public class Controller implements IController {
 	 */
 	@Override
     public void orderPerform(Order order) {
-    	switch (order.getTyped()) {
+		// the moving of the character
+		switch (order.getTyped()) {
+			// RIGHT
     	case 'd':
     		if(collisions.canMove(Direction.RIGHT, this.model.getCharacter()) && isAlive) {
 				this.model.getCharacter().setX(this.model.getCharacter().getX()+1);
 			}
     	break;
+    		//LEFT
     	case 'q':
     		if(collisions.canMove(Direction.LEFT, this.model.getCharacter()) && isAlive) {
 				this.model.getCharacter().setX(this.model.getCharacter().getX()-1);
 			}
     		break;
+    		//UP
     	case 'z':
     		if(collisions.canMove(Direction.UP, this.model.getCharacter()) && isAlive) {
 				this.model.getCharacter().setY(this.model.getCharacter().getY()-1);
 			}
     		break;
+    		//DOWN
     	case 's':
     		if(collisions.canMove(Direction.DOWN, this.model.getCharacter()) && isAlive) {
 				this.model.getCharacter().setY(this.model.getCharacter().getY()+1);
@@ -84,12 +89,15 @@ public class Controller implements IController {
 	 * Method to run the game loop
 	 */
     public void play() {
+    	//recovery of the elements
         for(IElement element: this.model.getElements()){
         	element.setObserver(this.view.getObserver());
 		}
         this.model.getCharacter().setObserver(this.view.getObserver());
+        //while the character is not dead : isAlive = true
         while(this.isAlive) {
         	for(IElement element: getCopyOfElements()) {
+        		//gravity manage
         		if(element.canFall()) {
         			if(collisions.canMove(Direction.DOWN, element)) {
         				this.fallingElements.add(element);
@@ -98,12 +106,14 @@ public class Controller implements IController {
 					else {
 						this.fallingElements.remove(element);
 					}
+					// when a falling element (rock/diamond) fall on the character
 					if(element.getX() == this.model.getCharacter().getX() && element.getY()+1 == this.model.getCharacter().getY() &&
 						this.fallingElements.contains(element)) {
 						isAlive = false;
 					}
 				}
         		if(element.getType() == ElementType.ENNEMY) {
+        			// activating of the random moving for the enemies
         			moveRandomly(element);
 				}
 			}
@@ -113,12 +123,18 @@ public class Controller implements IController {
 				e.printStackTrace();
 			}
 		}
+        //when the character is dead : isAlive = false
 		this.model.getAudio().playSound("audio/lose.wav");
 		JOptionPane.showMessageDialog(null, "Exit", "Game OVER", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
 
-    private void moveRandomly(IElement element) {
+	/**
+	 * Method to move randomly an element (used for ennemies)
+	 * @param element
+	 * 		Element interface who will move
+	 */
+	private void moveRandomly(IElement element) {
     	int xy = random.nextInt(2);
     	if(xy == 1) {
     		int direction = random.nextInt(2);
@@ -135,6 +151,10 @@ public class Controller implements IController {
     	collisions.handleEnnemyMove(element);
 	}
 
+	/**
+	 * Get a copy of all elements
+	 * @return ArrayList of all elements
+	 */
     private synchronized ArrayList<IElement> getCopyOfElements() {
 		ArrayList<IElement> copy = new ArrayList<>();
 		copy.addAll(this.model.getElements());

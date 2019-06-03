@@ -27,12 +27,24 @@ import java.util.Observer;
  */
 public class Model implements IModel {
 
-
+    /**
+     * Score
+     */
     private Score score;
 
+    /**
+     * Level
+     */
     private Level level;
 
+    /**
+     * ArrayList of elements
+     */
     private ArrayList<IElement> elements;
+
+    /**
+     * Character
+     */
     private IElement character;
 
 
@@ -52,11 +64,11 @@ public class Model implements IModel {
      * 		LevelBuilder from DP Builder
      */
     private void parse(String path) {
+        // reading the text file located in path
         BufferedReader in = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream(path)));
-
-
-        String line;
-        int y = 0;
+        String line; // to read each line of the text file
+        int y = 0; // browse all the lines
+        //recovery of elements from the text file according to the letters
         try {
             while((line = in.readLine()) != null) {
                 int length = line.length();
@@ -146,6 +158,10 @@ public class Model implements IModel {
         return this.score;
     }
 
+    /**
+     * Method to get the audio
+     * @return instance of audio
+     */
     @Override
     public IAudio getAudio() {
         return Audio.getInstance();

@@ -10,10 +10,10 @@ import model.MotionElement;
  */
 public class Character extends MotionElement {
 
-	private String left; 
-	private String right;
-	private String up;
-	private String bottom;
+	private String left; //when the character turns left
+	private String right; //when the character turns right
+	private String up; //when the character goes up
+	private String bottom; //when the character goes down
 	
 
 	/**
@@ -89,6 +89,10 @@ public class Character extends MotionElement {
 		return true;
 	}
 
+	/**
+	 * Method to get the type of the element
+	 * @return ElementType of the element
+	 */
 	@Override
 	public ElementType getType() {
 		return ElementType.CHARACTER;

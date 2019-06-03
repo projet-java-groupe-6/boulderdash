@@ -25,6 +25,11 @@ public interface IModel {
 	 * @return interface of score
 	 */
 	IScore getScore();
+
+	/**
+	 * Method to get the audio
+	 * @return interface of audio
+	 */
 	IAudio getAudio();
 
 }

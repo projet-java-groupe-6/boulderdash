@@ -15,7 +15,7 @@ public class Level {
     /**
      * level map number 
      */
-    public static int levelNumber = 2;
+    public static int levelNumber = 2; // level chosen
 
     /**
      * The Constructor of Level
@@ -33,10 +33,12 @@ public class Level {
     public String getPath() {
         Statement statement = null;
         try {
+            //creating of the statement which is responsible to execute queries with the data base.
             statement = this.connection.createStatement();
+            // executing the query : calling the map
             ResultSet resultSet = statement.executeQuery("CALL map(" + levelNumber + ");");
             resultSet.first();
-
+            // getting the path to the data base
             String path = resultSet.getString("path");
             return path;
         }
