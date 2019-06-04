@@ -10,7 +10,8 @@ import java.util.ArrayList;
 /**
  * @author clement
  */
-public class Collisions {
+public class
+Collisions {
 
 	/**
 	 * Model interface
